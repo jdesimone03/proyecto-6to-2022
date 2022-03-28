@@ -1,8 +1,8 @@
 # Proyecto Final 6º Electronica 2022
-### Camara de Marcha Atras con Lineas Moviles
-El objetivo de este proyecto es hacer una camara de marcha atras para autos con lineas de proximidad que se mueven con respecto al giro del volante. Hecho con el microcontrolador **[inserte microcontrolador]** y programado en C.
+### Distribuidor automatico de alimento para mascotas domesticas (AlimenCat)
+El objetivo de este proyecto es hacer una maquina que permita facilitar el proceso de alimentacion de una mascota domestica, con sensores programados para la despensa de alimentos.
 
-[aca iria la imagen del proyecto cuando este terminado]
+[la fotito del croquis]
 ## Integrantes
 Integrante|Rol
 ------------------|--------
