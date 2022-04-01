@@ -2,7 +2,7 @@
 ### Distribuidor automatico de alimento para mascotas domesticas (AlimenCat)
 El objetivo de este proyecto es hacer una maquina que permita facilitar el proceso de alimentacion de una mascota domestica, con sensores programados para la despensa de alimentos.
 
-[la fotito del croquis]
+![Imagen](imagenes/IMG_20220328_161809.jpg)
 ## Integrantes
 Integrante|Rol
 ------------------|--------
