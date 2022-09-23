@@ -15,10 +15,21 @@ void appInit(void) {
     /* Configura funciones analógicas y dirección de los Ports de I/O */
     ANSEL = 0;
     ANSELH = 0;
+    
     TRIS_TEC1 = 1;
     TRIS_TEC2 = 1;
     TRIS_TEC3 = 1;
     TRIS_TEC4 = 1;
+    
+    TRIS_IR1 = 1;
+    TRIS_IR2 = 1;
+    TRIS_IR3 = 1;
+    
+    TRIS_CAP1 = 1;
+    TRIS_CAP2 = 1;
+    TRIS_CAP3 = 1;
+    
+    TRIS_COL = 1;
 
     TRIS_LED_R = 0;
     TRIS_LED_AM = 0;

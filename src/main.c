@@ -25,18 +25,18 @@ estadoMEF_t estadoActual2;
 void colorMEFInit(void);
 void colorMEF(void);
 
-void aguaMEFInit(void);
-void aguaMEF(void);
+void comidaMEFInit(void);
+void comidaMEF(void);
 
 // Funcion Principal
 
 void main(void) {
     appInit();
     colorMEFInit();
-    aguaMEFInit();
+    comidaMEFInit();
     while (1) {
         colorMEF();
-        aguaMEF();
+        comidaMEF();
     }
 }
 
@@ -49,17 +49,25 @@ void colorMEFInit(void) {
 void colorMEF(void) {
     switch (estadoActual) {
         case E_REPOSO:
-            // Espera a que pase el tiempo limite o por un boton (para demostrar)
-            // y pasa al estado de DETECTA
+            if (!PIN_TEC1) {
+                estadoActual = E_DETECTA;
+                PIN_COL = 1;
+            }
             break;
         case E_DETECTA:
-            // Funcion que detecta si el plato esta vacio o lleno. Si esta vacio
-            // pasa al estado ACTIVO, y si esta lleno (porque no detecta o por
-            // sensor infrarojo) vuelve al estado de REPOSO.
+            if (detectaColor()) {
+                estadoActual = E_ACTIVO;
+                PIN_COL = 0;
+            } else {
+                estadoActual = E_REPOSO;
+                PIN_COL = 0;
+            }
             break;
         case E_ACTIVO:
-            // Funcion que activa el motor y manda la comida, y cuando detecte
-            // que esta lleno vuelve al ACTIVO
+            // activaServo();
+            if (!PIN_IR1) {
+                estadoActual = E_REPOSO;
+            }
             break;
         default:
             // Si cualquier cosa falla, reinicia al estado principal
@@ -67,11 +75,11 @@ void colorMEF(void) {
     }
 }
 
-void aguaMEFInit(void) {
+void comidaMEFInit(void) {
     estadoActual2 = E_VACIO;
 }
 
-void aguaMEF(void) {
+void comidaMEF(void) {
     switch (estadoActual2) {
         case E_VACIO:
             //esta para que detecte si le queda poca o nada de comida en el almacen
@@ -86,6 +94,10 @@ void aguaMEF(void) {
             //esta lleno no rompas las bolas 
             break;
         default:
-            aguaMEFInit();
+            comidaMEFInit();
     }
+}
+
+uint8_t detectaColor(void) {
+    return; // Despues lo hacemos
 }

@@ -43,6 +43,28 @@
 #define	TRIS_LED_V TRIS_LED3
 #define	TRIS_LED_AZ TRIS_LED4
 
+// Sensores Infrarojo
+#define PIN_IR1 PORTAbits.RA2
+#define PIN_IR2 PORTAbits.RA3
+#define PIN_IR3 PORTAbits.RA4
+
+#define TRIS_IR1 TRISAbits.TRISA2
+#define TRIS_IR2 TRISAbits.TRISA3
+#define TRIS_IR3 TRISAbits.TRISA4
+
+// Sensores Capacitivos
+#define PIN_CAP1 PORTDbits.RD0
+#define PIN_CAP2 PORTDbits.RD1
+#define PIN_CAP3 PORTDbits.RD2
+
+#define TRIS_CAP1 TRISDbits.TRISD0
+#define TRIS_CAP2 TRISDbits.TRISD1
+#define TRIS_CAP3 TRISDbits.TRISD2
+
+// Sensor de Color
+#define PIN_COL PORTBbits.RB2
+#define TRIS_COL TRISBbits.TRISB2
+
 /*==================[declaraciones de funciones externas]====================*/
 /* TODO: Los prototipos de User level (ej. InitApp) van aquí */
 void appInit(void); /* Inicializa las I/O y los periféricos */
