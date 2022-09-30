@@ -28,15 +28,40 @@ void colorMEF(void);
 void comidaMEFInit(void);
 void comidaMEF(void);
 
+void giraServo(void);
+
 // Funcion Principal
 
 void main(void) {
     appInit();
-    colorMEFInit();
-    comidaMEFInit();
+    PIN_LED_AM = 0;
+    PIN_LED_AZ = 0;
+    PIN_LED_V = 0;
+    PIN_LED_R = 0;
+    //    colorMEFInit();
+    //    comidaMEFInit();
     while (1) {
-        colorMEF();
-        comidaMEF();
+        if (!PIN_TEC4) {
+            __delay_ms(40);
+            while (!PIN_TEC4) {
+                PIN_SERVO = 1;
+                __delay_us(1390);
+                PIN_SERVO = 0;
+                __delay_ms(10);
+            }
+        }
+        if (!PIN_TEC3) {
+            __delay_ms(40);
+            while (!PIN_TEC3) {
+                PIN_SERVO = 1;
+                __delay_us(1570);
+                PIN_SERVO = 0;
+                __delay_ms(10);
+            }
+
+        }
+        //        colorMEF();
+        //        comidaMEF();
     }
 }
 
@@ -55,13 +80,13 @@ void colorMEF(void) {
             }
             break;
         case E_DETECTA:
-            if (detectaColor()) {
-                estadoActual = E_ACTIVO;
-                PIN_COL = 0;
-            } else {
-                estadoActual = E_REPOSO;
-                PIN_COL = 0;
-            }
+            //            if (detectaColor()) {
+            //                estadoActual = E_ACTIVO;
+            //                PIN_COL = 0;
+            //            } else {
+            //                estadoActual = E_REPOSO;
+            //                PIN_COL = 0;
+            //            }
             break;
         case E_ACTIVO:
             // activaServo();
@@ -98,6 +123,14 @@ void comidaMEF(void) {
     }
 }
 
-uint8_t detectaColor(void) {
-    return; // Despues lo hacemos
+//uint8_t detectaColor(void) {
+//    return; // Despues lo hacemos
+//}
+
+void giraServo(void) {
+    // TODO implementar con tick
+    PIN_SERVO = 1;
+    __delay_us(1390);
+    PIN_SERVO = 0;
+    __delay_ms(10);
 }

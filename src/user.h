@@ -12,14 +12,14 @@
 // Macros
 // Teclas
 #define	PIN_TEC1 PORTBbits.RB0
-#define	PIN_TEC2 PORTBbits.RB1
-#define	PIN_TEC3 PORTBbits.RB2
-#define	PIN_TEC4 PORTBbits.RB3
+#define	PIN_TEC2 PORTDbits.RD7
+#define	PIN_TEC3 PORTDbits.RD6
+#define	PIN_TEC4 PORTDbits.RD5
 
 #define	TRIS_TEC1 TRISBbits.TRISB0
-#define	TRIS_TEC2 TRISBbits.TRISB1
-#define	TRIS_TEC3 TRISBbits.TRISB2
-#define	TRIS_TEC4 TRISBbits.TRISB3
+#define	TRIS_TEC2 TRISDbits.TRISD7
+#define	TRIS_TEC3 TRISDbits.TRISD6
+#define	TRIS_TEC4 TRISDbits.TRISD5
 
 // Leds
 #define PIN_LED1 PORTEbits.RE2
@@ -64,6 +64,10 @@
 // Sensor de Color
 #define PIN_COL PORTBbits.RB2
 #define TRIS_COL TRISBbits.TRISB2
+
+// Servo
+#define PIN_SERVO PORTBbits.RB1
+#define TRIS_SERVO TRISBbits.TRISB1
 
 /*==================[declaraciones de funciones externas]====================*/
 /* TODO: Los prototipos de User level (ej. InitApp) van aquí */

@@ -35,6 +35,8 @@ void appInit(void) {
     TRIS_LED_AM = 0;
     TRIS_LED_V = 0;
     TRIS_LED_AZ = 0;
+    
+    TRIS_SERVO = 0;
 
     __delay_ms(100); //Espera que se estabilice la fuente
 
