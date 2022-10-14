@@ -21,9 +21,9 @@ void appInit(void) {
     TRIS_TEC3 = 1;
     TRIS_TEC4 = 1;
     
-    TRIS_IR1 = 1;
-    TRIS_IR2 = 1;
-    TRIS_IR3 = 1;
+    TRIS_B_MEDIO = 1;
+    TRIS_B_VACIO = 1;
+    TRIS_P_LLENO = 1;
     
     TRIS_CAP1 = 1;
     TRIS_CAP2 = 1;

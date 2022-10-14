@@ -44,13 +44,21 @@
 #define	TRIS_LED_AZ TRIS_LED4
 
 // Sensores Infrarojo
-#define PIN_IR1 PORTAbits.RA2
-#define PIN_IR2 PORTAbits.RA3
-#define PIN_IR3 PORTAbits.RA4
+#define PIN_IR1 PORTAbits.RA2       //bidon arriba
+#define PIN_IR2 PORTAbits.RA3       //bidon abajo 
+#define PIN_IR3 PORTAbits.RA4       //plato
 
 #define TRIS_IR1 TRISAbits.TRISA2
-#define TRIS_IR2 TRISAbits.TRISA3
+#define TRIS_IR2 TRISAbits.TRISA3       
 #define TRIS_IR3 TRISAbits.TRISA4
+// alias sensores imfrarojos
+#define BIDON_MEDIO PIN_IR1  
+#define BIDON_VACIO PIN_IR2  
+#define PLATO_LLENO PIN_IR3  
+
+#define TRIS_B_MEDIO TRIS_IR1                   //B es de bidon xdddddddddddd
+#define TRIS_B_VACIO TRIS_IR2  
+#define TRIS_P_LLENO TRIS_IR3                  //P es de POLO o de PLATO 
 
 // Sensores Capacitivos
 #define PIN_CAP1 PORTDbits.RD0
