@@ -2798,7 +2798,7 @@ void colorMEF(void);
 void comidaMEFInit(void);
 void comidaMEF(void);
 
-void giraServo(void);
+
 void servoHorario(void);
 void servoAntiHorario(void);
 
@@ -2810,11 +2810,11 @@ void main(void) {
     PORTAbits.RA5 = 0;
     PORTEbits.RE0 = 0;
     PORTEbits.RE2 = 0;
-
-
+    colorMEFInit();
+    comidaMEFInit();
     while (1) {
-        if (!PORTDbits.RD7){
-            giraServo();
+        if(!PORTDbits.RD7 && PORTAbits.RA4) {
+            servoHorario();
         }
 
 
@@ -2863,16 +2863,16 @@ void comidaMEFInit(void) {
 void comidaMEF(void) {
     switch (estadoComida) {
         case E_VACIO:
-                  if(!PORTAbits.RA3){
-                      estadoComida = E_MEDIO;
+            if (!PORTAbits.RA3) {
+                estadoComida = E_MEDIO;
 
-                  }
+            }
 
             break;
         case E_MEDIO:
-               if(!PORTAbits.RA2){
-                   estadoComida = E_LLENO ;
-               }
+            if (!PORTAbits.RA2) {
+                estadoComida = E_LLENO;
+            }
 
             break;
 
@@ -2882,28 +2882,7 @@ void comidaMEF(void) {
             comidaMEFInit();
     }
 }
-
-
-
-
-
-void giraServo(void){
-
-
-    tickServo = tickRead();
-    while(tickRead() - tickServo < 500){
-
-        PORTEbits.RE2 = 1;
-        PORTEbits.RE1 = 0;
-    }
-    tickServo = tickRead();
-    while(tickRead() - tickServo < 250){
-
-        PORTEbits.RE2 = 0;
-        PORTEbits.RE1 = 1;
-    }
-}
-
+# 128 "main.c"
 void servoHorario(void) {
 
     PORTBbits.RB1 = 1;

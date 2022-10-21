@@ -19,13 +19,13 @@ typedef enum {
 } estadoMEF_t;
 
 // Definiciones de variables
-estadoMEF_t estadoColor;
+estadoMEF_t estadoPlato;
 estadoMEF_t estadoComida;
-tick_t tickServo;
+tick_t tickColor;
 
 // Funciones Internas
-void colorMEFInit(void);
-void colorMEF(void);
+void platoMEFInit(void);
+void platoMEF(void);
 
 void comidaMEFInit(void);
 void comidaMEF(void);
@@ -42,46 +42,46 @@ void main(void) {
     PIN_LED_AZ = 0;
     PIN_LED_V = 0;
     PIN_LED_R = 0;
-        colorMEFInit();
-        comidaMEFInit();
+    platoMEFInit();
+    comidaMEFInit();
     while (1) {
-        colorMEF();
+        platoMEF();
         comidaMEF();
     }
 }
 
 // Otras Funciones
 
-void colorMEFInit(void) {
-    estadoColor = E_REPOSO;
+void platoMEFInit(void) {
+    estadoPlato = E_REPOSO;
 }
 
-void colorMEF(void) {
-    switch (estadoColor) {
+void platoMEF(void) {
+    switch (estadoPlato) {
         case E_REPOSO:
-            if (!PIN_TEC1) {
-                estadoColor = E_DETECTA;
+            if (!PIN_TEC2) {
+                estadoPlato = E_DETECTA;
                 PIN_COL = 1;
             }
             break;
         case E_DETECTA:
-            //            if (detectaColor()) {
-            //                estadoColor = E_ACTIVO;
-            //                PIN_COL = 0;
-            //            } else {
-            //                estadoColor = E_REPOSO;
-            //                PIN_COL = 0;
-            //            }
+            if (detectaColorAzul(tickRead())) {
+                estadoPlato = E_ACTIVO;
+                PIN_COL = 0;
+            } else {
+                estadoPlato = E_REPOSO;
+                PIN_COL = 0;
+            }
             break;
         case E_ACTIVO:
-            // activaServo();
-            if (!BIDON_MEDIO) {
-                estadoColor = E_REPOSO;
+            servoHorario();
+            if (!PLATO_LLENO) {
+                estadoPlato = E_REPOSO;
             }
             break;
         default:
             // Si cualquier cosa falla, reinicia al estado principal
-            colorMEFInit();
+            platoMEFInit();
     }
 }
 
@@ -91,36 +91,44 @@ void comidaMEFInit(void) {
 
 void comidaMEF(void) {
     switch (estadoComida) {
-        case E_VACIO:
-                  if(!BIDON_VACIO){
-                      estadoComida = E_MEDIO;       //pasa al estado MEDIO
-                      
-                  }                  //esta para que detecte si le queda poca o nada de comida en el almacen
-                                   //espera a que se llene el almacen para que pase de estado 
-            break;
+        case E_LLENO:
+            if (!BIDON_VACIO && BIDON_MEDIO) { // Si detecta el IR vacio y no el medio
+                estadoComida = E_MEDIO; // Pasa al estado medio
+            }
         case E_MEDIO:
-               if(!BIDON_MEDIO){
-                   estadoComida = E_LLENO ;
-               }                              //detecta el nivel de la comida cuando llega a la mitad del almacen
-                                             //pasa al esatdo lleno
+            if (!BIDON_VACIO && !BIDON_MEDIO) {
+                estadoComida = E_LLENO;
+            } //detecta el nivel de la comida cuando llega a la mitad del almacen
+            //pasa al esatdo lleno
+            if (BIDON_VACIO && BIDON_MEDIO) {
+                estadoComida = E_VACIO;
+            }
             break;
-//        case E_LLENO:
-//                                              //esta lleno no rompas las bolas 
-//            break;
+        case E_VACIO:
+            if (!BIDON_VACIO) {
+                estadoComida = E_MEDIO; //pasa al estado MEDIO
+            } //esta para que detecte si le queda poca o nada de comida en el almacen
+            //espera a que se llene el almacen para que pase de estado 
+            break;
         default:
             comidaMEFInit();
     }
 }
 
-//uint8_t detectaColor(void) {
-//    return; // Despues lo hacemos
-//}
+uint8_t detectaColorAzul(tick_t periodo) {
+    return; // Despues lo hacemos
+}
 
-//void giraServo(void){
-//    /* Tiene que girar el servo en sentido horario y despues antihorario por un
-//       rato */
-//    // Va a ser maquina de estado
-//}
+void mideColorAzul(void) {
+    static tick_t t1 = 0;
+    tick_t aux = tickRead();
+    int16_t temp;
+    temp = aux - t1;
+    t1 = aux;
+    if (temp < 0)
+        return;
+    tickColor = temp;
+}
 
 void servoHorario(void) {
     // TODO implementar con tick

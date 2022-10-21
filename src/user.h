@@ -52,12 +52,12 @@
 #define TRIS_IR2 TRISAbits.TRISA3       
 #define TRIS_IR3 TRISAbits.TRISA4
 // alias sensores imfrarojos
-#define BIDON_MEDIO PIN_IR1  
-#define BIDON_VACIO PIN_IR2  
+#define BIDON_VACIO PIN_IR1
+#define BIDON_MEDIO PIN_IR2    
 #define PLATO_LLENO PIN_IR3  
 
-#define TRIS_B_MEDIO TRIS_IR1                   //B es de bidon xdddddddddddd
-#define TRIS_B_VACIO TRIS_IR2  
+#define TRIS_B_VACIO TRIS_IR1                   //B es de bidon xdddddddddddd
+#define TRIS_B_MEDIO TRIS_IR2  
 #define TRIS_P_LLENO TRIS_IR3                  //P es de POLO o de PLATO 
 
 // Sensores Capacitivos
