@@ -105,7 +105,7 @@ void comidaMEF(void) {
             }
             break;
         case E_VACIO:
-            if (!BIDON_VACIO) {
+            if (!BIDON_VACIO && BIDON_MEDIO) {
                 estadoComida = E_MEDIO; //pasa al estado MEDIO
             } //esta para que detecte si le queda poca o nada de comida en el almacen
             //espera a que se llene el almacen para que pase de estado 
