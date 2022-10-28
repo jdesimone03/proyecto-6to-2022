@@ -15,7 +15,7 @@
 // Definiciones de Tipos
 
 typedef enum {
-    E_REPOSO, E_DETECTA, E_ACTIVO, E_VACIO, E_MEDIO, E_LLENO
+    E_REPOSO, E_DETECTA, E_ACTIVO, E_VACIO, E_MEDIO, E_LLENO, E_COMIDA_IN
 } estadoMEF_t;
 
 // Definiciones de variables
@@ -86,11 +86,24 @@ void platoMEF(void) {
 }
 
 void comidaMEFInit(void) {
-    estadoComida = E_VACIO;
+    estadoComida = E_COMIDA_IN;
 }
 
 void comidaMEF(void) {
     switch (estadoComida) {
+        case E_COMIDA_IN: // Estado Inicial
+            if (!BIDON_VACIO && !BIDON_MEDIO) {
+                estadoComida = E_LLENO;
+            }
+            if (!BIDON_VACIO && BIDON_MEDIO) {
+                estadoComida = E_MEDIO; //pasa al estado MEDIO
+                PIN_LED_R = 0;
+            }
+            if (BIDON_VACIO && BIDON_MEDIO) {
+                estadoComida = E_VACIO;
+                PIN_LED_R = 1;
+            }
+            break;
         case E_LLENO:
             if (!BIDON_VACIO && BIDON_MEDIO) { // Si detecta el IR vacio y no el medio
                 estadoComida = E_MEDIO; // Pasa al estado medio
@@ -102,11 +115,13 @@ void comidaMEF(void) {
             //pasa al esatdo lleno
             if (BIDON_VACIO && BIDON_MEDIO) {
                 estadoComida = E_VACIO;
+                PIN_LED_R = 1;
             }
             break;
         case E_VACIO:
             if (!BIDON_VACIO && BIDON_MEDIO) {
                 estadoComida = E_MEDIO; //pasa al estado MEDIO
+                PIN_LED_R = 0;
             } //esta para que detecte si le queda poca o nada de comida en el almacen
             //espera a que se llene el almacen para que pase de estado 
             break;
