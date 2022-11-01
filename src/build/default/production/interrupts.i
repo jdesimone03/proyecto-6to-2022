@@ -1,4 +1,4 @@
-# 1 "user.c"
+# 1 "interrupts.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,13 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "user.c" 2
-
-
-
-
-
-
+# 1 "interrupts.c" 2
+# 12 "interrupts.c"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2497,8 +2492,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 7 "user.c" 2
+# 12 "interrupts.c" 2
 
+# 1 "./tick.h" 1
+# 15 "./tick.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
 typedef signed char int8_t;
@@ -2632,68 +2629,34 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 8 "user.c" 2
-
-
-# 1 "./system.h" 1
-# 18 "./system.h"
-#pragma config FOSC = XT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = ON
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = ON
-#pragma config FCMEN = ON
-#pragma config LVP = OFF
-
-#pragma config BOR4V = BOR21V
-#pragma config WRT = OFF
-# 10 "user.c" 2
-
-# 1 "./user.h" 1
-# 10 "./user.h"
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 10 "./user.h" 2
-# 85 "./user.h"
-void appInit(void);
-# 11 "user.c" 2
+# 15 "./tick.h" 2
 
 
 
-void appInit(void) {
-
-    ANSEL = 0;
-    ANSELH = 0;
-    IOCB5 = 1;
-
-    TRISBbits.TRISB0 = 1;
-    TRISDbits.TRISD7 = 1;
-    TRISDbits.TRISD6 = 1;
-    TRISDbits.TRISD5 = 1;
-
-    TRISAbits.TRISA3 = 1;
-    TRISAbits.TRISA2 = 1;
-    TRISAbits.TRISA4 = 1;
-
-    TRISDbits.TRISD0 = 1;
-    TRISDbits.TRISD1 = 1;
-    TRISDbits.TRISD2 = 1;
-
-    TRISBbits.TRISB2 = 1;
-
-    TRISEbits.TRISE2 = 0;
-    TRISEbits.TRISE1 = 0;
-    TRISEbits.TRISE0 = 0;
-    TRISAbits.TRISA5 = 0;
-
-    TRISBbits.TRISB1 = 0;
-
-    _delay((unsigned long)((100)*(4000000L/4000.0)));
 
 
-    TMR0IE = 1;
+typedef uint16_t tick_t;
 
-    GIE = 1;
+
+extern volatile tick_t tickCounter;
+
+
+void tickInit(void);
+tick_t tickRead( void );
+void tickWrite( tick_t ticks );
+# 13 "interrupts.c" 2
+# 22 "interrupts.c"
+void isr(void);
+
+
+
+
+
+
+
+void __attribute__((picinterrupt(("")))) isr(void) {
+
+
+
+
 }

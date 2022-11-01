@@ -15,13 +15,12 @@
 // Definiciones de Tipos
 
 typedef enum {
-    E_REPOSO, E_DETECTA, E_ACTIVO, E_VACIO, E_MEDIO, E_LLENO, E_COMIDA_IN
+    E_REPOSO, E_DETECTA, E_ACTIVO, E_VACIO, E_MEDIO, E_LLENO, E_COMIDA_IN, E_AGUA_IN, E_AGUA_LLENO, E_AGUA_VACIO
 } estadoMEF_t;
 
 // Definiciones de variables
-estadoMEF_t estadoPlato;
-estadoMEF_t estadoComida;
-tick_t tickColor;
+estadoMEF_t estadoPlato, estadoComida, estadoAgua;
+tick_t tickColor, tHeartbeat;
 
 // Funciones Internas
 void platoMEFInit(void);
@@ -29,6 +28,9 @@ void platoMEF(void);
 
 void comidaMEFInit(void);
 void comidaMEF(void);
+
+void aguaMEFInit(void);
+void aguaMEF(void);
 
 //void giraServo(void);
 void servoHorario(void);
@@ -47,6 +49,7 @@ void main(void) {
     while (1) {
         platoMEF();
         comidaMEF();
+        aguaMEF();
     }
 }
 
@@ -65,11 +68,11 @@ void platoMEF(void) {
             }
             break;
         case E_DETECTA:
-            if (detectaColorAzul(tickRead())) {
-                estadoPlato = E_ACTIVO;
+            if (!PLATO_LLENO) {
+                estadoPlato = E_REPOSO;
                 PIN_COL = 0;
             } else {
-                estadoPlato = E_REPOSO;
+                estadoPlato = E_ACTIVO;
                 PIN_COL = 0;
             }
             break;
@@ -108,6 +111,7 @@ void comidaMEF(void) {
             if (!BIDON_VACIO && BIDON_MEDIO) { // Si detecta el IR vacio y no el medio
                 estadoComida = E_MEDIO; // Pasa al estado medio
             }
+            break;
         case E_MEDIO:
             if (!BIDON_VACIO && !BIDON_MEDIO) {
                 estadoComida = E_LLENO;
@@ -130,9 +134,42 @@ void comidaMEF(void) {
     }
 }
 
-uint8_t detectaColorAzul(tick_t periodo) {
-    return; // Despues lo hacemos
+void aguaMEFInit(void) {
+    estadoComida = E_AGUA_IN;
 }
+
+void aguaMEF(void) {
+    switch (estadoAgua) {
+        case E_AGUA_IN: // Estado Inicial
+            if (!CAP_AGUA) {
+                estadoAgua = E_AGUA_LLENO;
+                PIN_LED_AZ = 0;
+            }
+            else {
+                estadoAgua = E_AGUA_VACIO;
+                PIN_LED_AZ = 1;
+            }
+            break;
+        case E_AGUA_LLENO:
+            if(CAP_AGUA){
+                estadoAgua = E_AGUA_VACIO;
+                PIN_LED_AZ = 1;
+            }
+            break;
+        case E_AGUA_VACIO:
+            if(!CAP_AGUA){
+                estadoAgua = E_AGUA_LLENO;
+                PIN_LED_AZ = 0;
+            }
+            break;
+        default:
+            aguaMEFInit();
+    }
+}
+
+//uint8_t detectaColorAzul(tick_t periodo) {
+//    return; // Despues lo hacemos
+//}
 
 void mideColorAzul(void) {
     static tick_t t1 = 0;

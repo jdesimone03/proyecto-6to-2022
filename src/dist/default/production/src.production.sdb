@@ -11,6 +11,10 @@ E_ACTIVO 2
 E_VACIO 3
 E_MEDIO 4
 E_LLENO 5
+E_COMIDA_IN 6
+E_AGUA_IN 7
+E_AGUA_LLENO 8
+E_AGUA_VACIO 9
 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
@@ -20,17 +24,29 @@ E_LLENO 5
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"39 Z:\proyecto-6to-2022\src\main.c
+"30 Z:\proyecto-6to-2022\src\interrupts.c
+[v _isr isr `II(v  1 e 1 0 ]
+"41 Z:\proyecto-6to-2022\src\main.c
 [v _main main `(v  1 e 1 0 ]
-"58
-[v _colorMEFInit colorMEFInit `(v  1 e 1 0 ]
-"91
+"59
+[v _platoMEFInit platoMEFInit `(v  1 e 1 0 ]
+"63
+[v _platoMEF platoMEF `(v  1 e 1 0 ]
+"92
 [v _comidaMEFInit comidaMEFInit `(v  1 e 1 0 ]
-"128
+"96
+[v _comidaMEF comidaMEF `(v  1 e 1 0 ]
+"138
+[v _aguaMEFInit aguaMEFInit `(v  1 e 1 0 ]
+"142
+[v _aguaMEF aguaMEF `(v  1 e 1 0 ]
+"186
 [v _servoHorario servoHorario `(v  1 e 1 0 ]
+"62 Z:\proyecto-6to-2022\src\tick.c
+[v _tickRead tickRead `(ui  1 e 2 0 ]
 "14 Z:\proyecto-6to-2022\src\user.c
 [v _appInit appInit `(v  1 e 1 0 ]
-[s S46 . 1 `uc 1 RA0 1 0 :1:0 
+[s S50 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -40,9 +56,9 @@ E_LLENO 5
 `uc 1 RA7 1 0 :1:7 
 ]
 "183 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
-[u S55 . 1 `S46 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES55  1 e 1 @5 ]
-[s S100 . 1 `uc 1 RB0 1 0 :1:0 
+[u S59 . 1 `S50 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES59  1 e 1 @5 ]
+[s S116 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -52,9 +68,9 @@ E_LLENO 5
 `uc 1 RB7 1 0 :1:7 
 ]
 "245
-[u S109 . 1 `S100 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES109  1 e 1 @6 ]
-[s S75 . 1 `uc 1 RD0 1 0 :1:0 
+[u S125 . 1 `S116 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES125  1 e 1 @6 ]
+[s S95 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -64,17 +80,17 @@ E_LLENO 5
 `uc 1 RD7 1 0 :1:7 
 ]
 "369
-[u S84 . 1 `S75 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES84  1 e 1 @8 ]
-[s S33 . 1 `uc 1 RE0 1 0 :1:0 
+[u S104 . 1 `S95 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES104  1 e 1 @8 ]
+[s S37 . 1 `uc 1 RE0 1 0 :1:0 
 `uc 1 RE1 1 0 :1:1 
 `uc 1 RE2 1 0 :1:2 
 `uc 1 RE3 1 0 :1:3 
 ]
 "427
-[u S38 . 1 `S33 1 . 1 0 ]
-[v _PORTEbits PORTEbits `VES38  1 e 1 @9 ]
-[s S282 . 1 `uc 1 PS 1 0 :3:0 
+[u S42 . 1 `S37 1 . 1 0 ]
+[v _PORTEbits PORTEbits `VES42  1 e 1 @9 ]
+[s S312 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -82,13 +98,13 @@ E_LLENO 5
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "1366
-[s S289 . 1 `uc 1 PS0 1 0 :1:0 
+[s S319 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S293 . 1 `S282 1 . 1 0 `S289 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES293  1 e 1 @129 ]
-[s S213 . 1 `uc 1 TRISA0 1 0 :1:0 
+[u S323 . 1 `S312 1 . 1 0 `S319 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES323  1 e 1 @129 ]
+[s S243 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -98,9 +114,9 @@ E_LLENO 5
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "1433
-[u S222 . 1 `S213 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES222  1 e 1 @133 ]
-[s S171 . 1 `uc 1 TRISB0 1 0 :1:0 
+[u S252 . 1 `S243 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES252  1 e 1 @133 ]
+[s S201 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -110,9 +126,9 @@ E_LLENO 5
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "1495
-[u S180 . 1 `S171 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES180  1 e 1 @134 ]
-[s S192 . 1 `uc 1 TRISD0 1 0 :1:0 
+[u S210 . 1 `S201 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES210  1 e 1 @134 ]
+[s S222 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -122,22 +138,24 @@ E_LLENO 5
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "1619
-[u S201 . 1 `S192 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES201  1 e 1 @136 ]
-[s S234 . 1 `uc 1 TRISE0 1 0 :1:0 
+[u S231 . 1 `S222 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES231  1 e 1 @136 ]
+[s S264 . 1 `uc 1 TRISE0 1 0 :1:0 
 `uc 1 TRISE1 1 0 :1:1 
 `uc 1 TRISE2 1 0 :1:2 
 `uc 1 TRISE3 1 0 :1:3 
 ]
 "1677
-[u S239 . 1 `S234 1 . 1 0 ]
-[v _TRISEbits TRISEbits `VES239  1 e 1 @137 ]
+[u S269 . 1 `S264 1 . 1 0 ]
+[v _TRISEbits TRISEbits `VES269  1 e 1 @137 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "3896
 [v _GIE GIE `VEb  1 e 0 @95 ]
+"3947
+[v _IOCB5 IOCB5 `VEb  1 e 0 @1205 ]
 "4058
 [v _PSA PSA `VEb  1 e 0 @1035 ]
 "4316
@@ -145,33 +163,68 @@ E_LLENO 5
 "4358
 [v _TMR0IE TMR0IE `VEb  1 e 0 @93 ]
 "22 Z:\proyecto-6to-2022\src\main.c
-[v _estadoColor estadoColor `E1356  1 e 1 0 ]
-"23
+[v _estadoPlato estadoPlato `E1356  1 e 1 0 ]
 [v _estadoComida estadoComida `E1356  1 e 1 0 ]
+[v _estadoAgua estadoAgua `E1356  1 e 1 0 ]
+"23
+[v _tickColor tickColor `ui  1 e 2 0 ]
+[v _tHeartbeat tHeartbeat `ui  1 e 2 0 ]
 "26 Z:\proyecto-6to-2022\src\tick.c
 [v _tickCounter tickCounter `VEui  1 e 2 0 ]
-"39 Z:\proyecto-6to-2022\src\main.c
+"41 Z:\proyecto-6to-2022\src\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"54
+"55
 } 0
-"128
+"62 Z:\proyecto-6to-2022\src\tick.c
+[v _tickRead tickRead `(ui  1 e 2 0 ]
+{
+"63
+[v tickRead@aux aux `ui  1 a 2 0 ]
+"68
+} 0
+"63 Z:\proyecto-6to-2022\src\main.c
+[v _platoMEF platoMEF `(v  1 e 1 0 ]
+{
+"90
+} 0
+"186
 [v _servoHorario servoHorario `(v  1 e 1 0 ]
 {
-"134
+"192
 } 0
-"91
+"59
+[v _platoMEFInit platoMEFInit `(v  1 e 1 0 ]
+{
+"61
+} 0
+"96
+[v _comidaMEF comidaMEF `(v  1 e 1 0 ]
+{
+"136
+} 0
+"92
 [v _comidaMEFInit comidaMEFInit `(v  1 e 1 0 ]
 {
-"93
-} 0
-"58
-[v _colorMEFInit colorMEFInit `(v  1 e 1 0 ]
-{
-"60
+"94
 } 0
 "14 Z:\proyecto-6to-2022\src\user.c
 [v _appInit appInit `(v  1 e 1 0 ]
 {
-"47
+"48
+} 0
+"142 Z:\proyecto-6to-2022\src\main.c
+[v _aguaMEF aguaMEF `(v  1 e 1 0 ]
+{
+"169
+} 0
+"138
+[v _aguaMEFInit aguaMEFInit `(v  1 e 1 0 ]
+{
+"140
+} 0
+"30 Z:\proyecto-6to-2022\src\interrupts.c
+[v _isr isr `II(v  1 e 1 0 ]
+{
+"35
 } 0

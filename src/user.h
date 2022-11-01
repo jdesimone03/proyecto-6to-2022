@@ -69,6 +69,9 @@
 #define TRIS_CAP2 TRISDbits.TRISD1
 #define TRIS_CAP3 TRISDbits.TRISD2
 
+#define CAP_AGUA PIN_CAP3
+#define TRIS_AGUA TRIS_CAP3
+
 // Sensor de Color
 #define PIN_COL PORTBbits.RB2
 #define TRIS_COL TRISBbits.TRISB2

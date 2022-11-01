@@ -1,67 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"3387 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
-[v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
-"3449
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
-[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
-"3947
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3947: extern volatile __bit IOCB5 __attribute__((address(0x4B5)));
-[v _IOCB5 `Vb ~T0 @X0 0 e@1205 ]
-"1484
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1484:     struct {
-[s S55 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S55 . TRISB0 TRISB1 TRISB2 TRISB3 TRISB4 TRISB5 TRISB6 TRISB7 ]
-"1483
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1483: typedef union {
-[u S54 `S55 1 ]
-[n S54 . . ]
-"1495
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1495: extern volatile TRISBbits_t TRISBbits __attribute__((address(0x086)));
-[v _TRISBbits `VS54 ~T0 @X0 0 e@134 ]
-"1608
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1608:     struct {
-[s S59 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S59 . TRISD0 TRISD1 TRISD2 TRISD3 TRISD4 TRISD5 TRISD6 TRISD7 ]
-"1607
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1607: typedef union {
-[u S58 `S59 1 ]
-[n S58 . . ]
-"1619
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1619: extern volatile TRISDbits_t TRISDbits __attribute__((address(0x088)));
-[v _TRISDbits `VS58 ~T0 @X0 0 e@136 ]
-"1422
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1422:     struct {
-[s S53 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S53 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
-"1421
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1421: typedef union {
-[u S52 `S53 1 ]
-[n S52 . . ]
-"1433
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1433: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x085)));
-[v _TRISAbits `VS52 ~T0 @X0 0 e@133 ]
-"1670
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1670:     struct {
-[s S61 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S61 . TRISE0 TRISE1 TRISE2 TRISE3 ]
-"1669
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1669: typedef union {
-[u S60 `S61 1 ]
-[n S60 . . ]
-"1677
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1677: extern volatile TRISEbits_t TRISEbits __attribute__((address(0x089)));
-[v _TRISEbits `VS60 ~T0 @X0 0 e@137 ]
-[v F1256 `(v ~T0 @X0 1 tf1`ul ]
-"92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
-[v __delay `JF1256 ~T0 @X0 0 e ]
-[p i __delay ]
-"4358 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4358: extern volatile __bit TMR0IE __attribute__((address(0x5D)));
-[v _TMR0IE `Vb ~T0 @X0 0 e@93 ]
-"3896
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3896: extern volatile __bit GIE __attribute__((address(0x5F)));
-[v _GIE `Vb ~T0 @X0 0 e@95 ]
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -296,103 +235,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"18 ./system.h
-[p x FOSC = XT ]
-"19
-[p x WDTE = OFF ]
-"20
-[p x PWRTE = OFF ]
-"21
-[p x MCLRE = ON ]
-"22
-[p x CP = OFF ]
-"23
-[p x CPD = OFF ]
-"24
-[p x BOREN = OFF ]
-"25
-[p x IESO = ON ]
-"26
-[p x FCMEN = ON ]
-"27
-[p x LVP = OFF ]
-"29
-[p x BOR4V = BOR21V ]
-"30
-[p x WRT = OFF ]
-"14 user.c
-[; ;user.c: 14: void appInit(void) {
-[v _appInit `(v ~T0 @X0 1 ef ]
+[v $root$_isr `(v ~T0 @X0 0 e ]
+"30 interrupts.c
+[; ;interrupts.c: 30: void __attribute__((picinterrupt(("")))) isr(void) {
+[v _isr `(v ~T1 @X0 1 ef ]
 {
-[e :U _appInit ]
+[e :U _isr ]
 [f ]
-"16
-[; ;user.c: 16:     ANSEL = 0;
-[e = _ANSEL -> -> 0 `i `uc ]
-"17
-[; ;user.c: 17:     ANSELH = 0;
-[e = _ANSELH -> -> 0 `i `uc ]
-"18
-[; ;user.c: 18:     IOCB5 = 1;
-[e = _IOCB5 -> -> 1 `i `b ]
-"20
-[; ;user.c: 20:     TRISBbits.TRISB0 = 1;
-[e = . . _TRISBbits 0 0 -> -> 1 `i `uc ]
-"21
-[; ;user.c: 21:     TRISDbits.TRISD7 = 1;
-[e = . . _TRISDbits 0 7 -> -> 1 `i `uc ]
-"22
-[; ;user.c: 22:     TRISDbits.TRISD6 = 1;
-[e = . . _TRISDbits 0 6 -> -> 1 `i `uc ]
-"23
-[; ;user.c: 23:     TRISDbits.TRISD5 = 1;
-[e = . . _TRISDbits 0 5 -> -> 1 `i `uc ]
-"25
-[; ;user.c: 25:     TRISAbits.TRISA3 = 1;
-[e = . . _TRISAbits 0 3 -> -> 1 `i `uc ]
-"26
-[; ;user.c: 26:     TRISAbits.TRISA2 = 1;
-[e = . . _TRISAbits 0 2 -> -> 1 `i `uc ]
-"27
-[; ;user.c: 27:     TRISAbits.TRISA4 = 1;
-[e = . . _TRISAbits 0 4 -> -> 1 `i `uc ]
-"29
-[; ;user.c: 29:     TRISDbits.TRISD0 = 1;
-[e = . . _TRISDbits 0 0 -> -> 1 `i `uc ]
-"30
-[; ;user.c: 30:     TRISDbits.TRISD1 = 1;
-[e = . . _TRISDbits 0 1 -> -> 1 `i `uc ]
-"31
-[; ;user.c: 31:     TRISDbits.TRISD2 = 1;
-[e = . . _TRISDbits 0 2 -> -> 1 `i `uc ]
-"33
-[; ;user.c: 33:     TRISBbits.TRISB2 = 1;
-[e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
 "35
-[; ;user.c: 35:     TRISEbits.TRISE2 = 0;
-[e = . . _TRISEbits 0 2 -> -> 0 `i `uc ]
-"36
-[; ;user.c: 36:     TRISEbits.TRISE1 = 0;
-[e = . . _TRISEbits 0 1 -> -> 0 `i `uc ]
-"37
-[; ;user.c: 37:     TRISEbits.TRISE0 = 0;
-[e = . . _TRISEbits 0 0 -> -> 0 `i `uc ]
-"38
-[; ;user.c: 38:     TRISAbits.TRISA5 = 0;
-[e = . . _TRISAbits 0 5 -> -> 0 `i `uc ]
-"40
-[; ;user.c: 40:     TRISBbits.TRISB1 = 0;
-[e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
-"42
-[; ;user.c: 42:     _delay((unsigned long)((100)*(4000000L/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"45
-[; ;user.c: 45:     TMR0IE = 1;
-[e = _TMR0IE -> -> 1 `i `b ]
-"47
-[; ;user.c: 47:     GIE = 1;
-[e = _GIE -> -> 1 `i `b ]
-"48
-[; ;user.c: 48: }
+[; ;interrupts.c: 35: }
 [e :UE 138 ]
 }

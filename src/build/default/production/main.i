@@ -2755,7 +2755,7 @@ extern __bank0 __bit __timeout;
 # 10 "./user.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 10 "./user.h" 2
-# 82 "./user.h"
+# 85 "./user.h"
 void appInit(void);
 # 12 "main.c" 2
 
@@ -2783,20 +2783,22 @@ void tickWrite( tick_t ticks );
 
 
 typedef enum {
-    E_REPOSO, E_DETECTA, E_ACTIVO, E_VACIO, E_MEDIO, E_LLENO
+    E_REPOSO, E_DETECTA, E_ACTIVO, E_VACIO, E_MEDIO, E_LLENO, E_COMIDA_IN, E_AGUA_IN, E_AGUA_LLENO, E_AGUA_VACIO
 } estadoMEF_t;
 
 
-estadoMEF_t estadoColor;
-estadoMEF_t estadoComida;
-tick_t tickServo;
+estadoMEF_t estadoPlato, estadoComida, estadoAgua;
+tick_t tickColor, tHeartbeat;
 
 
-void colorMEFInit(void);
-void colorMEF(void);
+void platoMEFInit(void);
+void platoMEF(void);
 
 void comidaMEFInit(void);
 void comidaMEF(void);
+
+void aguaMEFInit(void);
+void aguaMEF(void);
 
 
 void servoHorario(void);
@@ -2810,79 +2812,145 @@ void main(void) {
     PORTAbits.RA5 = 0;
     PORTEbits.RE0 = 0;
     PORTEbits.RE2 = 0;
-    colorMEFInit();
+    platoMEFInit();
     comidaMEFInit();
+    tHeartbeat = tickRead();
     while (1) {
-        if(!PORTDbits.RD7 && PORTAbits.RA4) {
-            servoHorario();
-        }
-
-
+        platoMEF();
+        comidaMEF();
+        aguaMEF();
     }
 }
 
 
 
-void colorMEFInit(void) {
-    estadoColor = E_REPOSO;
+void platoMEFInit(void) {
+    estadoPlato = E_REPOSO;
 }
 
-void colorMEF(void) {
-    switch (estadoColor) {
+void platoMEF(void) {
+    switch (estadoPlato) {
         case E_REPOSO:
-            if (!PORTBbits.RB0) {
-                estadoColor = E_DETECTA;
+            if (!PORTDbits.RD7) {
+                estadoPlato = E_DETECTA;
                 PORTBbits.RB2 = 1;
             }
             break;
         case E_DETECTA:
-
-
-
-
-
-
-
+            if (!PORTAbits.RA4) {
+                estadoPlato = E_REPOSO;
+                PORTBbits.RB2 = 0;
+            } else {
+                estadoPlato = E_ACTIVO;
+                PORTBbits.RB2 = 0;
+            }
             break;
         case E_ACTIVO:
-
-            if (!PORTAbits.RA2) {
-                estadoColor = E_REPOSO;
+            servoHorario();
+            if (!PORTAbits.RA4) {
+                estadoPlato = E_REPOSO;
             }
             break;
         default:
 
-            colorMEFInit();
+            platoMEFInit();
     }
 }
 
 void comidaMEFInit(void) {
-    estadoComida = E_VACIO;
+    estadoComida = E_COMIDA_IN;
 }
 
 void comidaMEF(void) {
     switch (estadoComida) {
-        case E_VACIO:
-            if (!PORTAbits.RA3) {
-                estadoComida = E_MEDIO;
-
+        case E_COMIDA_IN:
+            if (!PORTAbits.RA2 && !PORTAbits.RA3) {
+                estadoComida = E_LLENO;
             }
-
+            if (!PORTAbits.RA2 && PORTAbits.RA3) {
+                estadoComida = E_MEDIO;
+                PORTEbits.RE2 = 0;
+            }
+            if (PORTAbits.RA2 && PORTAbits.RA3) {
+                estadoComida = E_VACIO;
+                PORTEbits.RE2 = 1;
+            }
+            break;
+        case E_LLENO:
+            if (!PORTAbits.RA2 && PORTAbits.RA3) {
+                estadoComida = E_MEDIO;
+            }
             break;
         case E_MEDIO:
-            if (!PORTAbits.RA2) {
+            if (!PORTAbits.RA2 && !PORTAbits.RA3) {
                 estadoComida = E_LLENO;
             }
 
+            if (PORTAbits.RA2 && PORTAbits.RA3) {
+                estadoComida = E_VACIO;
+                PORTEbits.RE2 = 1;
+            }
             break;
+        case E_VACIO:
+            if (!PORTAbits.RA2 && PORTAbits.RA3) {
+                estadoComida = E_MEDIO;
+                PORTEbits.RE2 = 0;
+            }
 
-
-
+            break;
         default:
             comidaMEFInit();
     }
 }
-# 128 "main.c"
+
+void aguaMEFInit(void) {
+    estadoComida = E_AGUA_IN;
+}
+
+void aguaMEF(void) {
+    switch (estadoAgua) {
+        case E_AGUA_IN:
+            if (!PORTDbits.RD2) {
+                estadoAgua = E_AGUA_LLENO;
+                PORTAbits.RA5 = 0;
+            }
+            else {
+                estadoAgua = E_AGUA_VACIO;
+                PORTAbits.RA5 = 1;
+            }
+            break;
+        case E_AGUA_LLENO:
+            if(PORTDbits.RD2){
+                estadoAgua = E_AGUA_VACIO;
+                PORTAbits.RA5 = 1;
+            }
+            break;
+        case E_AGUA_VACIO:
+            if(!PORTDbits.RD2){
+                estadoAgua = E_AGUA_LLENO;
+                PORTAbits.RA5 = 0;
+            }
+            break;
+        default:
+            aguaMEFInit();
+    }
+}
+
+
+
+
+
+void mideColorAzul(void) {
+    static tick_t t1 = 0;
+    tick_t aux = tickRead();
+    int16_t temp;
+    temp = aux - t1;
+    t1 = aux;
+    if (temp < 0)
+        return;
+    tickColor = temp;
+}
+
 void servoHorario(void) {
 
     PORTBbits.RB1 = 1;

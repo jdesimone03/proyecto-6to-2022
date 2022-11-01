@@ -1,11 +1,11 @@
 Version 4.0 HI-TECH Software Intermediate Code
 "22 main.c
-[; ;main.c: 22: estadoMEF_t estadoColor;
-[c E1356 0 1 2 3 4 5 .. ]
-[n E1356 . E_REPOSO E_DETECTA E_ACTIVO E_VACIO E_MEDIO E_LLENO  ]
+[; ;main.c: 22: estadoMEF_t estadoPlato, estadoComida, estadoAgua;
+[c E1356 0 1 2 3 4 5 6 7 8 9 .. ]
+[n E1356 . E_REPOSO E_DETECTA E_ACTIVO E_VACIO E_MEDIO E_LLENO E_COMIDA_IN E_AGUA_IN E_AGUA_LLENO E_AGUA_VACIO  ]
 [p mainexit ]
-"82 ./user.h
-[; ;./user.h: 82: void appInit(void);
+"85 ./user.h
+[; ;./user.h: 85: void appInit(void);
 [v _appInit `(v ~T0 @X0 0 ef ]
 "420 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 420:     struct {
@@ -29,12 +29,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 "183
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 183: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x005)));
 [v _PORTAbits `VS6 ~T0 @X0 0 e@5 ]
-"27 main.c
-[; ;main.c: 27: void colorMEFInit(void);
-[v _colorMEFInit `(v ~T0 @X0 0 ef ]
-"30
-[; ;main.c: 30: void comidaMEFInit(void);
+"26 main.c
+[; ;main.c: 26: void platoMEFInit(void);
+[v _platoMEFInit `(v ~T0 @X0 0 ef ]
+"29
+[; ;main.c: 29: void comidaMEFInit(void);
 [v _comidaMEFInit `(v ~T0 @X0 0 ef ]
+"27 ./tick.h
+[; ;./tick.h: 27: tick_t tickRead( void );
+[v _tickRead `(ui ~T0 @X0 0 ef ]
+"27 main.c
+[; ;main.c: 27: void platoMEF(void);
+[v _platoMEF `(v ~T0 @X0 0 ef ]
+"30
+[; ;main.c: 30: void comidaMEF(void);
+[v _comidaMEF `(v ~T0 @X0 0 ef ]
+"33
+[; ;main.c: 33: void aguaMEF(void);
+[v _aguaMEF `(v ~T0 @X0 0 ef ]
 "358 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 358:     struct {
 [s S13 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -46,10 +58,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "369
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 369: extern volatile PORTDbits_t PORTDbits __attribute__((address(0x008)));
 [v _PORTDbits `VS12 ~T0 @X0 0 e@8 ]
-"34 main.c
-[; ;main.c: 34: void servoHorario(void);
-[v _servoHorario `(v ~T0 @X0 0 ef ]
-"234 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+"234
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 234:     struct {
 [s S9 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S9 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
@@ -60,6 +69,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "245
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 245: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x006)));
 [v _PORTBbits `VS8 ~T0 @X0 0 e@6 ]
+"36 main.c
+[; ;main.c: 36: void servoHorario(void);
+[v _servoHorario `(v ~T0 @X0 0 ef ]
 [v F1341 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
 [v __delay `JF1341 ~T0 @X0 0 e ]
@@ -323,270 +335,537 @@ Version 4.0 HI-TECH Software Intermediate Code
 "30
 [p x WRT = OFF ]
 "22 main.c
-[; ;main.c: 22: estadoMEF_t estadoColor;
-[v _estadoColor `E1356 ~T0 @X0 1 e ]
-"23
-[; ;main.c: 23: estadoMEF_t estadoComida;
+[; ;main.c: 22: estadoMEF_t estadoPlato, estadoComida, estadoAgua;
+[v _estadoPlato `E1356 ~T0 @X0 1 e ]
 [v _estadoComida `E1356 ~T0 @X0 1 e ]
-"24
-[; ;main.c: 24: tick_t tickServo;
-[v _tickServo `ui ~T0 @X0 1 e ]
+[v _estadoAgua `E1356 ~T0 @X0 1 e ]
+"23
+[; ;main.c: 23: tick_t tickColor, tHeartbeat;
+[v _tickColor `ui ~T0 @X0 1 e ]
+[v _tHeartbeat `ui ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"39
-[; ;main.c: 39: void main(void) {
+"41
+[; ;main.c: 41: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"40
-[; ;main.c: 40:     appInit();
-[e ( _appInit ..  ]
-"41
-[; ;main.c: 41:     PORTEbits.RE1 = 0;
-[e = . . _PORTEbits 0 1 -> -> 0 `i `uc ]
 "42
-[; ;main.c: 42:     PORTAbits.RA5 = 0;
-[e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 42:     appInit();
+[e ( _appInit ..  ]
 "43
-[; ;main.c: 43:     PORTEbits.RE0 = 0;
-[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 43:     PORTEbits.RE1 = 0;
+[e = . . _PORTEbits 0 1 -> -> 0 `i `uc ]
 "44
-[; ;main.c: 44:     PORTEbits.RE2 = 0;
-[e = . . _PORTEbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 44:     PORTAbits.RA5 = 0;
+[e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
 "45
-[; ;main.c: 45:     colorMEFInit();
-[e ( _colorMEFInit ..  ]
+[; ;main.c: 45:     PORTEbits.RE0 = 0;
+[e = . . _PORTEbits 0 0 -> -> 0 `i `uc ]
 "46
-[; ;main.c: 46:     comidaMEFInit();
-[e ( _comidaMEFInit ..  ]
+[; ;main.c: 46:     PORTEbits.RE2 = 0;
+[e = . . _PORTEbits 0 2 -> -> 0 `i `uc ]
 "47
-[; ;main.c: 47:     while (1) {
+[; ;main.c: 47:     platoMEFInit();
+[e ( _platoMEFInit ..  ]
+"48
+[; ;main.c: 48:     comidaMEFInit();
+[e ( _comidaMEFInit ..  ]
+"49
+[; ;main.c: 49:     tHeartbeat = tickRead();
+[e = _tHeartbeat ( _tickRead ..  ]
+"50
+[; ;main.c: 50:     while (1) {
 [e :U 141 ]
 {
-"48
-[; ;main.c: 48:         if(!PORTDbits.RD7 && PORTAbits.RA4) {
-[e $ ! && ! != -> . . _PORTDbits 0 7 `i -> 0 `i != -> . . _PORTAbits 0 4 `i -> 0 `i 143  ]
-{
-"49
-[; ;main.c: 49:             servoHorario();
-[e ( _servoHorario ..  ]
-"50
-[; ;main.c: 50:         }
-}
-[e :U 143 ]
+"51
+[; ;main.c: 51:         platoMEF();
+[e ( _platoMEF ..  ]
+"52
+[; ;main.c: 52:         comidaMEF();
+[e ( _comidaMEF ..  ]
 "53
-[; ;main.c: 53:     }
+[; ;main.c: 53:         aguaMEF();
+[e ( _aguaMEF ..  ]
+"54
+[; ;main.c: 54:     }
 }
 [e :U 140 ]
 [e $U 141  ]
 [e :U 142 ]
-"54
-[; ;main.c: 54: }
+"55
+[; ;main.c: 55: }
 [e :UE 139 ]
 }
-"58
-[; ;main.c: 58: void colorMEFInit(void) {
-[v _colorMEFInit `(v ~T0 @X0 1 ef ]
-{
-[e :U _colorMEFInit ]
-[f ]
 "59
-[; ;main.c: 59:     estadoColor = E_REPOSO;
-[e = _estadoColor . `E1356 0 ]
+[; ;main.c: 59: void platoMEFInit(void) {
+[v _platoMEFInit `(v ~T0 @X0 1 ef ]
+{
+[e :U _platoMEFInit ]
+[f ]
 "60
-[; ;main.c: 60: }
+[; ;main.c: 60:     estadoPlato = E_REPOSO;
+[e = _estadoPlato . `E1356 0 ]
+"61
+[; ;main.c: 61: }
+[e :UE 143 ]
+}
+"63
+[; ;main.c: 63: void platoMEF(void) {
+[v _platoMEF `(v ~T0 @X0 1 ef ]
+{
+[e :U _platoMEF ]
+[f ]
+"64
+[; ;main.c: 64:     switch (estadoPlato) {
+[e $U 146  ]
+{
+"65
+[; ;main.c: 65:         case E_REPOSO:
+[e :U 147 ]
+"66
+[; ;main.c: 66:             if (!PORTDbits.RD7) {
+[e $ ! ! != -> . . _PORTDbits 0 7 `i -> 0 `i 148  ]
+{
+"67
+[; ;main.c: 67:                 estadoPlato = E_DETECTA;
+[e = _estadoPlato . `E1356 1 ]
+"68
+[; ;main.c: 68:                 PORTBbits.RB2 = 1;
+[e = . . _PORTBbits 0 2 -> -> 1 `i `uc ]
+"69
+[; ;main.c: 69:             }
+}
+[e :U 148 ]
+"70
+[; ;main.c: 70:             break;
+[e $U 145  ]
+"71
+[; ;main.c: 71:         case E_DETECTA:
+[e :U 149 ]
+"72
+[; ;main.c: 72:             if (!PORTAbits.RA4) {
+[e $ ! ! != -> . . _PORTAbits 0 4 `i -> 0 `i 150  ]
+{
+"73
+[; ;main.c: 73:                 estadoPlato = E_REPOSO;
+[e = _estadoPlato . `E1356 0 ]
+"74
+[; ;main.c: 74:                 PORTBbits.RB2 = 0;
+[e = . . _PORTBbits 0 2 -> -> 0 `i `uc ]
+"75
+[; ;main.c: 75:             } else {
+}
+[e $U 151  ]
+[e :U 150 ]
+{
+"76
+[; ;main.c: 76:                 estadoPlato = E_ACTIVO;
+[e = _estadoPlato . `E1356 2 ]
+"77
+[; ;main.c: 77:                 PORTBbits.RB2 = 0;
+[e = . . _PORTBbits 0 2 -> -> 0 `i `uc ]
+"78
+[; ;main.c: 78:             }
+}
+[e :U 151 ]
+"79
+[; ;main.c: 79:             break;
+[e $U 145  ]
+"80
+[; ;main.c: 80:         case E_ACTIVO:
+[e :U 152 ]
+"81
+[; ;main.c: 81:             servoHorario();
+[e ( _servoHorario ..  ]
+"82
+[; ;main.c: 82:             if (!PORTAbits.RA4) {
+[e $ ! ! != -> . . _PORTAbits 0 4 `i -> 0 `i 153  ]
+{
+"83
+[; ;main.c: 83:                 estadoPlato = E_REPOSO;
+[e = _estadoPlato . `E1356 0 ]
+"84
+[; ;main.c: 84:             }
+}
+[e :U 153 ]
+"85
+[; ;main.c: 85:             break;
+[e $U 145  ]
+"86
+[; ;main.c: 86:         default:
+[e :U 154 ]
+"88
+[; ;main.c: 88:             platoMEFInit();
+[e ( _platoMEFInit ..  ]
+"89
+[; ;main.c: 89:     }
+}
+[e $U 145  ]
+[e :U 146 ]
+[e [\ -> _estadoPlato `ui , $ -> . `E1356 0 `ui 147
+ , $ -> . `E1356 1 `ui 149
+ , $ -> . `E1356 2 `ui 152
+ 154 ]
+[e :U 145 ]
+"90
+[; ;main.c: 90: }
 [e :UE 144 ]
 }
-"62
-[; ;main.c: 62: void colorMEF(void) {
-[v _colorMEF `(v ~T0 @X0 1 ef ]
-{
-[e :U _colorMEF ]
-[f ]
-"63
-[; ;main.c: 63:     switch (estadoColor) {
-[e $U 147  ]
-{
-"64
-[; ;main.c: 64:         case E_REPOSO:
-[e :U 148 ]
-"65
-[; ;main.c: 65:             if (!PORTBbits.RB0) {
-[e $ ! ! != -> . . _PORTBbits 0 0 `i -> 0 `i 149  ]
-{
-"66
-[; ;main.c: 66:                 estadoColor = E_DETECTA;
-[e = _estadoColor . `E1356 1 ]
-"67
-[; ;main.c: 67:                 PORTBbits.RB2 = 1;
-[e = . . _PORTBbits 0 2 -> -> 1 `i `uc ]
-"68
-[; ;main.c: 68:             }
-}
-[e :U 149 ]
-"69
-[; ;main.c: 69:             break;
-[e $U 146  ]
-"70
-[; ;main.c: 70:         case E_DETECTA:
-[e :U 150 ]
-"78
-[; ;main.c: 78:             break;
-[e $U 146  ]
-"79
-[; ;main.c: 79:         case E_ACTIVO:
-[e :U 151 ]
-"81
-[; ;main.c: 81:             if (!PORTAbits.RA2) {
-[e $ ! ! != -> . . _PORTAbits 0 2 `i -> 0 `i 152  ]
-{
-"82
-[; ;main.c: 82:                 estadoColor = E_REPOSO;
-[e = _estadoColor . `E1356 0 ]
-"83
-[; ;main.c: 83:             }
-}
-[e :U 152 ]
-"84
-[; ;main.c: 84:             break;
-[e $U 146  ]
-"85
-[; ;main.c: 85:         default:
-[e :U 153 ]
-"87
-[; ;main.c: 87:             colorMEFInit();
-[e ( _colorMEFInit ..  ]
-"88
-[; ;main.c: 88:     }
-}
-[e $U 146  ]
-[e :U 147 ]
-[e [\ -> _estadoColor `ui , $ -> . `E1356 0 `ui 148
- , $ -> . `E1356 1 `ui 150
- , $ -> . `E1356 2 `ui 151
- 153 ]
-[e :U 146 ]
-"89
-[; ;main.c: 89: }
-[e :UE 145 ]
-}
-"91
-[; ;main.c: 91: void comidaMEFInit(void) {
+"92
+[; ;main.c: 92: void comidaMEFInit(void) {
 [v _comidaMEFInit `(v ~T0 @X0 1 ef ]
 {
 [e :U _comidaMEFInit ]
 [f ]
-"92
-[; ;main.c: 92:     estadoComida = E_VACIO;
-[e = _estadoComida . `E1356 3 ]
 "93
-[; ;main.c: 93: }
-[e :UE 154 ]
+[; ;main.c: 93:     estadoComida = E_COMIDA_IN;
+[e = _estadoComida . `E1356 6 ]
+"94
+[; ;main.c: 94: }
+[e :UE 155 ]
 }
-"95
-[; ;main.c: 95: void comidaMEF(void) {
+"96
+[; ;main.c: 96: void comidaMEF(void) {
 [v _comidaMEF `(v ~T0 @X0 1 ef ]
 {
 [e :U _comidaMEF ]
 [f ]
-"96
-[; ;main.c: 96:     switch (estadoComida) {
-[e $U 157  ]
-{
 "97
-[; ;main.c: 97:         case E_VACIO:
-[e :U 158 ]
-"98
-[; ;main.c: 98:             if (!PORTAbits.RA3) {
-[e $ ! ! != -> . . _PORTAbits 0 3 `i -> 0 `i 159  ]
+[; ;main.c: 97:     switch (estadoComida) {
+[e $U 158  ]
 {
+"98
+[; ;main.c: 98:         case E_COMIDA_IN:
+[e :U 159 ]
 "99
-[; ;main.c: 99:                 estadoComida = E_MEDIO;
-[e = _estadoComida . `E1356 4 ]
+[; ;main.c: 99:             if (!PORTAbits.RA2 && !PORTAbits.RA3) {
+[e $ ! && ! != -> . . _PORTAbits 0 2 `i -> 0 `i ! != -> . . _PORTAbits 0 3 `i -> 0 `i 160  ]
+{
+"100
+[; ;main.c: 100:                 estadoComida = E_LLENO;
+[e = _estadoComida . `E1356 5 ]
 "101
 [; ;main.c: 101:             }
 }
-[e :U 159 ]
-"103
-[; ;main.c: 103:             break;
-[e $U 156  ]
-"104
-[; ;main.c: 104:         case E_MEDIO:
 [e :U 160 ]
-"105
-[; ;main.c: 105:             if (!PORTAbits.RA2) {
-[e $ ! ! != -> . . _PORTAbits 0 2 `i -> 0 `i 161  ]
+"102
+[; ;main.c: 102:             if (!PORTAbits.RA2 && PORTAbits.RA3) {
+[e $ ! && ! != -> . . _PORTAbits 0 2 `i -> 0 `i != -> . . _PORTAbits 0 3 `i -> 0 `i 161  ]
 {
-"106
-[; ;main.c: 106:                 estadoComida = E_LLENO;
-[e = _estadoComida . `E1356 5 ]
-"107
-[; ;main.c: 107:             }
+"103
+[; ;main.c: 103:                 estadoComida = E_MEDIO;
+[e = _estadoComida . `E1356 4 ]
+"104
+[; ;main.c: 104:                 PORTEbits.RE2 = 0;
+[e = . . _PORTEbits 0 2 -> -> 0 `i `uc ]
+"105
+[; ;main.c: 105:             }
 }
 [e :U 161 ]
+"106
+[; ;main.c: 106:             if (PORTAbits.RA2 && PORTAbits.RA3) {
+[e $ ! && != -> . . _PORTAbits 0 2 `i -> 0 `i != -> . . _PORTAbits 0 3 `i -> 0 `i 162  ]
+{
+"107
+[; ;main.c: 107:                 estadoComida = E_VACIO;
+[e = _estadoComida . `E1356 3 ]
+"108
+[; ;main.c: 108:                 PORTEbits.RE2 = 1;
+[e = . . _PORTEbits 0 2 -> -> 1 `i `uc ]
 "109
-[; ;main.c: 109:             break;
-[e $U 156  ]
-"113
-[; ;main.c: 113:         default:
+[; ;main.c: 109:             }
+}
 [e :U 162 ]
+"110
+[; ;main.c: 110:             break;
+[e $U 157  ]
+"111
+[; ;main.c: 111:         case E_LLENO:
+[e :U 163 ]
+"112
+[; ;main.c: 112:             if (!PORTAbits.RA2 && PORTAbits.RA3) {
+[e $ ! && ! != -> . . _PORTAbits 0 2 `i -> 0 `i != -> . . _PORTAbits 0 3 `i -> 0 `i 164  ]
+{
+"113
+[; ;main.c: 113:                 estadoComida = E_MEDIO;
+[e = _estadoComida . `E1356 4 ]
 "114
-[; ;main.c: 114:             comidaMEFInit();
-[e ( _comidaMEFInit ..  ]
+[; ;main.c: 114:             }
+}
+[e :U 164 ]
 "115
-[; ;main.c: 115:     }
-}
-[e $U 156  ]
-[e :U 157 ]
-[e [\ -> _estadoComida `ui , $ -> . `E1356 3 `ui 158
- , $ -> . `E1356 4 `ui 160
- 162 ]
-[e :U 156 ]
+[; ;main.c: 115:             break;
+[e $U 157  ]
 "116
-[; ;main.c: 116: }
-[e :UE 155 ]
+[; ;main.c: 116:         case E_MEDIO:
+[e :U 165 ]
+"117
+[; ;main.c: 117:             if (!PORTAbits.RA2 && !PORTAbits.RA3) {
+[e $ ! && ! != -> . . _PORTAbits 0 2 `i -> 0 `i ! != -> . . _PORTAbits 0 3 `i -> 0 `i 166  ]
+{
+"118
+[; ;main.c: 118:                 estadoComida = E_LLENO;
+[e = _estadoComida . `E1356 5 ]
+"119
+[; ;main.c: 119:             }
 }
+[e :U 166 ]
+"121
+[; ;main.c: 121:             if (PORTAbits.RA2 && PORTAbits.RA3) {
+[e $ ! && != -> . . _PORTAbits 0 2 `i -> 0 `i != -> . . _PORTAbits 0 3 `i -> 0 `i 167  ]
+{
+"122
+[; ;main.c: 122:                 estadoComida = E_VACIO;
+[e = _estadoComida . `E1356 3 ]
+"123
+[; ;main.c: 123:                 PORTEbits.RE2 = 1;
+[e = . . _PORTEbits 0 2 -> -> 1 `i `uc ]
+"124
+[; ;main.c: 124:             }
+}
+[e :U 167 ]
+"125
+[; ;main.c: 125:             break;
+[e $U 157  ]
+"126
+[; ;main.c: 126:         case E_VACIO:
+[e :U 168 ]
+"127
+[; ;main.c: 127:             if (!PORTAbits.RA2 && PORTAbits.RA3) {
+[e $ ! && ! != -> . . _PORTAbits 0 2 `i -> 0 `i != -> . . _PORTAbits 0 3 `i -> 0 `i 169  ]
+{
 "128
-[; ;main.c: 128: void servoHorario(void) {
+[; ;main.c: 128:                 estadoComida = E_MEDIO;
+[e = _estadoComida . `E1356 4 ]
+"129
+[; ;main.c: 129:                 PORTEbits.RE2 = 0;
+[e = . . _PORTEbits 0 2 -> -> 0 `i `uc ]
+"130
+[; ;main.c: 130:             }
+}
+[e :U 169 ]
+"132
+[; ;main.c: 132:             break;
+[e $U 157  ]
+"133
+[; ;main.c: 133:         default:
+[e :U 170 ]
+"134
+[; ;main.c: 134:             comidaMEFInit();
+[e ( _comidaMEFInit ..  ]
+"135
+[; ;main.c: 135:     }
+}
+[e $U 157  ]
+[e :U 158 ]
+[e [\ -> _estadoComida `ui , $ -> . `E1356 6 `ui 159
+ , $ -> . `E1356 5 `ui 163
+ , $ -> . `E1356 4 `ui 165
+ , $ -> . `E1356 3 `ui 168
+ 170 ]
+[e :U 157 ]
+"136
+[; ;main.c: 136: }
+[e :UE 156 ]
+}
+"138
+[; ;main.c: 138: void aguaMEFInit(void) {
+[v _aguaMEFInit `(v ~T0 @X0 1 ef ]
+{
+[e :U _aguaMEFInit ]
+[f ]
+"139
+[; ;main.c: 139:     estadoComida = E_AGUA_IN;
+[e = _estadoComida . `E1356 7 ]
+"140
+[; ;main.c: 140: }
+[e :UE 171 ]
+}
+"142
+[; ;main.c: 142: void aguaMEF(void) {
+[v _aguaMEF `(v ~T0 @X0 1 ef ]
+{
+[e :U _aguaMEF ]
+[f ]
+"143
+[; ;main.c: 143:     switch (estadoAgua) {
+[e $U 174  ]
+{
+"144
+[; ;main.c: 144:         case E_AGUA_IN:
+[e :U 175 ]
+"145
+[; ;main.c: 145:             if (!PORTDbits.RD2) {
+[e $ ! ! != -> . . _PORTDbits 0 2 `i -> 0 `i 176  ]
+{
+"146
+[; ;main.c: 146:                 estadoAgua = E_AGUA_LLENO;
+[e = _estadoAgua . `E1356 8 ]
+"147
+[; ;main.c: 147:                 PORTAbits.RA5 = 0;
+[e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
+"148
+[; ;main.c: 148:             }
+}
+[e $U 177  ]
+"149
+[; ;main.c: 149:             else {
+[e :U 176 ]
+{
+"150
+[; ;main.c: 150:                 estadoAgua = E_AGUA_VACIO;
+[e = _estadoAgua . `E1356 9 ]
+"151
+[; ;main.c: 151:                 PORTAbits.RA5 = 1;
+[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
+"152
+[; ;main.c: 152:             }
+}
+[e :U 177 ]
+"153
+[; ;main.c: 153:             break;
+[e $U 173  ]
+"154
+[; ;main.c: 154:         case E_AGUA_LLENO:
+[e :U 178 ]
+"155
+[; ;main.c: 155:             if(PORTDbits.RD2){
+[e $ ! != -> . . _PORTDbits 0 2 `i -> 0 `i 179  ]
+{
+"156
+[; ;main.c: 156:                 estadoAgua = E_AGUA_VACIO;
+[e = _estadoAgua . `E1356 9 ]
+"157
+[; ;main.c: 157:                 PORTAbits.RA5 = 1;
+[e = . . _PORTAbits 0 5 -> -> 1 `i `uc ]
+"158
+[; ;main.c: 158:             }
+}
+[e :U 179 ]
+"159
+[; ;main.c: 159:             break;
+[e $U 173  ]
+"160
+[; ;main.c: 160:         case E_AGUA_VACIO:
+[e :U 180 ]
+"161
+[; ;main.c: 161:             if(!PORTDbits.RD2){
+[e $ ! ! != -> . . _PORTDbits 0 2 `i -> 0 `i 181  ]
+{
+"162
+[; ;main.c: 162:                 estadoAgua = E_AGUA_LLENO;
+[e = _estadoAgua . `E1356 8 ]
+"163
+[; ;main.c: 163:                 PORTAbits.RA5 = 0;
+[e = . . _PORTAbits 0 5 -> -> 0 `i `uc ]
+"164
+[; ;main.c: 164:             }
+}
+[e :U 181 ]
+"165
+[; ;main.c: 165:             break;
+[e $U 173  ]
+"166
+[; ;main.c: 166:         default:
+[e :U 182 ]
+"167
+[; ;main.c: 167:             aguaMEFInit();
+[e ( _aguaMEFInit ..  ]
+"168
+[; ;main.c: 168:     }
+}
+[e $U 173  ]
+[e :U 174 ]
+[e [\ -> _estadoAgua `ui , $ -> . `E1356 7 `ui 175
+ , $ -> . `E1356 8 `ui 178
+ , $ -> . `E1356 9 `ui 180
+ 182 ]
+[e :U 173 ]
+"169
+[; ;main.c: 169: }
+[e :UE 172 ]
+}
+"175
+[; ;main.c: 175: void mideColorAzul(void) {
+[v _mideColorAzul `(v ~T0 @X0 1 ef ]
+{
+[e :U _mideColorAzul ]
+[f ]
+"176
+[; ;main.c: 176:     static tick_t t1 = 0;
+[v F1389 `ui ~T0 @X0 1 s t1 ]
+[i F1389
+-> -> 0 `i `ui
+]
+"177
+[; ;main.c: 177:     tick_t aux = tickRead();
+[v _aux `ui ~T0 @X0 1 a ]
+[e = _aux ( _tickRead ..  ]
+"178
+[; ;main.c: 178:     int16_t temp;
+[v _temp `i ~T0 @X0 1 a ]
+"179
+[; ;main.c: 179:     temp = aux - t1;
+[e = _temp -> - _aux F1389 `i ]
+"180
+[; ;main.c: 180:     t1 = aux;
+[e = F1389 _aux ]
+"181
+[; ;main.c: 181:     if (temp < 0)
+[e $ ! < _temp -> 0 `i 184  ]
+"182
+[; ;main.c: 182:         return;
+[e $UE 183  ]
+[e :U 184 ]
+"183
+[; ;main.c: 183:     tickColor = temp;
+[e = _tickColor -> _temp `ui ]
+"184
+[; ;main.c: 184: }
+[e :UE 183 ]
+}
+"186
+[; ;main.c: 186: void servoHorario(void) {
 [v _servoHorario `(v ~T0 @X0 1 ef ]
 {
 [e :U _servoHorario ]
 [f ]
-"130
-[; ;main.c: 130:     PORTBbits.RB1 = 1;
+"188
+[; ;main.c: 188:     PORTBbits.RB1 = 1;
 [e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
-"131
-[; ;main.c: 131:     _delay((unsigned long)((1390)*(4000000L/4000000.0)));
+"189
+[; ;main.c: 189:     _delay((unsigned long)((1390)*(4000000L/4000000.0)));
 [e ( __delay (1 -> * -> -> 1390 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-"132
-[; ;main.c: 132:     PORTBbits.RB1 = 0;
+"190
+[; ;main.c: 190:     PORTBbits.RB1 = 0;
 [e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
-"133
-[; ;main.c: 133:     _delay((unsigned long)((10)*(4000000L/4000.0)));
+"191
+[; ;main.c: 191:     _delay((unsigned long)((10)*(4000000L/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"134
-[; ;main.c: 134: }
-[e :UE 163 ]
+"192
+[; ;main.c: 192: }
+[e :UE 185 ]
 }
-"136
-[; ;main.c: 136: void servoAntiHorario(void) {
+"194
+[; ;main.c: 194: void servoAntiHorario(void) {
 [v _servoAntiHorario `(v ~T0 @X0 1 ef ]
 {
 [e :U _servoAntiHorario ]
 [f ]
-"138
-[; ;main.c: 138:     PORTBbits.RB1 = 1;
+"196
+[; ;main.c: 196:     PORTBbits.RB1 = 1;
 [e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
-"139
-[; ;main.c: 139:     _delay((unsigned long)((1570)*(4000000L/4000000.0)));
+"197
+[; ;main.c: 197:     _delay((unsigned long)((1570)*(4000000L/4000000.0)));
 [e ( __delay (1 -> * -> -> 1570 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
-"140
-[; ;main.c: 140:     PORTBbits.RB1 = 0;
+"198
+[; ;main.c: 198:     PORTBbits.RB1 = 0;
 [e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
-"141
-[; ;main.c: 141:     _delay((unsigned long)((10)*(4000000L/4000.0)));
+"199
+[; ;main.c: 199:     _delay((unsigned long)((10)*(4000000L/4000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"142
-[; ;main.c: 142: }
-[e :UE 164 ]
+"200
+[; ;main.c: 200: }
+[e :UE 186 ]
 }
