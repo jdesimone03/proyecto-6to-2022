@@ -2677,8 +2677,6 @@ void appInit(void) {
     TRISAbits.TRISA2 = 1;
     TRISAbits.TRISA4 = 1;
 
-    TRISDbits.TRISD0 = 1;
-    TRISDbits.TRISD1 = 1;
     TRISDbits.TRISD2 = 1;
 
     TRISBbits.TRISB2 = 1;

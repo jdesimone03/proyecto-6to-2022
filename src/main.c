@@ -46,6 +46,7 @@ void main(void) {
     PIN_LED_R = 0;
     platoMEFInit();
     comidaMEFInit();
+    aguaMEFInit();
     while (1) {
         platoMEF();
         comidaMEF();
@@ -97,6 +98,7 @@ void comidaMEF(void) {
         case E_COMIDA_IN: // Estado Inicial
             if (!BIDON_VACIO && !BIDON_MEDIO) {
                 estadoComida = E_LLENO;
+                PIN_LED_R = 0;
             }
             if (!BIDON_VACIO && BIDON_MEDIO) {
                 estadoComida = E_MEDIO; //pasa al estado MEDIO
@@ -110,11 +112,13 @@ void comidaMEF(void) {
         case E_LLENO:
             if (!BIDON_VACIO && BIDON_MEDIO) { // Si detecta el IR vacio y no el medio
                 estadoComida = E_MEDIO; // Pasa al estado medio
+                PIN_LED_R = 0;
             }
             break;
         case E_MEDIO:
             if (!BIDON_VACIO && !BIDON_MEDIO) {
                 estadoComida = E_LLENO;
+                PIN_LED_R = 0;
             } //detecta el nivel de la comida cuando llega a la mitad del almacen
             //pasa al esatdo lleno
             if (BIDON_VACIO && BIDON_MEDIO) {
@@ -135,7 +139,7 @@ void comidaMEF(void) {
 }
 
 void aguaMEFInit(void) {
-    estadoComida = E_AGUA_IN;
+    estadoAgua = E_AGUA_IN;
 }
 
 void aguaMEF(void) {
@@ -144,20 +148,19 @@ void aguaMEF(void) {
             if (!CAP_AGUA) {
                 estadoAgua = E_AGUA_LLENO;
                 PIN_LED_AZ = 0;
-            }
-            else {
+            } else {
                 estadoAgua = E_AGUA_VACIO;
                 PIN_LED_AZ = 1;
             }
             break;
         case E_AGUA_LLENO:
-            if(CAP_AGUA){
+            if (CAP_AGUA) {
                 estadoAgua = E_AGUA_VACIO;
                 PIN_LED_AZ = 1;
             }
             break;
         case E_AGUA_VACIO:
-            if(!CAP_AGUA){
+            if (!CAP_AGUA) {
                 estadoAgua = E_AGUA_LLENO;
                 PIN_LED_AZ = 0;
             }

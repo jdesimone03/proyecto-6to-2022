@@ -25,10 +25,8 @@ void appInit(void) {
     TRIS_B_MEDIO = 1;
     TRIS_B_VACIO = 1;
     TRIS_P_LLENO = 1;
-    
-    TRIS_CAP1 = 1;
-    TRIS_CAP2 = 1;
-    TRIS_CAP3 = 1;
+
+    TRIS_AGUA = 1;
     
     TRIS_COL = 1;
 

@@ -357,42 +357,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;user.c: 27:     TRISAbits.TRISA4 = 1;
 [e = . . _TRISAbits 0 4 -> -> 1 `i `uc ]
 "29
-[; ;user.c: 29:     TRISDbits.TRISD0 = 1;
-[e = . . _TRISDbits 0 0 -> -> 1 `i `uc ]
-"30
-[; ;user.c: 30:     TRISDbits.TRISD1 = 1;
-[e = . . _TRISDbits 0 1 -> -> 1 `i `uc ]
-"31
-[; ;user.c: 31:     TRISDbits.TRISD2 = 1;
+[; ;user.c: 29:     TRISDbits.TRISD2 = 1;
 [e = . . _TRISDbits 0 2 -> -> 1 `i `uc ]
-"33
-[; ;user.c: 33:     TRISBbits.TRISB2 = 1;
+"31
+[; ;user.c: 31:     TRISBbits.TRISB2 = 1;
 [e = . . _TRISBbits 0 2 -> -> 1 `i `uc ]
-"35
-[; ;user.c: 35:     TRISEbits.TRISE2 = 0;
+"33
+[; ;user.c: 33:     TRISEbits.TRISE2 = 0;
 [e = . . _TRISEbits 0 2 -> -> 0 `i `uc ]
-"36
-[; ;user.c: 36:     TRISEbits.TRISE1 = 0;
+"34
+[; ;user.c: 34:     TRISEbits.TRISE1 = 0;
 [e = . . _TRISEbits 0 1 -> -> 0 `i `uc ]
-"37
-[; ;user.c: 37:     TRISEbits.TRISE0 = 0;
+"35
+[; ;user.c: 35:     TRISEbits.TRISE0 = 0;
 [e = . . _TRISEbits 0 0 -> -> 0 `i `uc ]
-"38
-[; ;user.c: 38:     TRISAbits.TRISA5 = 0;
+"36
+[; ;user.c: 36:     TRISAbits.TRISA5 = 0;
 [e = . . _TRISAbits 0 5 -> -> 0 `i `uc ]
-"40
-[; ;user.c: 40:     TRISBbits.TRISB1 = 0;
+"38
+[; ;user.c: 38:     TRISBbits.TRISB1 = 0;
 [e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
-"42
-[; ;user.c: 42:     _delay((unsigned long)((100)*(4000000L/4000.0)));
+"40
+[; ;user.c: 40:     _delay((unsigned long)((100)*(4000000L/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"45
-[; ;user.c: 45:     TMR0IE = 1;
+"43
+[; ;user.c: 43:     TMR0IE = 1;
 [e = _TMR0IE -> -> 1 `i `b ]
-"47
-[; ;user.c: 47:     GIE = 1;
+"45
+[; ;user.c: 45:     GIE = 1;
 [e = _GIE -> -> 1 `i `b ]
-"48
-[; ;user.c: 48: }
+"46
+[; ;user.c: 46: }
 [e :UE 138 ]
 }

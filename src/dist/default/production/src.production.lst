@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Tue Nov 01 15:04:08 2022
+                                                                                               Tue Nov 01 15:49:50 2022
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	16F887
@@ -22,1829 +22,1751 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
     16                           	psect	text7,local,class=CODE,merge=1,delta=2
     17                           	psect	text8,local,class=CODE,merge=1,delta=2
     18                           	psect	text9,local,class=CODE,merge=1,delta=2
-    19                           	psect	text10,local,class=CODE,merge=1,delta=2
-    20                           	psect	intentry,global,class=CODE,delta=2
-    21                           	dabs	1,0x7E,2
-    22  0000                     
-    23                           ; Version 2.10
-    24                           ; Generated 31/07/2019 GMT
-    25                           ; 
-    26                           ; Copyright © 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
-    27                           ; All rights reserved.
-    28                           ; 
-    29                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+    19                           	psect	intentry,global,class=CODE,delta=2
+    20                           	dabs	1,0x7E,2
+    21  0000                     
+    22                           ; Version 2.10
+    23                           ; Generated 31/07/2019 GMT
+    24                           ; 
+    25                           ; Copyright © 2019, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    26                           ; All rights reserved.
+    27                           ; 
+    28                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
       +                          ip").
-    30                           ; 
-    31                           ; Redistribution and use in source and binary forms, with or without modification, are
-    32                           ; permitted provided that the following conditions are met:
-    33                           ; 
-    34                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+    29                           ; 
+    30                           ; Redistribution and use in source and binary forms, with or without modification, are
+    31                           ; permitted provided that the following conditions are met:
+    32                           ; 
+    33                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
       +                          t of
-    35                           ;        conditions and the following disclaimer.
-    36                           ; 
-    37                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+    34                           ;        conditions and the following disclaimer.
+    35                           ; 
+    36                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
       +                          list
-    38                           ;        of conditions and the following disclaimer in the documentation and/or other
-    39                           ;        materials provided with the distribution.
-    40                           ; 
-    41                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+    37                           ;        of conditions and the following disclaimer in the documentation and/or other
+    38                           ;        materials provided with the distribution.
+    39                           ; 
+    40                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
       +                          is
-    42                           ;        software without specific prior written permission.
-    43                           ; 
-    44                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
-    45                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+    41                           ;        software without specific prior written permission.
+    42                           ; 
+    43                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    44                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
       +                          OR
-    46                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+    45                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
       +                          T,
-    47                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
-    48                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
-    49                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+    46                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    47                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    48                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
       +                          RICT
-    50                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+    49                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
       +                          SE OF
-    51                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    50                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    51                           ; 
     52                           ; 
-    53                           ; 
-    54                           ; Code-generator required, PIC16F887 Definitions
-    55                           ; 
-    56                           ; SFR Addresses
-    57  0000                     	;# 
-    58  0001                     	;# 
-    59  0002                     	;# 
-    60  0003                     	;# 
-    61  0004                     	;# 
-    62  0005                     	;# 
-    63  0006                     	;# 
-    64  0007                     	;# 
-    65  0008                     	;# 
-    66  0009                     	;# 
-    67  000A                     	;# 
-    68  000B                     	;# 
-    69  000C                     	;# 
-    70  000D                     	;# 
+    53                           ; Code-generator required, PIC16F887 Definitions
+    54                           ; 
+    55                           ; SFR Addresses
+    56  0000                     	;# 
+    57  0001                     	;# 
+    58  0002                     	;# 
+    59  0003                     	;# 
+    60  0004                     	;# 
+    61  0005                     	;# 
+    62  0006                     	;# 
+    63  0007                     	;# 
+    64  0008                     	;# 
+    65  0009                     	;# 
+    66  000A                     	;# 
+    67  000B                     	;# 
+    68  000C                     	;# 
+    69  000D                     	;# 
+    70  000E                     	;# 
     71  000E                     	;# 
-    72  000E                     	;# 
-    73  000F                     	;# 
-    74  0010                     	;# 
-    75  0011                     	;# 
-    76  0012                     	;# 
-    77  0013                     	;# 
-    78  0014                     	;# 
+    72  000F                     	;# 
+    73  0010                     	;# 
+    74  0011                     	;# 
+    75  0012                     	;# 
+    76  0013                     	;# 
+    77  0014                     	;# 
+    78  0015                     	;# 
     79  0015                     	;# 
-    80  0015                     	;# 
-    81  0016                     	;# 
-    82  0017                     	;# 
-    83  0018                     	;# 
-    84  0019                     	;# 
-    85  001A                     	;# 
+    80  0016                     	;# 
+    81  0017                     	;# 
+    82  0018                     	;# 
+    83  0019                     	;# 
+    84  001A                     	;# 
+    85  001B                     	;# 
     86  001B                     	;# 
-    87  001B                     	;# 
-    88  001C                     	;# 
-    89  001D                     	;# 
-    90  001E                     	;# 
-    91  001F                     	;# 
-    92  0081                     	;# 
-    93  0085                     	;# 
-    94  0086                     	;# 
-    95  0087                     	;# 
-    96  0088                     	;# 
-    97  0089                     	;# 
-    98  008C                     	;# 
-    99  008D                     	;# 
-   100  008E                     	;# 
-   101  008F                     	;# 
-   102  0090                     	;# 
-   103  0091                     	;# 
-   104  0092                     	;# 
+    87  001C                     	;# 
+    88  001D                     	;# 
+    89  001E                     	;# 
+    90  001F                     	;# 
+    91  0081                     	;# 
+    92  0085                     	;# 
+    93  0086                     	;# 
+    94  0087                     	;# 
+    95  0088                     	;# 
+    96  0089                     	;# 
+    97  008C                     	;# 
+    98  008D                     	;# 
+    99  008E                     	;# 
+   100  008F                     	;# 
+   101  0090                     	;# 
+   102  0091                     	;# 
+   103  0092                     	;# 
+   104  0093                     	;# 
    105  0093                     	;# 
    106  0093                     	;# 
-   107  0093                     	;# 
-   108  0094                     	;# 
-   109  0095                     	;# 
-   110  0096                     	;# 
-   111  0097                     	;# 
-   112  0098                     	;# 
-   113  0099                     	;# 
-   114  009A                     	;# 
-   115  009B                     	;# 
-   116  009C                     	;# 
-   117  009D                     	;# 
-   118  009E                     	;# 
-   119  009F                     	;# 
-   120  0105                     	;# 
-   121  0107                     	;# 
-   122  0108                     	;# 
-   123  0109                     	;# 
+   107  0094                     	;# 
+   108  0095                     	;# 
+   109  0096                     	;# 
+   110  0097                     	;# 
+   111  0098                     	;# 
+   112  0099                     	;# 
+   113  009A                     	;# 
+   114  009B                     	;# 
+   115  009C                     	;# 
+   116  009D                     	;# 
+   117  009E                     	;# 
+   118  009F                     	;# 
+   119  0105                     	;# 
+   120  0107                     	;# 
+   121  0108                     	;# 
+   122  0109                     	;# 
+   123  010C                     	;# 
    124  010C                     	;# 
-   125  010C                     	;# 
-   126  010D                     	;# 
-   127  010E                     	;# 
-   128  010F                     	;# 
-   129  0185                     	;# 
-   130  0187                     	;# 
-   131  0188                     	;# 
-   132  0189                     	;# 
-   133  018C                     	;# 
-   134  018D                     	;# 
-   135  0000                     	;# 
-   136  0001                     	;# 
-   137  0002                     	;# 
-   138  0003                     	;# 
-   139  0004                     	;# 
-   140  0005                     	;# 
-   141  0006                     	;# 
-   142  0007                     	;# 
-   143  0008                     	;# 
-   144  0009                     	;# 
-   145  000A                     	;# 
-   146  000B                     	;# 
-   147  000C                     	;# 
-   148  000D                     	;# 
+   125  010D                     	;# 
+   126  010E                     	;# 
+   127  010F                     	;# 
+   128  0185                     	;# 
+   129  0187                     	;# 
+   130  0188                     	;# 
+   131  0189                     	;# 
+   132  018C                     	;# 
+   133  018D                     	;# 
+   134  0000                     	;# 
+   135  0001                     	;# 
+   136  0002                     	;# 
+   137  0003                     	;# 
+   138  0004                     	;# 
+   139  0005                     	;# 
+   140  0006                     	;# 
+   141  0007                     	;# 
+   142  0008                     	;# 
+   143  0009                     	;# 
+   144  000A                     	;# 
+   145  000B                     	;# 
+   146  000C                     	;# 
+   147  000D                     	;# 
+   148  000E                     	;# 
    149  000E                     	;# 
-   150  000E                     	;# 
-   151  000F                     	;# 
-   152  0010                     	;# 
-   153  0011                     	;# 
-   154  0012                     	;# 
-   155  0013                     	;# 
-   156  0014                     	;# 
+   150  000F                     	;# 
+   151  0010                     	;# 
+   152  0011                     	;# 
+   153  0012                     	;# 
+   154  0013                     	;# 
+   155  0014                     	;# 
+   156  0015                     	;# 
    157  0015                     	;# 
-   158  0015                     	;# 
-   159  0016                     	;# 
-   160  0017                     	;# 
-   161  0018                     	;# 
-   162  0019                     	;# 
-   163  001A                     	;# 
+   158  0016                     	;# 
+   159  0017                     	;# 
+   160  0018                     	;# 
+   161  0019                     	;# 
+   162  001A                     	;# 
+   163  001B                     	;# 
    164  001B                     	;# 
-   165  001B                     	;# 
-   166  001C                     	;# 
-   167  001D                     	;# 
-   168  001E                     	;# 
-   169  001F                     	;# 
-   170  0081                     	;# 
-   171  0085                     	;# 
-   172  0086                     	;# 
-   173  0087                     	;# 
-   174  0088                     	;# 
-   175  0089                     	;# 
-   176  008C                     	;# 
-   177  008D                     	;# 
-   178  008E                     	;# 
-   179  008F                     	;# 
-   180  0090                     	;# 
-   181  0091                     	;# 
-   182  0092                     	;# 
+   165  001C                     	;# 
+   166  001D                     	;# 
+   167  001E                     	;# 
+   168  001F                     	;# 
+   169  0081                     	;# 
+   170  0085                     	;# 
+   171  0086                     	;# 
+   172  0087                     	;# 
+   173  0088                     	;# 
+   174  0089                     	;# 
+   175  008C                     	;# 
+   176  008D                     	;# 
+   177  008E                     	;# 
+   178  008F                     	;# 
+   179  0090                     	;# 
+   180  0091                     	;# 
+   181  0092                     	;# 
+   182  0093                     	;# 
    183  0093                     	;# 
    184  0093                     	;# 
-   185  0093                     	;# 
-   186  0094                     	;# 
-   187  0095                     	;# 
-   188  0096                     	;# 
-   189  0097                     	;# 
-   190  0098                     	;# 
-   191  0099                     	;# 
-   192  009A                     	;# 
-   193  009B                     	;# 
-   194  009C                     	;# 
-   195  009D                     	;# 
-   196  009E                     	;# 
-   197  009F                     	;# 
-   198  0105                     	;# 
-   199  0107                     	;# 
-   200  0108                     	;# 
-   201  0109                     	;# 
+   185  0094                     	;# 
+   186  0095                     	;# 
+   187  0096                     	;# 
+   188  0097                     	;# 
+   189  0098                     	;# 
+   190  0099                     	;# 
+   191  009A                     	;# 
+   192  009B                     	;# 
+   193  009C                     	;# 
+   194  009D                     	;# 
+   195  009E                     	;# 
+   196  009F                     	;# 
+   197  0105                     	;# 
+   198  0107                     	;# 
+   199  0108                     	;# 
+   200  0109                     	;# 
+   201  010C                     	;# 
    202  010C                     	;# 
-   203  010C                     	;# 
-   204  010D                     	;# 
-   205  010E                     	;# 
-   206  010F                     	;# 
-   207  0185                     	;# 
-   208  0187                     	;# 
-   209  0188                     	;# 
-   210  0189                     	;# 
-   211  018C                     	;# 
-   212  018D                     	;# 
-   213  0000                     	;# 
-   214  0001                     	;# 
-   215  0002                     	;# 
-   216  0003                     	;# 
-   217  0004                     	;# 
-   218  0005                     	;# 
-   219  0006                     	;# 
-   220  0007                     	;# 
-   221  0008                     	;# 
-   222  0009                     	;# 
-   223  000A                     	;# 
-   224  000B                     	;# 
-   225  000C                     	;# 
-   226  000D                     	;# 
+   203  010D                     	;# 
+   204  010E                     	;# 
+   205  010F                     	;# 
+   206  0185                     	;# 
+   207  0187                     	;# 
+   208  0188                     	;# 
+   209  0189                     	;# 
+   210  018C                     	;# 
+   211  018D                     	;# 
+   212  0000                     	;# 
+   213  0001                     	;# 
+   214  0002                     	;# 
+   215  0003                     	;# 
+   216  0004                     	;# 
+   217  0005                     	;# 
+   218  0006                     	;# 
+   219  0007                     	;# 
+   220  0008                     	;# 
+   221  0009                     	;# 
+   222  000A                     	;# 
+   223  000B                     	;# 
+   224  000C                     	;# 
+   225  000D                     	;# 
+   226  000E                     	;# 
    227  000E                     	;# 
-   228  000E                     	;# 
-   229  000F                     	;# 
-   230  0010                     	;# 
-   231  0011                     	;# 
-   232  0012                     	;# 
-   233  0013                     	;# 
-   234  0014                     	;# 
+   228  000F                     	;# 
+   229  0010                     	;# 
+   230  0011                     	;# 
+   231  0012                     	;# 
+   232  0013                     	;# 
+   233  0014                     	;# 
+   234  0015                     	;# 
    235  0015                     	;# 
-   236  0015                     	;# 
-   237  0016                     	;# 
-   238  0017                     	;# 
-   239  0018                     	;# 
-   240  0019                     	;# 
-   241  001A                     	;# 
+   236  0016                     	;# 
+   237  0017                     	;# 
+   238  0018                     	;# 
+   239  0019                     	;# 
+   240  001A                     	;# 
+   241  001B                     	;# 
    242  001B                     	;# 
-   243  001B                     	;# 
-   244  001C                     	;# 
-   245  001D                     	;# 
-   246  001E                     	;# 
-   247  001F                     	;# 
-   248  0081                     	;# 
-   249  0085                     	;# 
-   250  0086                     	;# 
-   251  0087                     	;# 
-   252  0088                     	;# 
-   253  0089                     	;# 
-   254  008C                     	;# 
-   255  008D                     	;# 
-   256  008E                     	;# 
-   257  008F                     	;# 
-   258  0090                     	;# 
-   259  0091                     	;# 
-   260  0092                     	;# 
+   243  001C                     	;# 
+   244  001D                     	;# 
+   245  001E                     	;# 
+   246  001F                     	;# 
+   247  0081                     	;# 
+   248  0085                     	;# 
+   249  0086                     	;# 
+   250  0087                     	;# 
+   251  0088                     	;# 
+   252  0089                     	;# 
+   253  008C                     	;# 
+   254  008D                     	;# 
+   255  008E                     	;# 
+   256  008F                     	;# 
+   257  0090                     	;# 
+   258  0091                     	;# 
+   259  0092                     	;# 
+   260  0093                     	;# 
    261  0093                     	;# 
    262  0093                     	;# 
-   263  0093                     	;# 
-   264  0094                     	;# 
-   265  0095                     	;# 
-   266  0096                     	;# 
-   267  0097                     	;# 
-   268  0098                     	;# 
-   269  0099                     	;# 
-   270  009A                     	;# 
-   271  009B                     	;# 
-   272  009C                     	;# 
-   273  009D                     	;# 
-   274  009E                     	;# 
-   275  009F                     	;# 
-   276  0105                     	;# 
-   277  0107                     	;# 
-   278  0108                     	;# 
-   279  0109                     	;# 
+   263  0094                     	;# 
+   264  0095                     	;# 
+   265  0096                     	;# 
+   266  0097                     	;# 
+   267  0098                     	;# 
+   268  0099                     	;# 
+   269  009A                     	;# 
+   270  009B                     	;# 
+   271  009C                     	;# 
+   272  009D                     	;# 
+   273  009E                     	;# 
+   274  009F                     	;# 
+   275  0105                     	;# 
+   276  0107                     	;# 
+   277  0108                     	;# 
+   278  0109                     	;# 
+   279  010C                     	;# 
    280  010C                     	;# 
-   281  010C                     	;# 
-   282  010D                     	;# 
-   283  010E                     	;# 
-   284  010F                     	;# 
-   285  0185                     	;# 
-   286  0187                     	;# 
-   287  0188                     	;# 
-   288  0189                     	;# 
-   289  018C                     	;# 
-   290  018D                     	;# 
-   291  0000                     	;# 
-   292  0001                     	;# 
-   293  0002                     	;# 
-   294  0003                     	;# 
-   295  0004                     	;# 
-   296  0005                     	;# 
-   297  0006                     	;# 
-   298  0007                     	;# 
-   299  0008                     	;# 
-   300  0009                     	;# 
-   301  000A                     	;# 
-   302  000B                     	;# 
-   303  000C                     	;# 
-   304  000D                     	;# 
+   281  010D                     	;# 
+   282  010E                     	;# 
+   283  010F                     	;# 
+   284  0185                     	;# 
+   285  0187                     	;# 
+   286  0188                     	;# 
+   287  0189                     	;# 
+   288  018C                     	;# 
+   289  018D                     	;# 
+   290  0000                     	;# 
+   291  0001                     	;# 
+   292  0002                     	;# 
+   293  0003                     	;# 
+   294  0004                     	;# 
+   295  0005                     	;# 
+   296  0006                     	;# 
+   297  0007                     	;# 
+   298  0008                     	;# 
+   299  0009                     	;# 
+   300  000A                     	;# 
+   301  000B                     	;# 
+   302  000C                     	;# 
+   303  000D                     	;# 
+   304  000E                     	;# 
    305  000E                     	;# 
-   306  000E                     	;# 
-   307  000F                     	;# 
-   308  0010                     	;# 
-   309  0011                     	;# 
-   310  0012                     	;# 
-   311  0013                     	;# 
-   312  0014                     	;# 
+   306  000F                     	;# 
+   307  0010                     	;# 
+   308  0011                     	;# 
+   309  0012                     	;# 
+   310  0013                     	;# 
+   311  0014                     	;# 
+   312  0015                     	;# 
    313  0015                     	;# 
-   314  0015                     	;# 
-   315  0016                     	;# 
-   316  0017                     	;# 
-   317  0018                     	;# 
-   318  0019                     	;# 
-   319  001A                     	;# 
+   314  0016                     	;# 
+   315  0017                     	;# 
+   316  0018                     	;# 
+   317  0019                     	;# 
+   318  001A                     	;# 
+   319  001B                     	;# 
    320  001B                     	;# 
-   321  001B                     	;# 
-   322  001C                     	;# 
-   323  001D                     	;# 
-   324  001E                     	;# 
-   325  001F                     	;# 
-   326  0081                     	;# 
-   327  0085                     	;# 
-   328  0086                     	;# 
-   329  0087                     	;# 
-   330  0088                     	;# 
-   331  0089                     	;# 
-   332  008C                     	;# 
-   333  008D                     	;# 
-   334  008E                     	;# 
-   335  008F                     	;# 
-   336  0090                     	;# 
-   337  0091                     	;# 
-   338  0092                     	;# 
+   321  001C                     	;# 
+   322  001D                     	;# 
+   323  001E                     	;# 
+   324  001F                     	;# 
+   325  0081                     	;# 
+   326  0085                     	;# 
+   327  0086                     	;# 
+   328  0087                     	;# 
+   329  0088                     	;# 
+   330  0089                     	;# 
+   331  008C                     	;# 
+   332  008D                     	;# 
+   333  008E                     	;# 
+   334  008F                     	;# 
+   335  0090                     	;# 
+   336  0091                     	;# 
+   337  0092                     	;# 
+   338  0093                     	;# 
    339  0093                     	;# 
    340  0093                     	;# 
-   341  0093                     	;# 
-   342  0094                     	;# 
-   343  0095                     	;# 
-   344  0096                     	;# 
-   345  0097                     	;# 
-   346  0098                     	;# 
-   347  0099                     	;# 
-   348  009A                     	;# 
-   349  009B                     	;# 
-   350  009C                     	;# 
-   351  009D                     	;# 
-   352  009E                     	;# 
-   353  009F                     	;# 
-   354  0105                     	;# 
-   355  0107                     	;# 
-   356  0108                     	;# 
-   357  0109                     	;# 
+   341  0094                     	;# 
+   342  0095                     	;# 
+   343  0096                     	;# 
+   344  0097                     	;# 
+   345  0098                     	;# 
+   346  0099                     	;# 
+   347  009A                     	;# 
+   348  009B                     	;# 
+   349  009C                     	;# 
+   350  009D                     	;# 
+   351  009E                     	;# 
+   352  009F                     	;# 
+   353  0105                     	;# 
+   354  0107                     	;# 
+   355  0108                     	;# 
+   356  0109                     	;# 
+   357  010C                     	;# 
    358  010C                     	;# 
-   359  010C                     	;# 
-   360  010D                     	;# 
-   361  010E                     	;# 
-   362  010F                     	;# 
-   363  0185                     	;# 
-   364  0187                     	;# 
-   365  0188                     	;# 
-   366  0189                     	;# 
-   367  018C                     	;# 
-   368  018D                     	;# 
-   369  0000                     	;# 
-   370  0001                     	;# 
-   371  0002                     	;# 
-   372  0003                     	;# 
-   373  0004                     	;# 
-   374  0005                     	;# 
-   375  0006                     	;# 
-   376  0007                     	;# 
-   377  0008                     	;# 
-   378  0009                     	;# 
-   379  000A                     	;# 
-   380  000B                     	;# 
-   381  000C                     	;# 
-   382  000D                     	;# 
+   359  010D                     	;# 
+   360  010E                     	;# 
+   361  010F                     	;# 
+   362  0185                     	;# 
+   363  0187                     	;# 
+   364  0188                     	;# 
+   365  0189                     	;# 
+   366  018C                     	;# 
+   367  018D                     	;# 
+   368  0000                     	;# 
+   369  0001                     	;# 
+   370  0002                     	;# 
+   371  0003                     	;# 
+   372  0004                     	;# 
+   373  0005                     	;# 
+   374  0006                     	;# 
+   375  0007                     	;# 
+   376  0008                     	;# 
+   377  0009                     	;# 
+   378  000A                     	;# 
+   379  000B                     	;# 
+   380  000C                     	;# 
+   381  000D                     	;# 
+   382  000E                     	;# 
    383  000E                     	;# 
-   384  000E                     	;# 
-   385  000F                     	;# 
-   386  0010                     	;# 
-   387  0011                     	;# 
-   388  0012                     	;# 
-   389  0013                     	;# 
-   390  0014                     	;# 
+   384  000F                     	;# 
+   385  0010                     	;# 
+   386  0011                     	;# 
+   387  0012                     	;# 
+   388  0013                     	;# 
+   389  0014                     	;# 
+   390  0015                     	;# 
    391  0015                     	;# 
-   392  0015                     	;# 
-   393  0016                     	;# 
-   394  0017                     	;# 
-   395  0018                     	;# 
-   396  0019                     	;# 
-   397  001A                     	;# 
+   392  0016                     	;# 
+   393  0017                     	;# 
+   394  0018                     	;# 
+   395  0019                     	;# 
+   396  001A                     	;# 
+   397  001B                     	;# 
    398  001B                     	;# 
-   399  001B                     	;# 
-   400  001C                     	;# 
-   401  001D                     	;# 
-   402  001E                     	;# 
-   403  001F                     	;# 
-   404  0081                     	;# 
-   405  0085                     	;# 
-   406  0086                     	;# 
-   407  0087                     	;# 
-   408  0088                     	;# 
-   409  0089                     	;# 
-   410  008C                     	;# 
-   411  008D                     	;# 
-   412  008E                     	;# 
-   413  008F                     	;# 
-   414  0090                     	;# 
-   415  0091                     	;# 
-   416  0092                     	;# 
+   399  001C                     	;# 
+   400  001D                     	;# 
+   401  001E                     	;# 
+   402  001F                     	;# 
+   403  0081                     	;# 
+   404  0085                     	;# 
+   405  0086                     	;# 
+   406  0087                     	;# 
+   407  0088                     	;# 
+   408  0089                     	;# 
+   409  008C                     	;# 
+   410  008D                     	;# 
+   411  008E                     	;# 
+   412  008F                     	;# 
+   413  0090                     	;# 
+   414  0091                     	;# 
+   415  0092                     	;# 
+   416  0093                     	;# 
    417  0093                     	;# 
    418  0093                     	;# 
-   419  0093                     	;# 
-   420  0094                     	;# 
-   421  0095                     	;# 
-   422  0096                     	;# 
-   423  0097                     	;# 
-   424  0098                     	;# 
-   425  0099                     	;# 
-   426  009A                     	;# 
-   427  009B                     	;# 
-   428  009C                     	;# 
-   429  009D                     	;# 
-   430  009E                     	;# 
-   431  009F                     	;# 
-   432  0105                     	;# 
-   433  0107                     	;# 
-   434  0108                     	;# 
-   435  0109                     	;# 
+   419  0094                     	;# 
+   420  0095                     	;# 
+   421  0096                     	;# 
+   422  0097                     	;# 
+   423  0098                     	;# 
+   424  0099                     	;# 
+   425  009A                     	;# 
+   426  009B                     	;# 
+   427  009C                     	;# 
+   428  009D                     	;# 
+   429  009E                     	;# 
+   430  009F                     	;# 
+   431  0105                     	;# 
+   432  0107                     	;# 
+   433  0108                     	;# 
+   434  0109                     	;# 
+   435  010C                     	;# 
    436  010C                     	;# 
-   437  010C                     	;# 
-   438  010D                     	;# 
-   439  010E                     	;# 
-   440  010F                     	;# 
-   441  0185                     	;# 
-   442  0187                     	;# 
-   443  0188                     	;# 
-   444  0189                     	;# 
-   445  018C                     	;# 
-   446  018D                     	;# 
-   447  0006                     _PORTBbits	set	6
-   448  0008                     _PORTDbits	set	8
-   449  0005                     _PORTAbits	set	5
-   450  0009                     _PORTEbits	set	9
-   451  005F                     _GIE	set	95
-   452  005D                     _TMR0IE	set	93
-   453  0081                     _OPTION_REGbits	set	129
-   454  0089                     _TRISEbits	set	137
-   455  0085                     _TRISAbits	set	133
-   456  0088                     _TRISDbits	set	136
-   457  0086                     _TRISBbits	set	134
-   458  040B                     _PSA	set	1035
-   459  040D                     _T0CS	set	1037
-   460  04B5                     _IOCB5	set	1205
-   461  0189                     _ANSELH	set	393
-   462  0188                     _ANSEL	set	392
-   463                           
-   464                           ; #config settings
-   465  0000                     
-   466                           	psect	cinit
-   467  000F                     start_initialization:	
-   468  000F                     __initialization:	
-   469                           
-   470                           ; Clear objects allocated to COMMON
-   471  000F  01F0               	clrf	__pbssCOMMON& (0+127)
-   472  0010  01F1               	clrf	(__pbssCOMMON+1)& (0+127)
-   473  0011  01F2               	clrf	(__pbssCOMMON+2)& (0+127)
-   474  0012  01F3               	clrf	(__pbssCOMMON+3)& (0+127)
-   475  0013  01F4               	clrf	(__pbssCOMMON+4)& (0+127)
-   476  0014  01F5               	clrf	(__pbssCOMMON+5)& (0+127)
-   477  0015  01F6               	clrf	(__pbssCOMMON+6)& (0+127)
-   478                           
-   479                           ; Clear objects allocated to BANK0
-   480  0016  1283               	bcf	3,5	;RP0=0, select bank0
-   481  0017  1303               	bcf	3,6	;RP1=0, select bank0
-   482  0018  01A0               	clrf	__pbssBANK0& (0+127)
-   483  0019  01A1               	clrf	(__pbssBANK0+1)& (0+127)
-   484  001A  01A2               	clrf	(__pbssBANK0+2)& (0+127)
-   485  001B  01A3               	clrf	(__pbssBANK0+3)& (0+127)
-   486  001C                     end_of_initialization:	
-   487                           ;End of C runtime variable initialization code
-   488                           
-   489  001C                     __end_of__initialization:	
-   490  001C  0183               	clrf	3
-   491  001D  120A  118A  2926   	ljmp	_main	;jump to C main() function
-   492                           
-   493                           	psect	bssCOMMON
-   494  0070                     __pbssCOMMON:	
-   495  0070                     _tickCounter:	
-   496  0070                     	ds	2
-   497  0072                     mideColorAzul@t1:	
-   498  0072                     	ds	2
-   499  0074                     _estadoAgua:	
-   500  0074                     	ds	1
-   501  0075                     _estadoComida:	
-   502  0075                     	ds	1
-   503  0076                     _estadoPlato:	
-   504  0076                     	ds	1
-   505                           
-   506                           	psect	bssBANK0
-   507  0020                     __pbssBANK0:	
-   508  0020                     _tHeartbeat:	
-   509  0020                     	ds	2
-   510  0022                     _tickColor:	
-   511  0022                     	ds	2
-   512                           
-   513                           	psect	cstackCOMMON
-   514  0077                     __pcstackCOMMON:	
-   515  0077                     ?_appInit:	
-   516  0077                     ?_platoMEFInit:	
-   517                           ; 1 bytes @ 0x0
-   518                           
-   519  0077                     ?_comidaMEFInit:	
-   520                           ; 1 bytes @ 0x0
-   521                           
-   522  0077                     ?_platoMEF:	
-   523                           ; 1 bytes @ 0x0
-   524                           
-   525  0077                     ?_comidaMEF:	
-   526                           ; 1 bytes @ 0x0
-   527                           
-   528  0077                     ?_aguaMEF:	
-   529                           ; 1 bytes @ 0x0
-   530                           
-   531  0077                     ?_servoHorario:	
-   532                           ; 1 bytes @ 0x0
-   533                           
-   534  0077                     ?_main:	
-   535                           ; 1 bytes @ 0x0
-   536                           
-   537  0077                     ?_aguaMEFInit:	
-   538                           ; 1 bytes @ 0x0
-   539                           
-   540  0077                     ?_isr:	
-   541                           ; 1 bytes @ 0x0
-   542                           
-   543  0077                     ??_isr:	
-   544                           ; 1 bytes @ 0x0
+   437  010D                     	;# 
+   438  010E                     	;# 
+   439  010F                     	;# 
+   440  0185                     	;# 
+   441  0187                     	;# 
+   442  0188                     	;# 
+   443  0189                     	;# 
+   444  018C                     	;# 
+   445  018D                     	;# 
+   446  0006                     _PORTBbits	set	6
+   447  0008                     _PORTDbits	set	8
+   448  0005                     _PORTAbits	set	5
+   449  0009                     _PORTEbits	set	9
+   450  005F                     _GIE	set	95
+   451  005D                     _TMR0IE	set	93
+   452  0081                     _OPTION_REGbits	set	129
+   453  0089                     _TRISEbits	set	137
+   454  0085                     _TRISAbits	set	133
+   455  0088                     _TRISDbits	set	136
+   456  0086                     _TRISBbits	set	134
+   457  040B                     _PSA	set	1035
+   458  040D                     _T0CS	set	1037
+   459  04B5                     _IOCB5	set	1205
+   460  0189                     _ANSELH	set	393
+   461  0188                     _ANSEL	set	392
+   462                           
+   463                           ; #config settings
+   464  0000                     
+   465                           	psect	cinit
+   466  000F                     start_initialization:	
+   467  000F                     __initialization:	
+   468                           
+   469                           ; Clear objects allocated to COMMON
+   470  000F  01F0               	clrf	__pbssCOMMON& (0+127)
+   471  0010  01F1               	clrf	(__pbssCOMMON+1)& (0+127)
+   472  0011  01F2               	clrf	(__pbssCOMMON+2)& (0+127)
+   473  0012  01F3               	clrf	(__pbssCOMMON+3)& (0+127)
+   474  0013  01F4               	clrf	(__pbssCOMMON+4)& (0+127)
+   475  0014  01F5               	clrf	(__pbssCOMMON+5)& (0+127)
+   476  0015  01F6               	clrf	(__pbssCOMMON+6)& (0+127)
+   477                           
+   478                           ; Clear objects allocated to BANK0
+   479  0016  1283               	bcf	3,5	;RP0=0, select bank0
+   480  0017  1303               	bcf	3,6	;RP1=0, select bank0
+   481  0018  01A0               	clrf	__pbssBANK0& (0+127)
+   482  0019  01A1               	clrf	(__pbssBANK0+1)& (0+127)
+   483  001A  01A2               	clrf	(__pbssBANK0+2)& (0+127)
+   484  001B  01A3               	clrf	(__pbssBANK0+3)& (0+127)
+   485  001C                     end_of_initialization:	
+   486                           ;End of C runtime variable initialization code
+   487                           
+   488  001C                     __end_of__initialization:	
+   489  001C  0183               	clrf	3
+   490  001D  120A  118A  2929   	ljmp	_main	;jump to C main() function
+   491                           
+   492                           	psect	bssCOMMON
+   493  0070                     __pbssCOMMON:	
+   494  0070                     _tickCounter:	
+   495  0070                     	ds	2
+   496  0072                     mideColorAzul@t1:	
+   497  0072                     	ds	2
+   498  0074                     _estadoAgua:	
+   499  0074                     	ds	1
+   500  0075                     _estadoComida:	
+   501  0075                     	ds	1
+   502  0076                     _estadoPlato:	
+   503  0076                     	ds	1
+   504                           
+   505                           	psect	bssBANK0
+   506  0020                     __pbssBANK0:	
+   507  0020                     _tHeartbeat:	
+   508  0020                     	ds	2
+   509  0022                     _tickColor:	
+   510  0022                     	ds	2
+   511                           
+   512                           	psect	cstackCOMMON
+   513  0077                     __pcstackCOMMON:	
+   514  0077                     ?_appInit:	
+   515  0077                     ?_platoMEFInit:	
+   516                           ; 1 bytes @ 0x0
+   517                           
+   518  0077                     ?_comidaMEFInit:	
+   519                           ; 1 bytes @ 0x0
+   520                           
+   521  0077                     ?_aguaMEFInit:	
+   522                           ; 1 bytes @ 0x0
+   523                           
+   524  0077                     ?_platoMEF:	
+   525                           ; 1 bytes @ 0x0
+   526                           
+   527  0077                     ?_comidaMEF:	
+   528                           ; 1 bytes @ 0x0
+   529                           
+   530  0077                     ?_aguaMEF:	
+   531                           ; 1 bytes @ 0x0
+   532                           
+   533  0077                     ?_servoHorario:	
+   534                           ; 1 bytes @ 0x0
+   535                           
+   536  0077                     ?_main:	
+   537                           ; 1 bytes @ 0x0
+   538                           
+   539  0077                     ?_isr:	
+   540                           ; 1 bytes @ 0x0
+   541                           
+   542  0077                     ??_isr:	
+   543                           ; 1 bytes @ 0x0
+   544                           
    545                           
-   546                           
-   547                           ; 1 bytes @ 0x0
-   548  0077                     	ds	2
-   549  0079                     ??_appInit:	
-   550  0079                     ??_platoMEFInit:	
-   551                           ; 1 bytes @ 0x2
-   552                           
-   553  0079                     ??_comidaMEFInit:	
-   554                           ; 1 bytes @ 0x2
-   555                           
-   556  0079                     ??_servoHorario:	
-   557                           ; 1 bytes @ 0x2
-   558                           
-   559  0079                     ??_aguaMEFInit:	
-   560                           ; 1 bytes @ 0x2
+   546                           ; 1 bytes @ 0x0
+   547  0077                     	ds	2
+   548  0079                     ??_appInit:	
+   549  0079                     ??_platoMEFInit:	
+   550                           ; 1 bytes @ 0x2
+   551                           
+   552  0079                     ??_comidaMEFInit:	
+   553                           ; 1 bytes @ 0x2
+   554                           
+   555  0079                     ??_aguaMEFInit:	
+   556                           ; 1 bytes @ 0x2
+   557                           
+   558  0079                     ??_servoHorario:	
+   559                           ; 1 bytes @ 0x2
+   560                           
    561                           
-   562  0079                     ?_tickRead:	
-   563                           ; 1 bytes @ 0x2
-   564                           
-   565                           
-   566                           ; 2 bytes @ 0x2
-   567  0079                     	ds	1
-   568  007A                     ??_comidaMEF:	
-   569  007A                     ??_aguaMEF:	
-   570                           ; 1 bytes @ 0x3
-   571                           
+   562                           ; 1 bytes @ 0x2
+   563  0079                     	ds	1
+   564  007A                     ??_comidaMEF:	
+   565  007A                     ??_aguaMEF:	
+   566                           ; 1 bytes @ 0x3
+   567                           
+   568                           
+   569                           ; 1 bytes @ 0x3
+   570  007A                     	ds	2
+   571  007C                     ??_main:	
    572                           
-   573                           ; 1 bytes @ 0x3
-   574  007A                     	ds	1
-   575  007B                     ??_tickRead:	
+   573                           	psect	cstackBANK0
+   574  0024                     __pcstackBANK0:	
+   575                           ; 1 bytes @ 0x5
    576                           
-   577                           ; 1 bytes @ 0x4
-   578  007B                     	ds	1
-   579  007C                     ??_main:	
-   580                           
-   581                           	psect	cstackBANK0
-   582  0024                     __pcstackBANK0:	
-   583                           ; 1 bytes @ 0x5
-   584                           
-   585  0024                     ??_platoMEF:	
-   586  0024                     tickRead@aux:	
-   587                           ; 1 bytes @ 0x0
-   588                           
-   589                           
-   590                           ; 2 bytes @ 0x0
-   591  0024                     	ds	2
-   592                           
-   593                           	psect	maintext
-   594  0126                     __pmaintext:	
-   595 ;;
-   596 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
-   597 ;;
-   598 ;; *************** function _main *****************
-   599 ;; Defined at:
-   600 ;;		line 41 in file "main.c"
-   601 ;; Parameters:    Size  Location     Type
-   602 ;;		None
-   603 ;; Auto vars:     Size  Location     Type
-   604 ;;		None
-   605 ;; Return value:  Size  Location     Type
-   606 ;;                  1    wreg      void 
-   607 ;; Registers used:
-   608 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
-   609 ;; Tracked objects:
-   610 ;;		On entry : B00/0
-   611 ;;		On exit  : 0/0
-   612 ;;		Unchanged: 0/0
-   613 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   614 ;;      Params:         0       0       0       0       0
-   615 ;;      Locals:         0       0       0       0       0
-   616 ;;      Temps:          0       0       0       0       0
-   617 ;;      Totals:         0       0       0       0       0
-   618 ;;Total ram usage:        0 bytes
-   619 ;; Hardware stack levels required when called:    3
-   620 ;; This function calls:
-   621 ;;		_aguaMEF
-   622 ;;		_appInit
-   623 ;;		_comidaMEF
-   624 ;;		_comidaMEFInit
-   625 ;;		_platoMEF
-   626 ;;		_platoMEFInit
-   627 ;;		_tickRead
-   628 ;; This function is called by:
-   629 ;;		Startup code after reset
-   630 ;; This function uses a non-reentrant model
-   631 ;;
-   632                           
+   577  0024                     ??_platoMEF:	
+   578                           
+   579                           ; 1 bytes @ 0x0
+   580  0024                     	ds	2
+   581                           
+   582                           	psect	maintext
+   583  0129                     __pmaintext:	
+   584 ;;
+   585 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   586 ;;
+   587 ;; *************** function _main *****************
+   588 ;; Defined at:
+   589 ;;		line 41 in file "main.c"
+   590 ;; Parameters:    Size  Location     Type
+   591 ;;		None
+   592 ;; Auto vars:     Size  Location     Type
+   593 ;;		None
+   594 ;; Return value:  Size  Location     Type
+   595 ;;                  1    wreg      void 
+   596 ;; Registers used:
+   597 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   598 ;; Tracked objects:
+   599 ;;		On entry : B00/0
+   600 ;;		On exit  : 0/0
+   601 ;;		Unchanged: 0/0
+   602 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   603 ;;      Params:         0       0       0       0       0
+   604 ;;      Locals:         0       0       0       0       0
+   605 ;;      Temps:          0       0       0       0       0
+   606 ;;      Totals:         0       0       0       0       0
+   607 ;;Total ram usage:        0 bytes
+   608 ;; Hardware stack levels required when called:    3
+   609 ;; This function calls:
+   610 ;;		_aguaMEF
+   611 ;;		_aguaMEFInit
+   612 ;;		_appInit
+   613 ;;		_comidaMEF
+   614 ;;		_comidaMEFInit
+   615 ;;		_platoMEF
+   616 ;;		_platoMEFInit
+   617 ;; This function is called by:
+   618 ;;		Startup code after reset
+   619 ;; This function uses a non-reentrant model
+   620 ;;
+   621                           
+   622                           
+   623                           ;psect for function _main
+   624  0129                     _main:	
+   625  0129                     l1137:	
+   626                           ;incstack = 0
+   627                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   628                           
+   629                           
+   630                           ;main.c: 42:     appInit();
+   631  0129  120A  118A  2156  120A  118A  	fcall	_appInit
+   632  012E                     l1139:	
    633                           
-   634                           ;psect for function _main
-   635  0126                     _main:	
-   636  0126                     l1321:	
-   637                           ;incstack = 0
-   638                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   634                           ;main.c: 43:     PORTEbits.RE1 = 0;
+   635  012E  1283               	bcf	3,5	;RP0=0, select bank0
+   636  012F  1303               	bcf	3,6	;RP1=0, select bank0
+   637  0130  1089               	bcf	9,1	;volatile
+   638  0131                     l1141:	
    639                           
-   640                           
-   641                           ;main.c: 42:     appInit();
-   642  0126  120A  118A  2159  120A  118A  	fcall	_appInit
-   643  012B                     l1323:	
-   644                           
-   645                           ;main.c: 43:     PORTEbits.RE1 = 0;
-   646  012B  1283               	bcf	3,5	;RP0=0, select bank0
-   647  012C  1303               	bcf	3,6	;RP1=0, select bank0
-   648  012D  1089               	bcf	9,1	;volatile
-   649  012E                     l1325:	
-   650                           
-   651                           ;main.c: 44:     PORTAbits.RA5 = 0;
-   652  012E  1285               	bcf	5,5	;volatile
-   653  012F                     l1327:	
-   654                           
-   655                           ;main.c: 45:     PORTEbits.RE0 = 0;
-   656  012F  1009               	bcf	9,0	;volatile
-   657  0130                     l1329:	
-   658                           
-   659                           ;main.c: 46:     PORTEbits.RE2 = 0;
-   660  0130  1109               	bcf	9,2	;volatile
-   661  0131                     l1331:	
-   662                           
-   663                           ;main.c: 47:     platoMEFInit();
-   664  0131  120A  118A  21B2  120A  118A  	fcall	_platoMEFInit
-   665  0136                     l1333:	
-   666                           
-   667                           ;main.c: 48:     comidaMEFInit();
-   668  0136  120A  118A  21A8  120A  118A  	fcall	_comidaMEFInit
-   669  013B                     l1335:	
-   670                           
-   671                           ;main.c: 49:     tHeartbeat = tickRead();
-   672  013B  120A  118A  2194  120A  118A  	fcall	_tickRead
-   673  0140  087A               	movf	?_tickRead+1,w
-   674  0141  1283               	bcf	3,5	;RP0=0, select bank0
-   675  0142  1303               	bcf	3,6	;RP1=0, select bank0
-   676  0143  00A1               	movwf	_tHeartbeat+1
-   677  0144  0879               	movf	?_tickRead,w
-   678  0145  00A0               	movwf	_tHeartbeat
-   679  0146                     l1337:	
-   680                           
-   681                           ;main.c: 51:         platoMEF();
-   682  0146  120A  118A  20E7  120A  118A  	fcall	_platoMEF
-   683  014B                     l1339:	
-   684                           
-   685                           ;main.c: 52:         comidaMEF();
-   686  014B  120A  118A  2020  120A  118A  	fcall	_comidaMEF
-   687  0150                     l1341:	
-   688                           
-   689                           ;main.c: 53:         aguaMEF();
-   690  0150  120A  118A  20A2  120A  118A  	fcall	_aguaMEF
-   691  0155  2946               	goto	l1337
-   692  0156  120A  118A  280C   	ljmp	start
-   693  0159                     __end_of_main:	
-   694                           
-   695                           	psect	text1
-   696  0194                     __ptext1:	
-   697 ;; *************** function _tickRead *****************
-   698 ;; Defined at:
-   699 ;;		line 62 in file "tick.c"
-   700 ;; Parameters:    Size  Location     Type
-   701 ;;		None
-   702 ;; Auto vars:     Size  Location     Type
-   703 ;;  aux             2    0[BANK0 ] unsigned int 
-   704 ;; Return value:  Size  Location     Type
-   705 ;;                  2    2[COMMON] unsigned int 
-   706 ;; Registers used:
-   707 ;;		wreg
-   708 ;; Tracked objects:
-   709 ;;		On entry : 0/0
-   710 ;;		On exit  : 0/0
-   711 ;;		Unchanged: 0/0
-   712 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   713 ;;      Params:         2       0       0       0       0
-   714 ;;      Locals:         0       2       0       0       0
-   715 ;;      Temps:          0       0       0       0       0
-   716 ;;      Totals:         2       2       0       0       0
-   717 ;;Total ram usage:        4 bytes
-   718 ;; Hardware stack levels used:    1
-   719 ;; Hardware stack levels required when called:    1
-   720 ;; This function calls:
-   721 ;;		Nothing
-   722 ;; This function is called by:
-   723 ;;		_main
-   724 ;;		_mideColorAzul
-   725 ;; This function uses a non-reentrant model
-   726 ;;
-   727                           
-   728                           
-   729                           ;psect for function _tickRead
-   730  0194                     _tickRead:	
-   731  0194                     l1287:	
-   732                           ;incstack = 0
-   733                           ; Regs used in _tickRead: [wreg]
-   734                           
-   735                           
-   736                           ;tick.c: 63:     tick_t aux;;tick.c: 64:     GIE = 0;
-   737  0194  138B               	bcf	11,7	;volatile
-   738  0195                     l1289:	
-   739                           
-   740                           ;tick.c: 65:     aux = tickCounter;
-   741  0195  0871               	movf	_tickCounter+1,w	;volatile
-   742  0196  1283               	bcf	3,5	;RP0=0, select bank0
-   743  0197  1303               	bcf	3,6	;RP1=0, select bank0
-   744  0198  00A5               	movwf	tickRead@aux+1
-   745  0199  0870               	movf	_tickCounter,w	;volatile
-   746  019A  00A4               	movwf	tickRead@aux
-   747  019B                     l1291:	
-   748                           
-   749                           ;tick.c: 66:     GIE = 1;
-   750  019B  178B               	bsf	11,7	;volatile
-   751                           
-   752                           ;tick.c: 67:     return aux;
-   753  019C  0825               	movf	tickRead@aux+1,w
-   754  019D  00FA               	movwf	?_tickRead+1
-   755  019E  0824               	movf	tickRead@aux,w
-   756  019F  00F9               	movwf	?_tickRead
-   757  01A0                     l149:	
-   758  01A0  0008               	return
-   759  01A1                     __end_of_tickRead:	
+   640                           ;main.c: 44:     PORTAbits.RA5 = 0;
+   641  0131  1285               	bcf	5,5	;volatile
+   642  0132                     l1143:	
+   643                           
+   644                           ;main.c: 45:     PORTEbits.RE0 = 0;
+   645  0132  1009               	bcf	9,0	;volatile
+   646  0133                     l1145:	
+   647                           
+   648                           ;main.c: 46:     PORTEbits.RE2 = 0;
+   649  0133  1109               	bcf	9,2	;volatile
+   650  0134                     l1147:	
+   651                           
+   652                           ;main.c: 47:     platoMEFInit();
+   653  0134  120A  118A  21A0  120A  118A  	fcall	_platoMEFInit
+   654  0139                     l1149:	
+   655                           
+   656                           ;main.c: 48:     comidaMEFInit();
+   657  0139  120A  118A  2196  120A  118A  	fcall	_comidaMEFInit
+   658  013E                     l1151:	
+   659                           
+   660                           ;main.c: 49:     aguaMEFInit();
+   661  013E  120A  118A  219B  120A  118A  	fcall	_aguaMEFInit
+   662  0143                     l1153:	
+   663                           
+   664                           ;main.c: 51:         platoMEF();
+   665  0143  120A  118A  20EA  120A  118A  	fcall	_platoMEF
+   666  0148                     l1155:	
+   667                           
+   668                           ;main.c: 52:         comidaMEF();
+   669  0148  120A  118A  2020  120A  118A  	fcall	_comidaMEF
+   670  014D                     l1157:	
+   671                           
+   672                           ;main.c: 53:         aguaMEF();
+   673  014D  120A  118A  20A5  120A  118A  	fcall	_aguaMEF
+   674  0152  2943               	goto	l1153
+   675  0153  120A  118A  280C   	ljmp	start
+   676  0156                     __end_of_main:	
+   677                           
+   678                           	psect	text1
+   679  00EA                     __ptext1:	
+   680 ;; *************** function _platoMEF *****************
+   681 ;; Defined at:
+   682 ;;		line 63 in file "main.c"
+   683 ;; Parameters:    Size  Location     Type
+   684 ;;		None
+   685 ;; Auto vars:     Size  Location     Type
+   686 ;;		None
+   687 ;; Return value:  Size  Location     Type
+   688 ;;                  1    wreg      void 
+   689 ;; Registers used:
+   690 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   691 ;; Tracked objects:
+   692 ;;		On entry : 0/0
+   693 ;;		On exit  : 0/0
+   694 ;;		Unchanged: 0/0
+   695 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   696 ;;      Params:         0       0       0       0       0
+   697 ;;      Locals:         0       0       0       0       0
+   698 ;;      Temps:          0       2       0       0       0
+   699 ;;      Totals:         0       2       0       0       0
+   700 ;;Total ram usage:        2 bytes
+   701 ;; Hardware stack levels used:    1
+   702 ;; Hardware stack levels required when called:    2
+   703 ;; This function calls:
+   704 ;;		_platoMEFInit
+   705 ;;		_servoHorario
+   706 ;; This function is called by:
+   707 ;;		_main
+   708 ;; This function uses a non-reentrant model
+   709 ;;
+   710                           
+   711                           
+   712                           ;psect for function _platoMEF
+   713  00EA                     _platoMEF:	
+   714  00EA                     l1111:	
+   715                           ;incstack = 0
+   716                           ; Regs used in _platoMEF: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   717                           
+   718                           
+   719                           ;main.c: 64:     switch (estadoPlato) {
+   720  00EA  2913               	goto	l1131
+   721  00EB                     l53:	
+   722                           ;main.c: 65:         case E_REPOSO:
+   723                           
+   724                           
+   725                           ;main.c: 66:             if (!PORTDbits.RD7) {
+   726  00EB  1B88               	btfsc	8,7	;volatile
+   727  00EC  28EE               	goto	u231
+   728  00ED  28EF               	goto	u230
+   729  00EE                     u231:	
+   730  00EE  2928               	goto	l62
+   731  00EF                     u230:	
+   732  00EF                     l1113:	
+   733                           
+   734                           ;main.c: 67:                 estadoPlato = E_DETECTA;
+   735  00EF  01F6               	clrf	_estadoPlato
+   736  00F0  0AF6               	incf	_estadoPlato,f
+   737                           
+   738                           ;main.c: 68:                 PORTBbits.RB2 = 1;
+   739  00F1  1506               	bsf	6,2	;volatile
+   740  00F2  2928               	goto	l62
+   741  00F3                     l56:	
+   742                           ;main.c: 71:         case E_DETECTA:
+   743                           
+   744                           
+   745                           ;main.c: 72:             if (!PORTAbits.RA4) {
+   746  00F3  1A05               	btfsc	5,4	;volatile
+   747  00F4  28F6               	goto	u241
+   748  00F5  28F7               	goto	u240
+   749  00F6                     u241:	
+   750  00F6  28FA               	goto	l1119
+   751  00F7                     u240:	
+   752  00F7                     l1115:	
+   753                           
+   754                           ;main.c: 73:                 estadoPlato = E_REPOSO;
+   755  00F7  01F6               	clrf	_estadoPlato
+   756  00F8                     l1117:	
+   757                           
+   758                           ;main.c: 74:                 PORTBbits.RB2 = 0;
+   759  00F8  1106               	bcf	6,2	;volatile
    760                           
-   761                           	psect	text2
-   762  00E7                     __ptext2:	
-   763 ;; *************** function _platoMEF *****************
-   764 ;; Defined at:
-   765 ;;		line 63 in file "main.c"
-   766 ;; Parameters:    Size  Location     Type
-   767 ;;		None
-   768 ;; Auto vars:     Size  Location     Type
-   769 ;;		None
-   770 ;; Return value:  Size  Location     Type
-   771 ;;                  1    wreg      void 
-   772 ;; Registers used:
-   773 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
-   774 ;; Tracked objects:
-   775 ;;		On entry : 0/0
-   776 ;;		On exit  : 0/0
-   777 ;;		Unchanged: 0/0
-   778 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   779 ;;      Params:         0       0       0       0       0
-   780 ;;      Locals:         0       0       0       0       0
-   781 ;;      Temps:          0       2       0       0       0
-   782 ;;      Totals:         0       2       0       0       0
-   783 ;;Total ram usage:        2 bytes
-   784 ;; Hardware stack levels used:    1
-   785 ;; Hardware stack levels required when called:    2
-   786 ;; This function calls:
-   787 ;;		_platoMEFInit
-   788 ;;		_servoHorario
-   789 ;; This function is called by:
-   790 ;;		_main
-   791 ;; This function uses a non-reentrant model
-   792 ;;
-   793                           
-   794                           
-   795                           ;psect for function _platoMEF
-   796  00E7                     _platoMEF:	
-   797  00E7                     l1295:	
-   798                           ;incstack = 0
-   799                           ; Regs used in _platoMEF: [wreg-fsr0h+status,2+status,0+pclath+cstack]
-   800                           
-   801                           
-   802                           ;main.c: 64:     switch (estadoPlato) {
-   803  00E7  2910               	goto	l1315
-   804  00E8                     l51:	
-   805                           ;main.c: 65:         case E_REPOSO:
-   806                           
-   807                           
-   808                           ;main.c: 66:             if (!PORTDbits.RD7) {
-   809  00E8  1B88               	btfsc	8,7	;volatile
-   810  00E9  28EB               	goto	u431
-   811  00EA  28EC               	goto	u430
-   812  00EB                     u431:	
-   813  00EB  2925               	goto	l60
-   814  00EC                     u430:	
-   815  00EC                     l1297:	
-   816                           
-   817                           ;main.c: 67:                 estadoPlato = E_DETECTA;
-   818  00EC  01F6               	clrf	_estadoPlato
-   819  00ED  0AF6               	incf	_estadoPlato,f
-   820                           
-   821                           ;main.c: 68:                 PORTBbits.RB2 = 1;
-   822  00EE  1506               	bsf	6,2	;volatile
-   823  00EF  2925               	goto	l60
-   824  00F0                     l54:	
-   825                           ;main.c: 71:         case E_DETECTA:
-   826                           
-   827                           
-   828                           ;main.c: 72:             if (!PORTAbits.RA4) {
-   829  00F0  1A05               	btfsc	5,4	;volatile
-   830  00F1  28F3               	goto	u441
-   831  00F2  28F4               	goto	u440
-   832  00F3                     u441:	
-   833  00F3  28F7               	goto	l1303
-   834  00F4                     u440:	
-   835  00F4                     l1299:	
-   836                           
-   837                           ;main.c: 73:                 estadoPlato = E_REPOSO;
-   838  00F4  01F6               	clrf	_estadoPlato
-   839  00F5                     l1301:	
-   840                           
-   841                           ;main.c: 74:                 PORTBbits.RB2 = 0;
-   842  00F5  1106               	bcf	6,2	;volatile
-   843                           
-   844                           ;main.c: 75:             } else {
-   845  00F6  2925               	goto	l60
-   846  00F7                     l1303:	
+   761                           ;main.c: 75:             } else {
+   762  00F9  2928               	goto	l62
+   763  00FA                     l1119:	
+   764                           
+   765                           ;main.c: 76:                 estadoPlato = E_ACTIVO;
+   766  00FA  3002               	movlw	2
+   767  00FB  00A4               	movwf	??_platoMEF
+   768  00FC  0824               	movf	??_platoMEF,w
+   769  00FD  00F6               	movwf	_estadoPlato
+   770  00FE                     l1121:	
+   771                           
+   772                           ;main.c: 77:                 PORTBbits.RB2 = 0;
+   773  00FE  1106               	bcf	6,2	;volatile
+   774  00FF  2928               	goto	l62
+   775  0100                     l1123:	
+   776                           
+   777                           ;main.c: 81:             servoHorario();
+   778  0100  120A  118A  2177  120A  118A  	fcall	_servoHorario
+   779  0105                     l1125:	
+   780                           
+   781                           ;main.c: 82:             if (!PORTAbits.RA4) {
+   782  0105  1283               	bcf	3,5	;RP0=0, select bank0
+   783  0106  1303               	bcf	3,6	;RP1=0, select bank0
+   784  0107  1A05               	btfsc	5,4	;volatile
+   785  0108  290A               	goto	u251
+   786  0109  290B               	goto	u250
+   787  010A                     u251:	
+   788  010A  2928               	goto	l62
+   789  010B                     u250:	
+   790  010B                     l1127:	
+   791                           
+   792                           ;main.c: 83:                 estadoPlato = E_REPOSO;
+   793  010B  01F6               	clrf	_estadoPlato
+   794  010C  2928               	goto	l62
+   795  010D                     l1129:	
+   796                           
+   797                           ;main.c: 88:             platoMEFInit();
+   798  010D  120A  118A  21A0  120A  118A  	fcall	_platoMEFInit
+   799                           
+   800                           ;main.c: 89:     }
+   801  0112  2928               	goto	l62
+   802  0113                     l1131:	
+   803  0113  0876               	movf	_estadoPlato,w
+   804  0114  1283               	bcf	3,5	;RP0=0, select bank0
+   805  0115  1303               	bcf	3,6	;RP1=0, select bank0
+   806  0116  00A4               	movwf	??_platoMEF
+   807  0117  01A5               	clrf	??_platoMEF+1
+   808                           
+   809                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+      +                          itches
+   810                           ; Switch size 1, requested type "simple"
+   811                           ; Number of cases is 1, Range of values is 0 to 0
+   812                           ; switch strategies available:
+   813                           ; Name         Instructions Cycles
+   814                           ; simple_byte            4     3 (average)
+   815                           ; direct_byte           11     8 (fixed)
+   816                           ; jumptable            260     6 (fixed)
+   817                           ;	Chosen strategy is simple_byte
+   818  0118  0825               	movf	??_platoMEF+1,w
+   819  0119  3A00               	xorlw	0	; case 0
+   820  011A  1903               	skipnz
+   821  011B  291D               	goto	l1219
+   822  011C  290D               	goto	l1129
+   823  011D                     l1219:	
+   824                           
+   825                           ; Switch size 1, requested type "simple"
+   826                           ; Number of cases is 3, Range of values is 0 to 2
+   827                           ; switch strategies available:
+   828                           ; Name         Instructions Cycles
+   829                           ; simple_byte           10     6 (average)
+   830                           ; direct_byte           17     8 (fixed)
+   831                           ; jumptable            260     6 (fixed)
+   832                           ;	Chosen strategy is simple_byte
+   833  011D  0824               	movf	??_platoMEF,w
+   834  011E  3A00               	xorlw	0	; case 0
+   835  011F  1903               	skipnz
+   836  0120  28EB               	goto	l53
+   837  0121  3A01               	xorlw	1	; case 1
+   838  0122  1903               	skipnz
+   839  0123  28F3               	goto	l56
+   840  0124  3A03               	xorlw	3	; case 2
+   841  0125  1903               	skipnz
+   842  0126  2900               	goto	l1123
+   843  0127  290D               	goto	l1129
+   844  0128                     l62:	
+   845  0128  0008               	return
+   846  0129                     __end_of_platoMEF:	
    847                           
-   848                           ;main.c: 76:                 estadoPlato = E_ACTIVO;
-   849  00F7  3002               	movlw	2
-   850  00F8  00A4               	movwf	??_platoMEF
-   851  00F9  0824               	movf	??_platoMEF,w
-   852  00FA  00F6               	movwf	_estadoPlato
-   853  00FB                     l1305:	
-   854                           
-   855                           ;main.c: 77:                 PORTBbits.RB2 = 0;
-   856  00FB  1106               	bcf	6,2	;volatile
-   857  00FC  2925               	goto	l60
-   858  00FD                     l1307:	
-   859                           
-   860                           ;main.c: 81:             servoHorario();
-   861  00FD  120A  118A  217C  120A  118A  	fcall	_servoHorario
-   862  0102                     l1309:	
-   863                           
-   864                           ;main.c: 82:             if (!PORTAbits.RA4) {
-   865  0102  1283               	bcf	3,5	;RP0=0, select bank0
-   866  0103  1303               	bcf	3,6	;RP1=0, select bank0
-   867  0104  1A05               	btfsc	5,4	;volatile
-   868  0105  2907               	goto	u451
-   869  0106  2908               	goto	u450
-   870  0107                     u451:	
-   871  0107  2925               	goto	l60
-   872  0108                     u450:	
-   873  0108                     l1311:	
-   874                           
-   875                           ;main.c: 83:                 estadoPlato = E_REPOSO;
-   876  0108  01F6               	clrf	_estadoPlato
-   877  0109  2925               	goto	l60
-   878  010A                     l1313:	
+   848                           	psect	text2
+   849  0177                     __ptext2:	
+   850 ;; *************** function _servoHorario *****************
+   851 ;; Defined at:
+   852 ;;		line 188 in file "main.c"
+   853 ;; Parameters:    Size  Location     Type
+   854 ;;		None
+   855 ;; Auto vars:     Size  Location     Type
+   856 ;;		None
+   857 ;; Return value:  Size  Location     Type
+   858 ;;                  1    wreg      void 
+   859 ;; Registers used:
+   860 ;;		wreg
+   861 ;; Tracked objects:
+   862 ;;		On entry : 0/0
+   863 ;;		On exit  : 0/0
+   864 ;;		Unchanged: 0/0
+   865 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   866 ;;      Params:         0       0       0       0       0
+   867 ;;      Locals:         0       0       0       0       0
+   868 ;;      Temps:          2       0       0       0       0
+   869 ;;      Totals:         2       0       0       0       0
+   870 ;;Total ram usage:        2 bytes
+   871 ;; Hardware stack levels used:    1
+   872 ;; Hardware stack levels required when called:    1
+   873 ;; This function calls:
+   874 ;;		Nothing
+   875 ;; This function is called by:
+   876 ;;		_platoMEF
+   877 ;; This function uses a non-reentrant model
+   878 ;;
    879                           
-   880                           ;main.c: 88:             platoMEFInit();
-   881  010A  120A  118A  21B2  120A  118A  	fcall	_platoMEFInit
-   882                           
-   883                           ;main.c: 89:     }
-   884  010F  2925               	goto	l60
-   885  0110                     l1315:	
-   886  0110  0876               	movf	_estadoPlato,w
-   887  0111  1283               	bcf	3,5	;RP0=0, select bank0
-   888  0112  1303               	bcf	3,6	;RP1=0, select bank0
-   889  0113  00A4               	movwf	??_platoMEF
-   890  0114  01A5               	clrf	??_platoMEF+1
-   891                           
-   892                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+   880                           
+   881                           ;psect for function _servoHorario
+   882  0177                     _servoHorario:	
+   883  0177                     l757:	
+   884                           ;incstack = 0
+   885                           ; Regs used in _servoHorario: [wreg]
+   886                           
+   887                           
+   888                           ;main.c: 190:     PORTBbits.RB1 = 1;
+   889  0177  1283               	bcf	3,5	;RP0=0, select bank0
+   890  0178  1303               	bcf	3,6	;RP1=0, select bank0
+   891  0179  1486               	bsf	6,1	;volatile
+   892  017A                     l759:	
+   893                           
+   894                           ;main.c: 191:     _delay((unsigned long)((1390)*(4000000L/4000000.0)));
+   895  017A  30C6               	movlw	198
+   896  017B  00F9               	movwf	??_servoHorario
+   897  017C                     u267:	
+   898  017C  297D               	nop2
+   899  017D  297E               	nop2
+   900  017E  0BF9               	decfsz	??_servoHorario,f
+   901  017F  297C               	goto	u267
+   902  0180  2981               	nop2
+   903  0181  0000               	nop
+   904  0182                     l761:	
+   905                           
+   906                           ;main.c: 192:     PORTBbits.RB1 = 0;
+   907  0182  1283               	bcf	3,5	;RP0=0, select bank0
+   908  0183  1303               	bcf	3,6	;RP1=0, select bank0
+   909  0184  1086               	bcf	6,1	;volatile
+   910                           
+   911                           ;main.c: 193:     _delay((unsigned long)((10)*(4000000L/4000.0)));
+   912  0185  300D               	movlw	13
+   913  0186  00FA               	movwf	??_servoHorario+1
+   914  0187  30FB               	movlw	251
+   915  0188  00F9               	movwf	??_servoHorario
+   916  0189                     u277:	
+   917  0189  0BF9               	decfsz	??_servoHorario,f
+   918  018A  2989               	goto	u277
+   919  018B  0BFA               	decfsz	??_servoHorario+1,f
+   920  018C  2989               	goto	u277
+   921  018D  298E               	nop2
+   922  018E                     l107:	
+   923  018E  0008               	return
+   924  018F                     __end_of_servoHorario:	
+   925                           
+   926                           	psect	text3
+   927  01A0                     __ptext3:	
+   928 ;; *************** function _platoMEFInit *****************
+   929 ;; Defined at:
+   930 ;;		line 59 in file "main.c"
+   931 ;; Parameters:    Size  Location     Type
+   932 ;;		None
+   933 ;; Auto vars:     Size  Location     Type
+   934 ;;		None
+   935 ;; Return value:  Size  Location     Type
+   936 ;;                  1    wreg      void 
+   937 ;; Registers used:
+   938 ;;		status,2
+   939 ;; Tracked objects:
+   940 ;;		On entry : 0/0
+   941 ;;		On exit  : 0/0
+   942 ;;		Unchanged: 0/0
+   943 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   944 ;;      Params:         0       0       0       0       0
+   945 ;;      Locals:         0       0       0       0       0
+   946 ;;      Temps:          0       0       0       0       0
+   947 ;;      Totals:         0       0       0       0       0
+   948 ;;Total ram usage:        0 bytes
+   949 ;; Hardware stack levels used:    1
+   950 ;; Hardware stack levels required when called:    1
+   951 ;; This function calls:
+   952 ;;		Nothing
+   953 ;; This function is called by:
+   954 ;;		_main
+   955 ;;		_platoMEF
+   956 ;; This function uses a non-reentrant model
+   957 ;;
+   958                           
+   959                           
+   960                           ;psect for function _platoMEFInit
+   961  01A0                     _platoMEFInit:	
+   962  01A0                     l751:	
+   963                           ;incstack = 0
+   964                           ; Regs used in _platoMEFInit: [status,2]
+   965                           
+   966                           
+   967                           ;main.c: 60:     estadoPlato = E_REPOSO;
+   968  01A0  01F6               	clrf	_estadoPlato
+   969  01A1                     l49:	
+   970  01A1  0008               	return
+   971  01A2                     __end_of_platoMEFInit:	
+   972                           
+   973                           	psect	text4
+   974  0020                     __ptext4:	
+   975 ;; *************** function _comidaMEF *****************
+   976 ;; Defined at:
+   977 ;;		line 96 in file "main.c"
+   978 ;; Parameters:    Size  Location     Type
+   979 ;;		None
+   980 ;; Auto vars:     Size  Location     Type
+   981 ;;		None
+   982 ;; Return value:  Size  Location     Type
+   983 ;;                  1    wreg      void 
+   984 ;; Registers used:
+   985 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   986 ;; Tracked objects:
+   987 ;;		On entry : 0/0
+   988 ;;		On exit  : 0/0
+   989 ;;		Unchanged: 0/0
+   990 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   991 ;;      Params:         0       0       0       0       0
+   992 ;;      Locals:         0       0       0       0       0
+   993 ;;      Temps:          2       0       0       0       0
+   994 ;;      Totals:         2       0       0       0       0
+   995 ;;Total ram usage:        2 bytes
+   996 ;; Hardware stack levels used:    1
+   997 ;; Hardware stack levels required when called:    2
+   998 ;; This function calls:
+   999 ;;		_comidaMEFInit
+  1000 ;; This function is called by:
+  1001 ;;		_main
+  1002 ;; This function uses a non-reentrant model
+  1003 ;;
+  1004                           
+  1005                           
+  1006                           ;psect for function _comidaMEF
+  1007  0020                     _comidaMEF:	
+  1008  0020                     l827:	
+  1009                           ;incstack = 0
+  1010                           ; Regs used in _comidaMEF: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1011                           
+  1012                           
+  1013                           ;main.c: 97:     switch (estadoComida) {
+  1014  0020  288E               	goto	l879
+  1015  0021                     l69:	
+  1016                           ;main.c: 98:         case E_COMIDA_IN:
+  1017                           
+  1018                           
+  1019                           ;main.c: 99:             if (!PORTAbits.RA2 && !PORTAbits.RA3) {
+  1020  0021  1283               	bcf	3,5	;RP0=0, select bank0
+  1021  0022  1303               	bcf	3,6	;RP1=0, select bank0
+  1022  0023  1905               	btfsc	5,2	;volatile
+  1023  0024  2826               	goto	u41
+  1024  0025  2827               	goto	u40
+  1025  0026                     u41:	
+  1026  0026  2830               	goto	l835
+  1027  0027                     u40:	
+  1028  0027                     l829:	
+  1029  0027  1985               	btfsc	5,3	;volatile
+  1030  0028  282A               	goto	u51
+  1031  0029  282B               	goto	u50
+  1032  002A                     u51:	
+  1033  002A  2830               	goto	l835
+  1034  002B                     u50:	
+  1035  002B                     l831:	
+  1036                           
+  1037                           ;main.c: 100:                 estadoComida = E_LLENO;
+  1038  002B  3005               	movlw	5
+  1039  002C  00FA               	movwf	??_comidaMEF
+  1040  002D  087A               	movf	??_comidaMEF,w
+  1041  002E  00F5               	movwf	_estadoComida
+  1042  002F                     l833:	
+  1043                           
+  1044                           ;main.c: 101:                 PORTEbits.RE2 = 0;
+  1045  002F  1109               	bcf	9,2	;volatile
+  1046  0030                     l835:	
+  1047                           
+  1048                           ;main.c: 103:             if (!PORTAbits.RA2 && PORTAbits.RA3) {
+  1049  0030  1905               	btfsc	5,2	;volatile
+  1050  0031  2833               	goto	u61
+  1051  0032  2834               	goto	u60
+  1052  0033                     u61:	
+  1053  0033  283D               	goto	l843
+  1054  0034                     u60:	
+  1055  0034                     l837:	
+  1056  0034  1D85               	btfss	5,3	;volatile
+  1057  0035  2837               	goto	u71
+  1058  0036  2838               	goto	u70
+  1059  0037                     u71:	
+  1060  0037  283D               	goto	l843
+  1061  0038                     u70:	
+  1062  0038                     l839:	
+  1063                           
+  1064                           ;main.c: 104:                 estadoComida = E_MEDIO;
+  1065  0038  3004               	movlw	4
+  1066  0039  00FA               	movwf	??_comidaMEF
+  1067  003A  087A               	movf	??_comidaMEF,w
+  1068  003B  00F5               	movwf	_estadoComida
+  1069  003C                     l841:	
+  1070                           
+  1071                           ;main.c: 105:                 PORTEbits.RE2 = 0;
+  1072  003C  1109               	bcf	9,2	;volatile
+  1073  003D                     l843:	
+  1074                           
+  1075                           ;main.c: 107:             if (PORTAbits.RA2 && PORTAbits.RA3) {
+  1076  003D  1D05               	btfss	5,2	;volatile
+  1077  003E  2840               	goto	u81
+  1078  003F  2841               	goto	u80
+  1079  0040                     u81:	
+  1080  0040  28A4               	goto	l82
+  1081  0041                     u80:	
+  1082  0041                     l845:	
+  1083  0041  1D85               	btfss	5,3	;volatile
+  1084  0042  2844               	goto	u91
+  1085  0043  2845               	goto	u90
+  1086  0044                     u91:	
+  1087  0044  28A4               	goto	l82
+  1088  0045                     u90:	
+  1089  0045                     l847:	
+  1090                           
+  1091                           ;main.c: 108:                 estadoComida = E_VACIO;
+  1092  0045  3003               	movlw	3
+  1093  0046  00FA               	movwf	??_comidaMEF
+  1094  0047  087A               	movf	??_comidaMEF,w
+  1095  0048  00F5               	movwf	_estadoComida
+  1096  0049                     l849:	
+  1097                           
+  1098                           ;main.c: 109:                 PORTEbits.RE2 = 1;
+  1099  0049  1509               	bsf	9,2	;volatile
+  1100  004A  28A4               	goto	l82
+  1101  004B                     l74:	
+  1102                           ;main.c: 112:         case E_LLENO:
+  1103                           
+  1104                           
+  1105                           ;main.c: 113:             if (!PORTAbits.RA2 && PORTAbits.RA3) {
+  1106  004B  1283               	bcf	3,5	;RP0=0, select bank0
+  1107  004C  1303               	bcf	3,6	;RP1=0, select bank0
+  1108  004D  1905               	btfsc	5,2	;volatile
+  1109  004E  2850               	goto	u101
+  1110  004F  2851               	goto	u100
+  1111  0050                     u101:	
+  1112  0050  28A4               	goto	l82
+  1113  0051                     u100:	
+  1114  0051                     l851:	
+  1115  0051  1D85               	btfss	5,3	;volatile
+  1116  0052  2854               	goto	u111
+  1117  0053  2855               	goto	u110
+  1118  0054                     u111:	
+  1119  0054  28A4               	goto	l82
+  1120  0055                     u110:	
+  1121  0055                     l853:	
+  1122                           
+  1123                           ;main.c: 114:                 estadoComida = E_MEDIO;
+  1124  0055  3004               	movlw	4
+  1125  0056  00FA               	movwf	??_comidaMEF
+  1126  0057  087A               	movf	??_comidaMEF,w
+  1127  0058  00F5               	movwf	_estadoComida
+  1128  0059                     l855:	
+  1129                           
+  1130                           ;main.c: 115:                 PORTEbits.RE2 = 0;
+  1131  0059  1109               	bcf	9,2	;volatile
+  1132  005A  28A4               	goto	l82
+  1133  005B                     l76:	
+  1134                           ;main.c: 118:         case E_MEDIO:
+  1135                           
+  1136                           
+  1137                           ;main.c: 119:             if (!PORTAbits.RA2 && !PORTAbits.RA3) {
+  1138  005B  1283               	bcf	3,5	;RP0=0, select bank0
+  1139  005C  1303               	bcf	3,6	;RP1=0, select bank0
+  1140  005D  1905               	btfsc	5,2	;volatile
+  1141  005E  2860               	goto	u121
+  1142  005F  2861               	goto	u120
+  1143  0060                     u121:	
+  1144  0060  286A               	goto	l863
+  1145  0061                     u120:	
+  1146  0061                     l857:	
+  1147  0061  1985               	btfsc	5,3	;volatile
+  1148  0062  2864               	goto	u131
+  1149  0063  2865               	goto	u130
+  1150  0064                     u131:	
+  1151  0064  286A               	goto	l863
+  1152  0065                     u130:	
+  1153  0065                     l859:	
+  1154                           
+  1155                           ;main.c: 120:                 estadoComida = E_LLENO;
+  1156  0065  3005               	movlw	5
+  1157  0066  00FA               	movwf	??_comidaMEF
+  1158  0067  087A               	movf	??_comidaMEF,w
+  1159  0068  00F5               	movwf	_estadoComida
+  1160  0069                     l861:	
+  1161                           
+  1162                           ;main.c: 121:                 PORTEbits.RE2 = 0;
+  1163  0069  1109               	bcf	9,2	;volatile
+  1164  006A                     l863:	
+  1165                           
+  1166                           ;main.c: 124:             if (PORTAbits.RA2 && PORTAbits.RA3) {
+  1167  006A  1D05               	btfss	5,2	;volatile
+  1168  006B  286D               	goto	u141
+  1169  006C  286E               	goto	u140
+  1170  006D                     u141:	
+  1171  006D  28A4               	goto	l82
+  1172  006E                     u140:	
+  1173  006E                     l865:	
+  1174  006E  1D85               	btfss	5,3	;volatile
+  1175  006F  2871               	goto	u151
+  1176  0070  2872               	goto	u150
+  1177  0071                     u151:	
+  1178  0071  28A4               	goto	l82
+  1179  0072                     u150:	
+  1180  0072                     l867:	
+  1181                           
+  1182                           ;main.c: 125:                 estadoComida = E_VACIO;
+  1183  0072  3003               	movlw	3
+  1184  0073  00FA               	movwf	??_comidaMEF
+  1185  0074  087A               	movf	??_comidaMEF,w
+  1186  0075  00F5               	movwf	_estadoComida
+  1187  0076                     l869:	
+  1188                           
+  1189                           ;main.c: 126:                 PORTEbits.RE2 = 1;
+  1190  0076  1509               	bsf	9,2	;volatile
+  1191  0077  28A4               	goto	l82
+  1192  0078                     l79:	
+  1193                           ;main.c: 129:         case E_VACIO:
+  1194                           
+  1195                           
+  1196                           ;main.c: 130:             if (!PORTAbits.RA2 && PORTAbits.RA3) {
+  1197  0078  1283               	bcf	3,5	;RP0=0, select bank0
+  1198  0079  1303               	bcf	3,6	;RP1=0, select bank0
+  1199  007A  1905               	btfsc	5,2	;volatile
+  1200  007B  287D               	goto	u161
+  1201  007C  287E               	goto	u160
+  1202  007D                     u161:	
+  1203  007D  28A4               	goto	l82
+  1204  007E                     u160:	
+  1205  007E                     l871:	
+  1206  007E  1D85               	btfss	5,3	;volatile
+  1207  007F  2881               	goto	u171
+  1208  0080  2882               	goto	u170
+  1209  0081                     u171:	
+  1210  0081  28A4               	goto	l82
+  1211  0082                     u170:	
+  1212  0082                     l873:	
+  1213                           
+  1214                           ;main.c: 131:                 estadoComida = E_MEDIO;
+  1215  0082  3004               	movlw	4
+  1216  0083  00FA               	movwf	??_comidaMEF
+  1217  0084  087A               	movf	??_comidaMEF,w
+  1218  0085  00F5               	movwf	_estadoComida
+  1219  0086                     l875:	
+  1220                           
+  1221                           ;main.c: 132:                 PORTEbits.RE2 = 0;
+  1222  0086  1109               	bcf	9,2	;volatile
+  1223  0087  28A4               	goto	l82
+  1224  0088                     l877:	
+  1225                           
+  1226                           ;main.c: 137:             comidaMEFInit();
+  1227  0088  120A  118A  2196  120A  118A  	fcall	_comidaMEFInit
+  1228                           
+  1229                           ;main.c: 138:     }
+  1230  008D  28A4               	goto	l82
+  1231  008E                     l879:	
+  1232  008E  0875               	movf	_estadoComida,w
+  1233  008F  00FA               	movwf	??_comidaMEF
+  1234  0090  01FB               	clrf	??_comidaMEF+1
+  1235                           
+  1236                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
-   893                           ; Switch size 1, requested type "simple"
-   894                           ; Number of cases is 1, Range of values is 0 to 0
-   895                           ; switch strategies available:
-   896                           ; Name         Instructions Cycles
-   897                           ; simple_byte            4     3 (average)
-   898                           ; direct_byte           11     8 (fixed)
-   899                           ; jumptable            260     6 (fixed)
-   900                           ;	Chosen strategy is simple_byte
-   901  0115  0825               	movf	??_platoMEF+1,w
-   902  0116  3A00               	xorlw	0	; case 0
-   903  0117  1903               	skipnz
-   904  0118  291A               	goto	l1415
-   905  0119  290A               	goto	l1313
-   906  011A                     l1415:	
-   907                           
-   908                           ; Switch size 1, requested type "simple"
-   909                           ; Number of cases is 3, Range of values is 0 to 2
-   910                           ; switch strategies available:
-   911                           ; Name         Instructions Cycles
-   912                           ; simple_byte           10     6 (average)
-   913                           ; direct_byte           17     8 (fixed)
-   914                           ; jumptable            260     6 (fixed)
-   915                           ;	Chosen strategy is simple_byte
-   916  011A  0824               	movf	??_platoMEF,w
-   917  011B  3A00               	xorlw	0	; case 0
-   918  011C  1903               	skipnz
-   919  011D  28E8               	goto	l51
-   920  011E  3A01               	xorlw	1	; case 1
-   921  011F  1903               	skipnz
-   922  0120  28F0               	goto	l54
-   923  0121  3A03               	xorlw	3	; case 2
-   924  0122  1903               	skipnz
-   925  0123  28FD               	goto	l1307
-   926  0124  290A               	goto	l1313
-   927  0125                     l60:	
-   928  0125  0008               	return
-   929  0126                     __end_of_platoMEF:	
-   930                           
-   931                           	psect	text3
-   932  017C                     __ptext3:	
-   933 ;; *************** function _servoHorario *****************
-   934 ;; Defined at:
-   935 ;;		line 186 in file "main.c"
-   936 ;; Parameters:    Size  Location     Type
-   937 ;;		None
-   938 ;; Auto vars:     Size  Location     Type
-   939 ;;		None
-   940 ;; Return value:  Size  Location     Type
-   941 ;;                  1    wreg      void 
-   942 ;; Registers used:
-   943 ;;		wreg
-   944 ;; Tracked objects:
-   945 ;;		On entry : 0/0
-   946 ;;		On exit  : 0/0
-   947 ;;		Unchanged: 0/0
-   948 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-   949 ;;      Params:         0       0       0       0       0
-   950 ;;      Locals:         0       0       0       0       0
-   951 ;;      Temps:          2       0       0       0       0
-   952 ;;      Totals:         2       0       0       0       0
-   953 ;;Total ram usage:        2 bytes
-   954 ;; Hardware stack levels used:    1
-   955 ;; Hardware stack levels required when called:    1
-   956 ;; This function calls:
-   957 ;;		Nothing
-   958 ;; This function is called by:
-   959 ;;		_platoMEF
-   960 ;; This function uses a non-reentrant model
-   961 ;;
-   962                           
-   963                           
-   964                           ;psect for function _servoHorario
-   965  017C                     _servoHorario:	
-   966  017C                     l1031:	
-   967                           ;incstack = 0
-   968                           ; Regs used in _servoHorario: [wreg]
-   969                           
-   970                           
-   971                           ;main.c: 188:     PORTBbits.RB1 = 1;
-   972  017C  1283               	bcf	3,5	;RP0=0, select bank0
-   973  017D  1303               	bcf	3,6	;RP1=0, select bank0
-   974  017E  1486               	bsf	6,1	;volatile
-   975  017F                     l1033:	
-   976                           
-   977                           ;main.c: 189:     _delay((unsigned long)((1390)*(4000000L/4000000.0)));
-   978  017F  30C6               	movlw	198
-   979  0180  00F9               	movwf	??_servoHorario
-   980  0181                     u477:	
-   981  0181  2982               	nop2
-   982  0182  2983               	nop2
-   983  0183  0BF9               	decfsz	??_servoHorario,f
-   984  0184  2981               	goto	u477
-   985  0185  2986               	nop2
-   986  0186  0000               	nop
-   987  0187                     l1035:	
-   988                           
-   989                           ;main.c: 190:     PORTBbits.RB1 = 0;
-   990  0187  1283               	bcf	3,5	;RP0=0, select bank0
-   991  0188  1303               	bcf	3,6	;RP1=0, select bank0
-   992  0189  1086               	bcf	6,1	;volatile
-   993                           
-   994                           ;main.c: 191:     _delay((unsigned long)((10)*(4000000L/4000.0)));
-   995  018A  300D               	movlw	13
-   996  018B  00FA               	movwf	??_servoHorario+1
-   997  018C  30FB               	movlw	251
-   998  018D  00F9               	movwf	??_servoHorario
-   999  018E                     u487:	
-  1000  018E  0BF9               	decfsz	??_servoHorario,f
-  1001  018F  298E               	goto	u487
-  1002  0190  0BFA               	decfsz	??_servoHorario+1,f
-  1003  0191  298E               	goto	u487
-  1004  0192  2993               	nop2
-  1005  0193                     l105:	
-  1006  0193  0008               	return
-  1007  0194                     __end_of_servoHorario:	
-  1008                           
-  1009                           	psect	text4
-  1010  01B2                     __ptext4:	
-  1011 ;; *************** function _platoMEFInit *****************
-  1012 ;; Defined at:
-  1013 ;;		line 59 in file "main.c"
-  1014 ;; Parameters:    Size  Location     Type
-  1015 ;;		None
-  1016 ;; Auto vars:     Size  Location     Type
-  1017 ;;		None
-  1018 ;; Return value:  Size  Location     Type
-  1019 ;;                  1    wreg      void 
-  1020 ;; Registers used:
-  1021 ;;		status,2
-  1022 ;; Tracked objects:
-  1023 ;;		On entry : 0/0
-  1024 ;;		On exit  : 0/0
-  1025 ;;		Unchanged: 0/0
-  1026 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1027 ;;      Params:         0       0       0       0       0
-  1028 ;;      Locals:         0       0       0       0       0
-  1029 ;;      Temps:          0       0       0       0       0
-  1030 ;;      Totals:         0       0       0       0       0
-  1031 ;;Total ram usage:        0 bytes
-  1032 ;; Hardware stack levels used:    1
-  1033 ;; Hardware stack levels required when called:    1
-  1034 ;; This function calls:
-  1035 ;;		Nothing
-  1036 ;; This function is called by:
-  1037 ;;		_main
-  1038 ;;		_platoMEF
-  1039 ;; This function uses a non-reentrant model
-  1040 ;;
-  1041                           
-  1042                           
-  1043                           ;psect for function _platoMEFInit
-  1044  01B2                     _platoMEFInit:	
-  1045  01B2                     l1027:	
-  1046                           ;incstack = 0
-  1047                           ; Regs used in _platoMEFInit: [status,2]
-  1048                           
-  1049                           
-  1050                           ;main.c: 60:     estadoPlato = E_REPOSO;
-  1051  01B2  01F6               	clrf	_estadoPlato
-  1052  01B3                     l47:	
-  1053  01B3  0008               	return
-  1054  01B4                     __end_of_platoMEFInit:	
-  1055                           
-  1056                           	psect	text5
-  1057  0020                     __ptext5:	
-  1058 ;; *************** function _comidaMEF *****************
-  1059 ;; Defined at:
-  1060 ;;		line 96 in file "main.c"
-  1061 ;; Parameters:    Size  Location     Type
-  1062 ;;		None
-  1063 ;; Auto vars:     Size  Location     Type
-  1064 ;;		None
-  1065 ;; Return value:  Size  Location     Type
-  1066 ;;                  1    wreg      void 
-  1067 ;; Registers used:
-  1068 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
-  1069 ;; Tracked objects:
-  1070 ;;		On entry : 0/0
-  1071 ;;		On exit  : 0/0
-  1072 ;;		Unchanged: 0/0
-  1073 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1074 ;;      Params:         0       0       0       0       0
-  1075 ;;      Locals:         0       0       0       0       0
-  1076 ;;      Temps:          2       0       0       0       0
-  1077 ;;      Totals:         2       0       0       0       0
-  1078 ;;Total ram usage:        2 bytes
-  1079 ;; Hardware stack levels used:    1
-  1080 ;; Hardware stack levels required when called:    2
-  1081 ;; This function calls:
-  1082 ;;		_comidaMEFInit
-  1083 ;; This function is called by:
-  1084 ;;		_main
-  1085 ;; This function uses a non-reentrant model
-  1086 ;;
-  1087                           
-  1088                           
-  1089                           ;psect for function _comidaMEF
-  1090  0020                     _comidaMEF:	
-  1091  0020                     l1115:	
-  1092                           ;incstack = 0
-  1093                           ; Regs used in _comidaMEF: [wreg-fsr0h+status,2+status,0+pclath+cstack]
-  1094                           
-  1095                           
-  1096                           ;main.c: 97:     switch (estadoComida) {
-  1097  0020  288B               	goto	l1161
-  1098  0021                     l67:	
-  1099                           ;main.c: 98:         case E_COMIDA_IN:
-  1100                           
-  1101                           
-  1102                           ;main.c: 99:             if (!PORTAbits.RA2 && !PORTAbits.RA3) {
-  1103  0021  1283               	bcf	3,5	;RP0=0, select bank0
-  1104  0022  1303               	bcf	3,6	;RP1=0, select bank0
-  1105  0023  1905               	btfsc	5,2	;volatile
-  1106  0024  2826               	goto	u251
-  1107  0025  2827               	goto	u250
-  1108  0026                     u251:	
-  1109  0026  282F               	goto	l1121
-  1110  0027                     u250:	
-  1111  0027                     l1117:	
-  1112  0027  1985               	btfsc	5,3	;volatile
-  1113  0028  282A               	goto	u261
-  1114  0029  282B               	goto	u260
-  1115  002A                     u261:	
-  1116  002A  282F               	goto	l1121
-  1117  002B                     u260:	
-  1118  002B                     l1119:	
-  1119                           
-  1120                           ;main.c: 100:                 estadoComida = E_LLENO;
-  1121  002B  3005               	movlw	5
-  1122  002C  00FA               	movwf	??_comidaMEF
-  1123  002D  087A               	movf	??_comidaMEF,w
-  1124  002E  00F5               	movwf	_estadoComida
-  1125  002F                     l1121:	
-  1126                           
-  1127                           ;main.c: 102:             if (!PORTAbits.RA2 && PORTAbits.RA3) {
-  1128  002F  1905               	btfsc	5,2	;volatile
-  1129  0030  2832               	goto	u271
-  1130  0031  2833               	goto	u270
-  1131  0032                     u271:	
-  1132  0032  283C               	goto	l1129
-  1133  0033                     u270:	
-  1134  0033                     l1123:	
-  1135  0033  1D85               	btfss	5,3	;volatile
-  1136  0034  2836               	goto	u281
-  1137  0035  2837               	goto	u280
-  1138  0036                     u281:	
-  1139  0036  283C               	goto	l1129
-  1140  0037                     u280:	
-  1141  0037                     l1125:	
-  1142                           
-  1143                           ;main.c: 103:                 estadoComida = E_MEDIO;
-  1144  0037  3004               	movlw	4
-  1145  0038  00FA               	movwf	??_comidaMEF
-  1146  0039  087A               	movf	??_comidaMEF,w
-  1147  003A  00F5               	movwf	_estadoComida
-  1148  003B                     l1127:	
-  1149                           
-  1150                           ;main.c: 104:                 PORTEbits.RE2 = 0;
-  1151  003B  1109               	bcf	9,2	;volatile
-  1152  003C                     l1129:	
-  1153                           
-  1154                           ;main.c: 106:             if (PORTAbits.RA2 && PORTAbits.RA3) {
-  1155  003C  1D05               	btfss	5,2	;volatile
-  1156  003D  283F               	goto	u291
-  1157  003E  2840               	goto	u290
-  1158  003F                     u291:	
-  1159  003F  28A1               	goto	l80
-  1160  0040                     u290:	
-  1161  0040                     l1131:	
-  1162  0040  1D85               	btfss	5,3	;volatile
-  1163  0041  2843               	goto	u301
-  1164  0042  2844               	goto	u300
-  1165  0043                     u301:	
-  1166  0043  28A1               	goto	l80
-  1167  0044                     u300:	
-  1168  0044                     l1133:	
-  1169                           
-  1170                           ;main.c: 107:                 estadoComida = E_VACIO;
-  1171  0044  3003               	movlw	3
-  1172  0045  00FA               	movwf	??_comidaMEF
-  1173  0046  087A               	movf	??_comidaMEF,w
-  1174  0047  00F5               	movwf	_estadoComida
-  1175  0048                     l1135:	
-  1176                           
-  1177                           ;main.c: 108:                 PORTEbits.RE2 = 1;
-  1178  0048  1509               	bsf	9,2	;volatile
-  1179  0049  28A1               	goto	l80
-  1180  004A                     l72:	
-  1181                           ;main.c: 111:         case E_LLENO:
-  1182                           
-  1183                           
-  1184                           ;main.c: 112:             if (!PORTAbits.RA2 && PORTAbits.RA3) {
-  1185  004A  1283               	bcf	3,5	;RP0=0, select bank0
-  1186  004B  1303               	bcf	3,6	;RP1=0, select bank0
-  1187  004C  1905               	btfsc	5,2	;volatile
-  1188  004D  284F               	goto	u311
-  1189  004E  2850               	goto	u310
-  1190  004F                     u311:	
-  1191  004F  28A1               	goto	l80
-  1192  0050                     u310:	
-  1193  0050                     l1137:	
-  1194  0050  1D85               	btfss	5,3	;volatile
-  1195  0051  2853               	goto	u321
-  1196  0052  2854               	goto	u320
-  1197  0053                     u321:	
-  1198  0053  28A1               	goto	l80
-  1199  0054                     u320:	
-  1200  0054                     l1139:	
-  1201                           
-  1202                           ;main.c: 113:                 estadoComida = E_MEDIO;
-  1203  0054  3004               	movlw	4
-  1204  0055  00FA               	movwf	??_comidaMEF
-  1205  0056  087A               	movf	??_comidaMEF,w
-  1206  0057  00F5               	movwf	_estadoComida
-  1207  0058  28A1               	goto	l80
-  1208  0059                     l74:	
-  1209                           ;main.c: 116:         case E_MEDIO:
-  1210                           
-  1211                           
-  1212                           ;main.c: 117:             if (!PORTAbits.RA2 && !PORTAbits.RA3) {
-  1213  0059  1283               	bcf	3,5	;RP0=0, select bank0
-  1214  005A  1303               	bcf	3,6	;RP1=0, select bank0
-  1215  005B  1905               	btfsc	5,2	;volatile
-  1216  005C  285E               	goto	u331
-  1217  005D  285F               	goto	u330
-  1218  005E                     u331:	
-  1219  005E  2867               	goto	l1145
-  1220  005F                     u330:	
-  1221  005F                     l1141:	
-  1222  005F  1985               	btfsc	5,3	;volatile
-  1223  0060  2862               	goto	u341
-  1224  0061  2863               	goto	u340
-  1225  0062                     u341:	
-  1226  0062  2867               	goto	l1145
-  1227  0063                     u340:	
-  1228  0063                     l1143:	
-  1229                           
-  1230                           ;main.c: 118:                 estadoComida = E_LLENO;
-  1231  0063  3005               	movlw	5
-  1232  0064  00FA               	movwf	??_comidaMEF
-  1233  0065  087A               	movf	??_comidaMEF,w
-  1234  0066  00F5               	movwf	_estadoComida
-  1235  0067                     l1145:	
-  1236                           
-  1237                           ;main.c: 121:             if (PORTAbits.RA2 && PORTAbits.RA3) {
-  1238  0067  1D05               	btfss	5,2	;volatile
-  1239  0068  286A               	goto	u351
-  1240  0069  286B               	goto	u350
-  1241  006A                     u351:	
-  1242  006A  28A1               	goto	l80
-  1243  006B                     u350:	
-  1244  006B                     l1147:	
-  1245  006B  1D85               	btfss	5,3	;volatile
-  1246  006C  286E               	goto	u361
-  1247  006D  286F               	goto	u360
-  1248  006E                     u361:	
-  1249  006E  28A1               	goto	l80
-  1250  006F                     u360:	
-  1251  006F                     l1149:	
-  1252                           
-  1253                           ;main.c: 122:                 estadoComida = E_VACIO;
-  1254  006F  3003               	movlw	3
-  1255  0070  00FA               	movwf	??_comidaMEF
-  1256  0071  087A               	movf	??_comidaMEF,w
-  1257  0072  00F5               	movwf	_estadoComida
-  1258  0073                     l1151:	
-  1259                           
-  1260                           ;main.c: 123:                 PORTEbits.RE2 = 1;
-  1261  0073  1509               	bsf	9,2	;volatile
-  1262  0074  28A1               	goto	l80
-  1263  0075                     l77:	
-  1264                           ;main.c: 126:         case E_VACIO:
-  1265                           
-  1266                           
-  1267                           ;main.c: 127:             if (!PORTAbits.RA2 && PORTAbits.RA3) {
-  1268  0075  1283               	bcf	3,5	;RP0=0, select bank0
-  1269  0076  1303               	bcf	3,6	;RP1=0, select bank0
-  1270  0077  1905               	btfsc	5,2	;volatile
-  1271  0078  287A               	goto	u371
-  1272  0079  287B               	goto	u370
-  1273  007A                     u371:	
-  1274  007A  28A1               	goto	l80
-  1275  007B                     u370:	
-  1276  007B                     l1153:	
-  1277  007B  1D85               	btfss	5,3	;volatile
-  1278  007C  287E               	goto	u381
-  1279  007D  287F               	goto	u380
-  1280  007E                     u381:	
-  1281  007E  28A1               	goto	l80
-  1282  007F                     u380:	
-  1283  007F                     l1155:	
-  1284                           
-  1285                           ;main.c: 128:                 estadoComida = E_MEDIO;
-  1286  007F  3004               	movlw	4
-  1287  0080  00FA               	movwf	??_comidaMEF
-  1288  0081  087A               	movf	??_comidaMEF,w
-  1289  0082  00F5               	movwf	_estadoComida
-  1290  0083                     l1157:	
-  1291                           
-  1292                           ;main.c: 129:                 PORTEbits.RE2 = 0;
-  1293  0083  1109               	bcf	9,2	;volatile
-  1294  0084  28A1               	goto	l80
-  1295  0085                     l1159:	
-  1296                           
-  1297                           ;main.c: 134:             comidaMEFInit();
-  1298  0085  120A  118A  21A8  120A  118A  	fcall	_comidaMEFInit
-  1299                           
-  1300                           ;main.c: 135:     }
-  1301  008A  28A1               	goto	l80
-  1302  008B                     l1161:	
-  1303  008B  0875               	movf	_estadoComida,w
-  1304  008C  00FA               	movwf	??_comidaMEF
-  1305  008D  01FB               	clrf	??_comidaMEF+1
-  1306                           
-  1307                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
-      +                          itches
-  1308                           ; Switch size 1, requested type "simple"
-  1309                           ; Number of cases is 1, Range of values is 0 to 0
-  1310                           ; switch strategies available:
-  1311                           ; Name         Instructions Cycles
-  1312                           ; simple_byte            4     3 (average)
-  1313                           ; direct_byte           11     8 (fixed)
-  1314                           ; jumptable            260     6 (fixed)
-  1315                           ;	Chosen strategy is simple_byte
-  1316  008E  087B               	movf	??_comidaMEF+1,w
-  1317  008F  3A00               	xorlw	0	; case 0
-  1318  0090  1903               	skipnz
-  1319  0091  2893               	goto	l1417
-  1320  0092  2885               	goto	l1159
-  1321  0093                     l1417:	
-  1322                           
-  1323                           ; Switch size 1, requested type "simple"
-  1324                           ; Number of cases is 4, Range of values is 3 to 6
-  1325                           ; switch strategies available:
-  1326                           ; Name         Instructions Cycles
-  1327                           ; simple_byte           13     7 (average)
-  1328                           ; direct_byte           23    11 (fixed)
-  1329                           ; jumptable            263     9 (fixed)
-  1330                           ;	Chosen strategy is simple_byte
-  1331  0093  087A               	movf	??_comidaMEF,w
-  1332  0094  3A03               	xorlw	3	; case 3
-  1333  0095  1903               	skipnz
-  1334  0096  2875               	goto	l77
-  1335  0097  3A07               	xorlw	7	; case 4
-  1336  0098  1903               	skipnz
-  1337  0099  2859               	goto	l74
-  1338  009A  3A01               	xorlw	1	; case 5
-  1339  009B  1903               	skipnz
-  1340  009C  284A               	goto	l72
-  1341  009D  3A03               	xorlw	3	; case 6
-  1342  009E  1903               	skipnz
-  1343  009F  2821               	goto	l67
-  1344  00A0  2885               	goto	l1159
-  1345  00A1                     l80:	
-  1346  00A1  0008               	return
-  1347  00A2                     __end_of_comidaMEF:	
-  1348                           
-  1349                           	psect	text6
-  1350  01A8                     __ptext6:	
-  1351 ;; *************** function _comidaMEFInit *****************
-  1352 ;; Defined at:
-  1353 ;;		line 92 in file "main.c"
-  1354 ;; Parameters:    Size  Location     Type
-  1355 ;;		None
-  1356 ;; Auto vars:     Size  Location     Type
-  1357 ;;		None
-  1358 ;; Return value:  Size  Location     Type
-  1359 ;;                  1    wreg      void 
-  1360 ;; Registers used:
-  1361 ;;		wreg
-  1362 ;; Tracked objects:
-  1363 ;;		On entry : 0/0
-  1364 ;;		On exit  : 0/0
-  1365 ;;		Unchanged: 0/0
-  1366 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1367 ;;      Params:         0       0       0       0       0
-  1368 ;;      Locals:         0       0       0       0       0
-  1369 ;;      Temps:          1       0       0       0       0
-  1370 ;;      Totals:         1       0       0       0       0
-  1371 ;;Total ram usage:        1 bytes
-  1372 ;; Hardware stack levels used:    1
-  1373 ;; Hardware stack levels required when called:    1
-  1374 ;; This function calls:
-  1375 ;;		Nothing
-  1376 ;; This function is called by:
-  1377 ;;		_main
-  1378 ;;		_comidaMEF
-  1379 ;; This function uses a non-reentrant model
-  1380 ;;
-  1381                           
+  1237                           ; Switch size 1, requested type "simple"
+  1238                           ; Number of cases is 1, Range of values is 0 to 0
+  1239                           ; switch strategies available:
+  1240                           ; Name         Instructions Cycles
+  1241                           ; simple_byte            4     3 (average)
+  1242                           ; direct_byte           11     8 (fixed)
+  1243                           ; jumptable            260     6 (fixed)
+  1244                           ;	Chosen strategy is simple_byte
+  1245  0091  087B               	movf	??_comidaMEF+1,w
+  1246  0092  3A00               	xorlw	0	; case 0
+  1247  0093  1903               	skipnz
+  1248  0094  2896               	goto	l1221
+  1249  0095  2888               	goto	l877
+  1250  0096                     l1221:	
+  1251                           
+  1252                           ; Switch size 1, requested type "simple"
+  1253                           ; Number of cases is 4, Range of values is 3 to 6
+  1254                           ; switch strategies available:
+  1255                           ; Name         Instructions Cycles
+  1256                           ; simple_byte           13     7 (average)
+  1257                           ; direct_byte           23    11 (fixed)
+  1258                           ; jumptable            263     9 (fixed)
+  1259                           ;	Chosen strategy is simple_byte
+  1260  0096  087A               	movf	??_comidaMEF,w
+  1261  0097  3A03               	xorlw	3	; case 3
+  1262  0098  1903               	skipnz
+  1263  0099  2878               	goto	l79
+  1264  009A  3A07               	xorlw	7	; case 4
+  1265  009B  1903               	skipnz
+  1266  009C  285B               	goto	l76
+  1267  009D  3A01               	xorlw	1	; case 5
+  1268  009E  1903               	skipnz
+  1269  009F  284B               	goto	l74
+  1270  00A0  3A03               	xorlw	3	; case 6
+  1271  00A1  1903               	skipnz
+  1272  00A2  2821               	goto	l69
+  1273  00A3  2888               	goto	l877
+  1274  00A4                     l82:	
+  1275  00A4  0008               	return
+  1276  00A5                     __end_of_comidaMEF:	
+  1277                           
+  1278                           	psect	text5
+  1279  0196                     __ptext5:	
+  1280 ;; *************** function _comidaMEFInit *****************
+  1281 ;; Defined at:
+  1282 ;;		line 92 in file "main.c"
+  1283 ;; Parameters:    Size  Location     Type
+  1284 ;;		None
+  1285 ;; Auto vars:     Size  Location     Type
+  1286 ;;		None
+  1287 ;; Return value:  Size  Location     Type
+  1288 ;;                  1    wreg      void 
+  1289 ;; Registers used:
+  1290 ;;		wreg
+  1291 ;; Tracked objects:
+  1292 ;;		On entry : 0/0
+  1293 ;;		On exit  : 0/0
+  1294 ;;		Unchanged: 0/0
+  1295 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1296 ;;      Params:         0       0       0       0       0
+  1297 ;;      Locals:         0       0       0       0       0
+  1298 ;;      Temps:          1       0       0       0       0
+  1299 ;;      Totals:         1       0       0       0       0
+  1300 ;;Total ram usage:        1 bytes
+  1301 ;; Hardware stack levels used:    1
+  1302 ;; Hardware stack levels required when called:    1
+  1303 ;; This function calls:
+  1304 ;;		Nothing
+  1305 ;; This function is called by:
+  1306 ;;		_main
+  1307 ;;		_comidaMEF
+  1308 ;; This function uses a non-reentrant model
+  1309 ;;
+  1310                           
+  1311                           
+  1312                           ;psect for function _comidaMEFInit
+  1313  0196                     _comidaMEFInit:	
+  1314  0196                     l753:	
+  1315                           ;incstack = 0
+  1316                           ; Regs used in _comidaMEFInit: [wreg]
+  1317                           
+  1318                           
+  1319                           ;main.c: 93:     estadoComida = E_COMIDA_IN;
+  1320  0196  3006               	movlw	6
+  1321  0197  00F9               	movwf	??_comidaMEFInit
+  1322  0198  0879               	movf	??_comidaMEFInit,w
+  1323  0199  00F5               	movwf	_estadoComida
+  1324  019A                     l65:	
+  1325  019A  0008               	return
+  1326  019B                     __end_of_comidaMEFInit:	
+  1327                           
+  1328                           	psect	text6
+  1329  0156                     __ptext6:	
+  1330 ;; *************** function _appInit *****************
+  1331 ;; Defined at:
+  1332 ;;		line 14 in file "user.c"
+  1333 ;; Parameters:    Size  Location     Type
+  1334 ;;		None
+  1335 ;; Auto vars:     Size  Location     Type
+  1336 ;;		None
+  1337 ;; Return value:  Size  Location     Type
+  1338 ;;                  1    wreg      void 
+  1339 ;; Registers used:
+  1340 ;;		wreg, status,2
+  1341 ;; Tracked objects:
+  1342 ;;		On entry : 0/0
+  1343 ;;		On exit  : 0/0
+  1344 ;;		Unchanged: 0/0
+  1345 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1346 ;;      Params:         0       0       0       0       0
+  1347 ;;      Locals:         0       0       0       0       0
+  1348 ;;      Temps:          2       0       0       0       0
+  1349 ;;      Totals:         2       0       0       0       0
+  1350 ;;Total ram usage:        2 bytes
+  1351 ;; Hardware stack levels used:    1
+  1352 ;; Hardware stack levels required when called:    1
+  1353 ;; This function calls:
+  1354 ;;		Nothing
+  1355 ;; This function is called by:
+  1356 ;;		_main
+  1357 ;; This function uses a non-reentrant model
+  1358 ;;
+  1359                           
+  1360                           
+  1361                           ;psect for function _appInit
+  1362  0156                     _appInit:	
+  1363  0156                     l763:	
+  1364                           ;incstack = 0
+  1365                           ; Regs used in _appInit: [wreg+status,2]
+  1366                           
+  1367                           
+  1368                           ;user.c: 16:     ANSEL = 0;
+  1369  0156  1683               	bsf	3,5	;RP0=1, select bank3
+  1370  0157  1703               	bsf	3,6	;RP1=1, select bank3
+  1371  0158  0188               	clrf	8	;volatile
+  1372                           
+  1373                           ;user.c: 17:     ANSELH = 0;
+  1374  0159  0189               	clrf	9	;volatile
+  1375  015A                     l765:	
+  1376                           
+  1377                           ;user.c: 18:     IOCB5 = 1;
+  1378  015A  1683               	bsf	3,5	;RP0=1, select bank1
+  1379  015B  1303               	bcf	3,6	;RP1=0, select bank1
+  1380  015C  1696               	bsf	22,5	;volatile
+  1381  015D                     l767:	
   1382                           
-  1383                           ;psect for function _comidaMEFInit
-  1384  01A8                     _comidaMEFInit:	
-  1385  01A8                     l1029:	
-  1386                           ;incstack = 0
-  1387                           ; Regs used in _comidaMEFInit: [wreg]
-  1388                           
-  1389                           
-  1390                           ;main.c: 93:     estadoComida = E_COMIDA_IN;
-  1391  01A8  3006               	movlw	6
-  1392  01A9  00F9               	movwf	??_comidaMEFInit
-  1393  01AA  0879               	movf	??_comidaMEFInit,w
-  1394  01AB  00F5               	movwf	_estadoComida
-  1395  01AC                     l63:	
-  1396  01AC  0008               	return
-  1397  01AD                     __end_of_comidaMEFInit:	
+  1383                           ;user.c: 20:     TRISBbits.TRISB0 = 1;
+  1384  015D  1406               	bsf	6,0	;volatile
+  1385  015E                     l769:	
+  1386                           
+  1387                           ;user.c: 21:     TRISDbits.TRISD7 = 1;
+  1388  015E  1788               	bsf	8,7	;volatile
+  1389  015F                     l771:	
+  1390                           
+  1391                           ;user.c: 22:     TRISDbits.TRISD6 = 1;
+  1392  015F  1708               	bsf	8,6	;volatile
+  1393  0160                     l773:	
+  1394                           
+  1395                           ;user.c: 23:     TRISDbits.TRISD5 = 1;
+  1396  0160  1688               	bsf	8,5	;volatile
+  1397  0161                     l775:	
   1398                           
-  1399                           	psect	text7
-  1400  0159                     __ptext7:	
-  1401 ;; *************** function _appInit *****************
-  1402 ;; Defined at:
-  1403 ;;		line 14 in file "user.c"
-  1404 ;; Parameters:    Size  Location     Type
-  1405 ;;		None
-  1406 ;; Auto vars:     Size  Location     Type
-  1407 ;;		None
-  1408 ;; Return value:  Size  Location     Type
-  1409 ;;                  1    wreg      void 
-  1410 ;; Registers used:
-  1411 ;;		wreg, status,2
-  1412 ;; Tracked objects:
-  1413 ;;		On entry : 0/0
-  1414 ;;		On exit  : 0/0
-  1415 ;;		Unchanged: 0/0
-  1416 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1417 ;;      Params:         0       0       0       0       0
-  1418 ;;      Locals:         0       0       0       0       0
-  1419 ;;      Temps:          2       0       0       0       0
-  1420 ;;      Totals:         2       0       0       0       0
-  1421 ;;Total ram usage:        2 bytes
-  1422 ;; Hardware stack levels used:    1
-  1423 ;; Hardware stack levels required when called:    1
-  1424 ;; This function calls:
-  1425 ;;		Nothing
-  1426 ;; This function is called by:
-  1427 ;;		_main
-  1428 ;; This function uses a non-reentrant model
-  1429 ;;
+  1399                           ;user.c: 25:     TRISAbits.TRISA3 = 1;
+  1400  0161  1585               	bsf	5,3	;volatile
+  1401  0162                     l777:	
+  1402                           
+  1403                           ;user.c: 26:     TRISAbits.TRISA2 = 1;
+  1404  0162  1505               	bsf	5,2	;volatile
+  1405  0163                     l779:	
+  1406                           
+  1407                           ;user.c: 27:     TRISAbits.TRISA4 = 1;
+  1408  0163  1605               	bsf	5,4	;volatile
+  1409  0164                     l781:	
+  1410                           
+  1411                           ;user.c: 29:     TRISDbits.TRISD2 = 1;
+  1412  0164  1508               	bsf	8,2	;volatile
+  1413  0165                     l783:	
+  1414                           
+  1415                           ;user.c: 31:     TRISBbits.TRISB2 = 1;
+  1416  0165  1506               	bsf	6,2	;volatile
+  1417  0166                     l785:	
+  1418                           
+  1419                           ;user.c: 33:     TRISEbits.TRISE2 = 0;
+  1420  0166  1109               	bcf	9,2	;volatile
+  1421  0167                     l787:	
+  1422                           
+  1423                           ;user.c: 34:     TRISEbits.TRISE1 = 0;
+  1424  0167  1089               	bcf	9,1	;volatile
+  1425  0168                     l789:	
+  1426                           
+  1427                           ;user.c: 35:     TRISEbits.TRISE0 = 0;
+  1428  0168  1009               	bcf	9,0	;volatile
+  1429  0169                     l791:	
   1430                           
-  1431                           
-  1432                           ;psect for function _appInit
-  1433  0159                     _appInit:	
-  1434  0159                     l1039:	
-  1435                           ;incstack = 0
-  1436                           ; Regs used in _appInit: [wreg+status,2]
-  1437                           
+  1431                           ;user.c: 36:     TRISAbits.TRISA5 = 0;
+  1432  0169  1285               	bcf	5,5	;volatile
+  1433  016A                     l793:	
+  1434                           
+  1435                           ;user.c: 38:     TRISBbits.TRISB1 = 0;
+  1436  016A  1086               	bcf	6,1	;volatile
+  1437  016B                     l795:	
   1438                           
-  1439                           ;user.c: 16:     ANSEL = 0;
-  1440  0159  1683               	bsf	3,5	;RP0=1, select bank3
-  1441  015A  1703               	bsf	3,6	;RP1=1, select bank3
-  1442  015B  0188               	clrf	8	;volatile
-  1443                           
-  1444                           ;user.c: 17:     ANSELH = 0;
-  1445  015C  0189               	clrf	9	;volatile
-  1446  015D                     l1041:	
-  1447                           
-  1448                           ;user.c: 18:     IOCB5 = 1;
-  1449  015D  1683               	bsf	3,5	;RP0=1, select bank1
-  1450  015E  1303               	bcf	3,6	;RP1=0, select bank1
-  1451  015F  1696               	bsf	22,5	;volatile
-  1452  0160                     l1043:	
-  1453                           
-  1454                           ;user.c: 20:     TRISBbits.TRISB0 = 1;
-  1455  0160  1406               	bsf	6,0	;volatile
-  1456  0161                     l1045:	
-  1457                           
-  1458                           ;user.c: 21:     TRISDbits.TRISD7 = 1;
-  1459  0161  1788               	bsf	8,7	;volatile
-  1460  0162                     l1047:	
+  1439                           ;user.c: 40:     _delay((unsigned long)((100)*(4000000L/4000.0)));
+  1440  016B  3082               	movlw	130
+  1441  016C  00FA               	movwf	??_appInit+1
+  1442  016D  30DD               	movlw	221
+  1443  016E  00F9               	movwf	??_appInit
+  1444  016F                     u287:	
+  1445  016F  0BF9               	decfsz	??_appInit,f
+  1446  0170  296F               	goto	u287
+  1447  0171  0BFA               	decfsz	??_appInit+1,f
+  1448  0172  296F               	goto	u287
+  1449  0173  2974               	nop2
+  1450  0174                     l797:	
+  1451                           
+  1452                           ;user.c: 43:     TMR0IE = 1;
+  1453  0174  168B               	bsf	11,5	;volatile
+  1454  0175                     l799:	
+  1455                           
+  1456                           ;user.c: 45:     GIE = 1;
+  1457  0175  178B               	bsf	11,7	;volatile
+  1458  0176                     l133:	
+  1459  0176  0008               	return
+  1460  0177                     __end_of_appInit:	
   1461                           
-  1462                           ;user.c: 22:     TRISDbits.TRISD6 = 1;
-  1463  0162  1708               	bsf	8,6	;volatile
-  1464  0163                     l1049:	
-  1465                           
-  1466                           ;user.c: 23:     TRISDbits.TRISD5 = 1;
-  1467  0163  1688               	bsf	8,5	;volatile
-  1468  0164                     l1051:	
-  1469                           
-  1470                           ;user.c: 25:     TRISAbits.TRISA3 = 1;
-  1471  0164  1585               	bsf	5,3	;volatile
-  1472  0165                     l1053:	
-  1473                           
-  1474                           ;user.c: 26:     TRISAbits.TRISA2 = 1;
-  1475  0165  1505               	bsf	5,2	;volatile
-  1476  0166                     l1055:	
-  1477                           
-  1478                           ;user.c: 27:     TRISAbits.TRISA4 = 1;
-  1479  0166  1605               	bsf	5,4	;volatile
-  1480  0167                     l1057:	
-  1481                           
-  1482                           ;user.c: 29:     TRISDbits.TRISD0 = 1;
-  1483  0167  1408               	bsf	8,0	;volatile
-  1484  0168                     l1059:	
-  1485                           
-  1486                           ;user.c: 30:     TRISDbits.TRISD1 = 1;
-  1487  0168  1488               	bsf	8,1	;volatile
-  1488  0169                     l1061:	
-  1489                           
-  1490                           ;user.c: 31:     TRISDbits.TRISD2 = 1;
-  1491  0169  1508               	bsf	8,2	;volatile
-  1492  016A                     l1063:	
+  1462                           	psect	text7
+  1463  00A5                     __ptext7:	
+  1464 ;; *************** function _aguaMEF *****************
+  1465 ;; Defined at:
+  1466 ;;		line 145 in file "main.c"
+  1467 ;; Parameters:    Size  Location     Type
+  1468 ;;		None
+  1469 ;; Auto vars:     Size  Location     Type
+  1470 ;;		None
+  1471 ;; Return value:  Size  Location     Type
+  1472 ;;                  1    wreg      void 
+  1473 ;; Registers used:
+  1474 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1475 ;; Tracked objects:
+  1476 ;;		On entry : 0/0
+  1477 ;;		On exit  : 0/0
+  1478 ;;		Unchanged: 0/0
+  1479 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1480 ;;      Params:         0       0       0       0       0
+  1481 ;;      Locals:         0       0       0       0       0
+  1482 ;;      Temps:          2       0       0       0       0
+  1483 ;;      Totals:         2       0       0       0       0
+  1484 ;;Total ram usage:        2 bytes
+  1485 ;; Hardware stack levels used:    1
+  1486 ;; Hardware stack levels required when called:    2
+  1487 ;; This function calls:
+  1488 ;;		_aguaMEFInit
+  1489 ;; This function is called by:
+  1490 ;;		_main
+  1491 ;; This function uses a non-reentrant model
+  1492 ;;
   1493                           
-  1494                           ;user.c: 33:     TRISBbits.TRISB2 = 1;
-  1495  016A  1506               	bsf	6,2	;volatile
-  1496  016B                     l1065:	
-  1497                           
-  1498                           ;user.c: 35:     TRISEbits.TRISE2 = 0;
-  1499  016B  1109               	bcf	9,2	;volatile
-  1500  016C                     l1067:	
+  1494                           
+  1495                           ;psect for function _aguaMEF
+  1496  00A5                     _aguaMEF:	
+  1497  00A5                     l885:	
+  1498                           ;incstack = 0
+  1499                           ; Regs used in _aguaMEF: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1500                           
   1501                           
-  1502                           ;user.c: 36:     TRISEbits.TRISE1 = 0;
-  1503  016C  1089               	bcf	9,1	;volatile
-  1504  016D                     l1069:	
-  1505                           
-  1506                           ;user.c: 37:     TRISEbits.TRISE0 = 0;
-  1507  016D  1009               	bcf	9,0	;volatile
-  1508  016E                     l1071:	
-  1509                           
-  1510                           ;user.c: 38:     TRISAbits.TRISA5 = 0;
-  1511  016E  1285               	bcf	5,5	;volatile
-  1512  016F                     l1073:	
-  1513                           
-  1514                           ;user.c: 40:     TRISBbits.TRISB1 = 0;
-  1515  016F  1086               	bcf	6,1	;volatile
-  1516  0170                     l1075:	
-  1517                           
-  1518                           ;user.c: 42:     _delay((unsigned long)((100)*(4000000L/4000.0)));
-  1519  0170  3082               	movlw	130
-  1520  0171  00FA               	movwf	??_appInit+1
-  1521  0172  30DD               	movlw	221
-  1522  0173  00F9               	movwf	??_appInit
-  1523  0174                     u497:	
-  1524  0174  0BF9               	decfsz	??_appInit,f
-  1525  0175  2974               	goto	u497
-  1526  0176  0BFA               	decfsz	??_appInit+1,f
-  1527  0177  2974               	goto	u497
-  1528  0178  2979               	nop2
-  1529  0179                     l1077:	
-  1530                           
-  1531                           ;user.c: 45:     TMR0IE = 1;
-  1532  0179  168B               	bsf	11,5	;volatile
-  1533  017A                     l1079:	
-  1534                           
-  1535                           ;user.c: 47:     GIE = 1;
-  1536  017A  178B               	bsf	11,7	;volatile
-  1537  017B                     l131:	
-  1538  017B  0008               	return
-  1539  017C                     __end_of_appInit:	
-  1540                           
-  1541                           	psect	text8
-  1542  00A2                     __ptext8:	
-  1543 ;; *************** function _aguaMEF *****************
-  1544 ;; Defined at:
-  1545 ;;		line 142 in file "main.c"
-  1546 ;; Parameters:    Size  Location     Type
-  1547 ;;		None
-  1548 ;; Auto vars:     Size  Location     Type
-  1549 ;;		None
-  1550 ;; Return value:  Size  Location     Type
-  1551 ;;                  1    wreg      void 
-  1552 ;; Registers used:
-  1553 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
-  1554 ;; Tracked objects:
-  1555 ;;		On entry : 0/0
-  1556 ;;		On exit  : 0/0
-  1557 ;;		Unchanged: 0/0
-  1558 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1559 ;;      Params:         0       0       0       0       0
-  1560 ;;      Locals:         0       0       0       0       0
-  1561 ;;      Temps:          2       0       0       0       0
-  1562 ;;      Totals:         2       0       0       0       0
-  1563 ;;Total ram usage:        2 bytes
-  1564 ;; Hardware stack levels used:    1
-  1565 ;; Hardware stack levels required when called:    2
-  1566 ;; This function calls:
-  1567 ;;		_aguaMEFInit
-  1568 ;; This function is called by:
-  1569 ;;		_main
-  1570 ;; This function uses a non-reentrant model
-  1571 ;;
-  1572                           
-  1573                           
-  1574                           ;psect for function _aguaMEF
-  1575  00A2                     _aguaMEF:	
-  1576  00A2                     l1167:	
-  1577                           ;incstack = 0
-  1578                           ; Regs used in _aguaMEF: [wreg-fsr0h+status,2+status,0+pclath+cstack]
-  1579                           
-  1580                           
-  1581                           ;main.c: 143:     switch (estadoAgua) {
-  1582  00A2  28D3               	goto	l1187
-  1583  00A3                     l87:	
-  1584                           ;main.c: 144:         case E_AGUA_IN:
-  1585                           
-  1586                           
-  1587                           ;main.c: 145:             if (!PORTDbits.RD2) {
-  1588  00A3  1283               	bcf	3,5	;RP0=0, select bank0
-  1589  00A4  1303               	bcf	3,6	;RP1=0, select bank0
-  1590  00A5  1908               	btfsc	8,2	;volatile
-  1591  00A6  28A8               	goto	u391
-  1592  00A7  28A9               	goto	u390
-  1593  00A8                     u391:	
-  1594  00A8  28AF               	goto	l1173
-  1595  00A9                     u390:	
-  1596  00A9                     l1169:	
+  1502                           ;main.c: 146:     switch (estadoAgua) {
+  1503  00A5  28D6               	goto	l905
+  1504  00A6                     l89:	
+  1505                           ;main.c: 147:         case E_AGUA_IN:
+  1506                           
+  1507                           
+  1508                           ;main.c: 148:             if (!PORTDbits.RD2) {
+  1509  00A6  1283               	bcf	3,5	;RP0=0, select bank0
+  1510  00A7  1303               	bcf	3,6	;RP1=0, select bank0
+  1511  00A8  1908               	btfsc	8,2	;volatile
+  1512  00A9  28AB               	goto	u181
+  1513  00AA  28AC               	goto	u180
+  1514  00AB                     u181:	
+  1515  00AB  28B2               	goto	l891
+  1516  00AC                     u180:	
+  1517  00AC                     l887:	
+  1518                           
+  1519                           ;main.c: 149:                 estadoAgua = E_AGUA_LLENO;
+  1520  00AC  3008               	movlw	8
+  1521  00AD  00FA               	movwf	??_aguaMEF
+  1522  00AE  087A               	movf	??_aguaMEF,w
+  1523  00AF  00F4               	movwf	_estadoAgua
+  1524  00B0                     l889:	
+  1525                           
+  1526                           ;main.c: 150:                 PORTAbits.RA5 = 0;
+  1527  00B0  1285               	bcf	5,5	;volatile
+  1528                           
+  1529                           ;main.c: 151:             } else {
+  1530  00B1  28E9               	goto	l98
+  1531  00B2                     l891:	
+  1532                           
+  1533                           ;main.c: 152:                 estadoAgua = E_AGUA_VACIO;
+  1534  00B2  3009               	movlw	9
+  1535  00B3  00FA               	movwf	??_aguaMEF
+  1536  00B4  087A               	movf	??_aguaMEF,w
+  1537  00B5  00F4               	movwf	_estadoAgua
+  1538  00B6                     l893:	
+  1539                           
+  1540                           ;main.c: 153:                 PORTAbits.RA5 = 1;
+  1541  00B6  1685               	bsf	5,5	;volatile
+  1542  00B7  28E9               	goto	l98
+  1543  00B8                     l93:	
+  1544                           ;main.c: 156:         case E_AGUA_LLENO:
+  1545                           
+  1546                           
+  1547                           ;main.c: 157:             if (PORTDbits.RD2) {
+  1548  00B8  1283               	bcf	3,5	;RP0=0, select bank0
+  1549  00B9  1303               	bcf	3,6	;RP1=0, select bank0
+  1550  00BA  1D08               	btfss	8,2	;volatile
+  1551  00BB  28BD               	goto	u191
+  1552  00BC  28BE               	goto	u190
+  1553  00BD                     u191:	
+  1554  00BD  28E9               	goto	l98
+  1555  00BE                     u190:	
+  1556  00BE                     l895:	
+  1557                           
+  1558                           ;main.c: 158:                 estadoAgua = E_AGUA_VACIO;
+  1559  00BE  3009               	movlw	9
+  1560  00BF  00FA               	movwf	??_aguaMEF
+  1561  00C0  087A               	movf	??_aguaMEF,w
+  1562  00C1  00F4               	movwf	_estadoAgua
+  1563  00C2                     l897:	
+  1564                           
+  1565                           ;main.c: 159:                 PORTAbits.RA5 = 1;
+  1566  00C2  1685               	bsf	5,5	;volatile
+  1567  00C3  28E9               	goto	l98
+  1568  00C4                     l95:	
+  1569                           ;main.c: 162:         case E_AGUA_VACIO:
+  1570                           
+  1571                           
+  1572                           ;main.c: 163:             if (!PORTDbits.RD2) {
+  1573  00C4  1283               	bcf	3,5	;RP0=0, select bank0
+  1574  00C5  1303               	bcf	3,6	;RP1=0, select bank0
+  1575  00C6  1908               	btfsc	8,2	;volatile
+  1576  00C7  28C9               	goto	u201
+  1577  00C8  28CA               	goto	u200
+  1578  00C9                     u201:	
+  1579  00C9  28E9               	goto	l98
+  1580  00CA                     u200:	
+  1581  00CA                     l899:	
+  1582                           
+  1583                           ;main.c: 164:                 estadoAgua = E_AGUA_LLENO;
+  1584  00CA  3008               	movlw	8
+  1585  00CB  00FA               	movwf	??_aguaMEF
+  1586  00CC  087A               	movf	??_aguaMEF,w
+  1587  00CD  00F4               	movwf	_estadoAgua
+  1588  00CE                     l901:	
+  1589                           
+  1590                           ;main.c: 165:                 PORTAbits.RA5 = 0;
+  1591  00CE  1285               	bcf	5,5	;volatile
+  1592  00CF  28E9               	goto	l98
+  1593  00D0                     l903:	
+  1594                           
+  1595                           ;main.c: 169:             aguaMEFInit();
+  1596  00D0  120A  118A  219B  120A  118A  	fcall	_aguaMEFInit
   1597                           
-  1598                           ;main.c: 146:                 estadoAgua = E_AGUA_LLENO;
-  1599  00A9  3008               	movlw	8
-  1600  00AA  00FA               	movwf	??_aguaMEF
-  1601  00AB  087A               	movf	??_aguaMEF,w
-  1602  00AC  00F4               	movwf	_estadoAgua
-  1603  00AD                     l1171:	
+  1598                           ;main.c: 170:     }
+  1599  00D5  28E9               	goto	l98
+  1600  00D6                     l905:	
+  1601  00D6  0874               	movf	_estadoAgua,w
+  1602  00D7  00FA               	movwf	??_aguaMEF
+  1603  00D8  01FB               	clrf	??_aguaMEF+1
   1604                           
-  1605                           ;main.c: 147:                 PORTAbits.RA5 = 0;
-  1606  00AD  1285               	bcf	5,5	;volatile
-  1607                           
-  1608                           ;main.c: 148:             }
-  1609  00AE  28E6               	goto	l96
-  1610  00AF                     l1173:	
-  1611                           
-  1612                           ;main.c: 150:                 estadoAgua = E_AGUA_VACIO;
-  1613  00AF  3009               	movlw	9
-  1614  00B0  00FA               	movwf	??_aguaMEF
-  1615  00B1  087A               	movf	??_aguaMEF,w
-  1616  00B2  00F4               	movwf	_estadoAgua
-  1617  00B3                     l1175:	
-  1618                           
-  1619                           ;main.c: 151:                 PORTAbits.RA5 = 1;
-  1620  00B3  1685               	bsf	5,5	;volatile
-  1621  00B4  28E6               	goto	l96
-  1622  00B5                     l91:	
-  1623                           ;main.c: 154:         case E_AGUA_LLENO:
-  1624                           
-  1625                           
-  1626                           ;main.c: 155:             if(PORTDbits.RD2){
-  1627  00B5  1283               	bcf	3,5	;RP0=0, select bank0
-  1628  00B6  1303               	bcf	3,6	;RP1=0, select bank0
-  1629  00B7  1D08               	btfss	8,2	;volatile
-  1630  00B8  28BA               	goto	u401
-  1631  00B9  28BB               	goto	u400
-  1632  00BA                     u401:	
-  1633  00BA  28E6               	goto	l96
-  1634  00BB                     u400:	
-  1635  00BB                     l1177:	
-  1636                           
-  1637                           ;main.c: 156:                 estadoAgua = E_AGUA_VACIO;
-  1638  00BB  3009               	movlw	9
-  1639  00BC  00FA               	movwf	??_aguaMEF
-  1640  00BD  087A               	movf	??_aguaMEF,w
-  1641  00BE  00F4               	movwf	_estadoAgua
-  1642  00BF                     l1179:	
-  1643                           
-  1644                           ;main.c: 157:                 PORTAbits.RA5 = 1;
-  1645  00BF  1685               	bsf	5,5	;volatile
-  1646  00C0  28E6               	goto	l96
-  1647  00C1                     l93:	
-  1648                           ;main.c: 160:         case E_AGUA_VACIO:
-  1649                           
-  1650                           
-  1651                           ;main.c: 161:             if(!PORTDbits.RD2){
-  1652  00C1  1283               	bcf	3,5	;RP0=0, select bank0
-  1653  00C2  1303               	bcf	3,6	;RP1=0, select bank0
-  1654  00C3  1908               	btfsc	8,2	;volatile
-  1655  00C4  28C6               	goto	u411
-  1656  00C5  28C7               	goto	u410
-  1657  00C6                     u411:	
-  1658  00C6  28E6               	goto	l96
-  1659  00C7                     u410:	
-  1660  00C7                     l1181:	
-  1661                           
-  1662                           ;main.c: 162:                 estadoAgua = E_AGUA_LLENO;
-  1663  00C7  3008               	movlw	8
-  1664  00C8  00FA               	movwf	??_aguaMEF
-  1665  00C9  087A               	movf	??_aguaMEF,w
-  1666  00CA  00F4               	movwf	_estadoAgua
-  1667  00CB                     l1183:	
-  1668                           
-  1669                           ;main.c: 163:                 PORTAbits.RA5 = 0;
-  1670  00CB  1285               	bcf	5,5	;volatile
-  1671  00CC  28E6               	goto	l96
-  1672  00CD                     l1185:	
-  1673                           
-  1674                           ;main.c: 167:             aguaMEFInit();
-  1675  00CD  120A  118A  21AD  120A  118A  	fcall	_aguaMEFInit
-  1676                           
-  1677                           ;main.c: 168:     }
-  1678  00D2  28E6               	goto	l96
-  1679  00D3                     l1187:	
-  1680  00D3  0874               	movf	_estadoAgua,w
-  1681  00D4  00FA               	movwf	??_aguaMEF
-  1682  00D5  01FB               	clrf	??_aguaMEF+1
-  1683                           
-  1684                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
+  1605                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 1 sub-sw
       +                          itches
-  1685                           ; Switch size 1, requested type "simple"
-  1686                           ; Number of cases is 1, Range of values is 0 to 0
-  1687                           ; switch strategies available:
-  1688                           ; Name         Instructions Cycles
-  1689                           ; simple_byte            4     3 (average)
-  1690                           ; direct_byte           11     8 (fixed)
-  1691                           ; jumptable            260     6 (fixed)
-  1692                           ;	Chosen strategy is simple_byte
-  1693  00D6  087B               	movf	??_aguaMEF+1,w
-  1694  00D7  3A00               	xorlw	0	; case 0
-  1695  00D8  1903               	skipnz
-  1696  00D9  28DB               	goto	l1419
-  1697  00DA  28CD               	goto	l1185
-  1698  00DB                     l1419:	
-  1699                           
-  1700                           ; Switch size 1, requested type "simple"
-  1701                           ; Number of cases is 3, Range of values is 7 to 9
-  1702                           ; switch strategies available:
-  1703                           ; Name         Instructions Cycles
-  1704                           ; simple_byte           10     6 (average)
-  1705                           ; direct_byte           20    11 (fixed)
-  1706                           ; jumptable            263     9 (fixed)
-  1707                           ;	Chosen strategy is simple_byte
-  1708  00DB  087A               	movf	??_aguaMEF,w
-  1709  00DC  3A07               	xorlw	7	; case 7
-  1710  00DD  1903               	skipnz
-  1711  00DE  28A3               	goto	l87
-  1712  00DF  3A0F               	xorlw	15	; case 8
-  1713  00E0  1903               	skipnz
-  1714  00E1  28B5               	goto	l91
-  1715  00E2  3A01               	xorlw	1	; case 9
-  1716  00E3  1903               	skipnz
-  1717  00E4  28C1               	goto	l93
-  1718  00E5  28CD               	goto	l1185
-  1719  00E6                     l96:	
-  1720  00E6  0008               	return
-  1721  00E7                     __end_of_aguaMEF:	
-  1722                           
-  1723                           	psect	text9
-  1724  01AD                     __ptext9:	
-  1725 ;; *************** function _aguaMEFInit *****************
-  1726 ;; Defined at:
-  1727 ;;		line 138 in file "main.c"
-  1728 ;; Parameters:    Size  Location     Type
-  1729 ;;		None
-  1730 ;; Auto vars:     Size  Location     Type
-  1731 ;;		None
-  1732 ;; Return value:  Size  Location     Type
-  1733 ;;                  1    wreg      void 
-  1734 ;; Registers used:
-  1735 ;;		wreg
-  1736 ;; Tracked objects:
-  1737 ;;		On entry : 0/0
-  1738 ;;		On exit  : 0/0
-  1739 ;;		Unchanged: 0/0
-  1740 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1741 ;;      Params:         0       0       0       0       0
-  1742 ;;      Locals:         0       0       0       0       0
-  1743 ;;      Temps:          1       0       0       0       0
-  1744 ;;      Totals:         1       0       0       0       0
-  1745 ;;Total ram usage:        1 bytes
-  1746 ;; Hardware stack levels used:    1
-  1747 ;; Hardware stack levels required when called:    1
-  1748 ;; This function calls:
-  1749 ;;		Nothing
-  1750 ;; This function is called by:
-  1751 ;;		_aguaMEF
-  1752 ;; This function uses a non-reentrant model
-  1753 ;;
-  1754                           
-  1755                           
-  1756                           ;psect for function _aguaMEFInit
-  1757  01AD                     _aguaMEFInit:	
-  1758  01AD                     l1037:	
-  1759                           ;incstack = 0
-  1760                           ; Regs used in _aguaMEFInit: [wreg]
-  1761                           
-  1762                           
-  1763                           ;main.c: 139:     estadoComida = E_AGUA_IN;
-  1764  01AD  3007               	movlw	7
-  1765  01AE  00F9               	movwf	??_aguaMEFInit
-  1766  01AF  0879               	movf	??_aguaMEFInit,w
-  1767  01B0  00F5               	movwf	_estadoComida
-  1768  01B1                     l83:	
-  1769  01B1  0008               	return
-  1770  01B2                     __end_of_aguaMEFInit:	
-  1771                           
-  1772                           	psect	text10
-  1773  01A1                     __ptext10:	
-  1774 ;; *************** function _isr *****************
-  1775 ;; Defined at:
-  1776 ;;		line 30 in file "interrupts.c"
-  1777 ;; Parameters:    Size  Location     Type
-  1778 ;;		None
-  1779 ;; Auto vars:     Size  Location     Type
-  1780 ;;		None
-  1781 ;; Return value:  Size  Location     Type
-  1782 ;;                  1    wreg      void 
-  1783 ;; Registers used:
-  1784 ;;		None
-  1785 ;; Tracked objects:
-  1786 ;;		On entry : 0/0
-  1787 ;;		On exit  : 0/0
-  1788 ;;		Unchanged: 0/0
-  1789 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
-  1790 ;;      Params:         0       0       0       0       0
-  1791 ;;      Locals:         0       0       0       0       0
-  1792 ;;      Temps:          2       0       0       0       0
-  1793 ;;      Totals:         2       0       0       0       0
-  1794 ;;Total ram usage:        2 bytes
-  1795 ;; Hardware stack levels used:    1
-  1796 ;; This function calls:
-  1797 ;;		Nothing
-  1798 ;; This function is called by:
-  1799 ;;		Interrupt level 1
-  1800 ;; This function uses a non-reentrant model
-  1801 ;;
-  1802                           
-  1803                           
-  1804                           ;psect for function _isr
-  1805  01A1                     _isr:	
-  1806  01A1                     i1l157:	
-  1807  01A1  0878               	movf	??_isr+1,w
-  1808  01A2  008A               	movwf	10
-  1809  01A3  0E77               	swapf	??_isr^(0+4294967168),w
-  1810  01A4  0083               	movwf	3
-  1811  01A5  0EFE               	swapf	btemp,f
-  1812  01A6  0E7E               	swapf	btemp,w
-  1813  01A7  0009               	retfie
-  1814  01A8                     __end_of_isr:	
-  1815  007E                     btemp	set	126	;btemp
-  1816  007E                     wtemp0	set	126
-  1817                           
-  1818                           	psect	intentry
-  1819  0004                     __pintentry:	
-  1820                           ;incstack = 0
-  1821                           ; Regs used in _isr: []
-  1822                           
-  1823  0004                     interrupt_function:	
-  1824  007E                     saved_w	set	btemp
-  1825  0004  00FE               	movwf	btemp
-  1826  0005  0E03               	swapf	3,w
-  1827  0006  00F7               	movwf	??_isr
-  1828  0007  080A               	movf	10,w
-  1829  0008  00F8               	movwf	??_isr+1
-  1830  0009  120A  118A  29A1   	ljmp	_isr
+  1606                           ; Switch size 1, requested type "simple"
+  1607                           ; Number of cases is 1, Range of values is 0 to 0
+  1608                           ; switch strategies available:
+  1609                           ; Name         Instructions Cycles
+  1610                           ; simple_byte            4     3 (average)
+  1611                           ; direct_byte           11     8 (fixed)
+  1612                           ; jumptable            260     6 (fixed)
+  1613                           ;	Chosen strategy is simple_byte
+  1614  00D9  087B               	movf	??_aguaMEF+1,w
+  1615  00DA  3A00               	xorlw	0	; case 0
+  1616  00DB  1903               	skipnz
+  1617  00DC  28DE               	goto	l1223
+  1618  00DD  28D0               	goto	l903
+  1619  00DE                     l1223:	
+  1620                           
+  1621                           ; Switch size 1, requested type "simple"
+  1622                           ; Number of cases is 3, Range of values is 7 to 9
+  1623                           ; switch strategies available:
+  1624                           ; Name         Instructions Cycles
+  1625                           ; simple_byte           10     6 (average)
+  1626                           ; direct_byte           20    11 (fixed)
+  1627                           ; jumptable            263     9 (fixed)
+  1628                           ;	Chosen strategy is simple_byte
+  1629  00DE  087A               	movf	??_aguaMEF,w
+  1630  00DF  3A07               	xorlw	7	; case 7
+  1631  00E0  1903               	skipnz
+  1632  00E1  28A6               	goto	l89
+  1633  00E2  3A0F               	xorlw	15	; case 8
+  1634  00E3  1903               	skipnz
+  1635  00E4  28B8               	goto	l93
+  1636  00E5  3A01               	xorlw	1	; case 9
+  1637  00E6  1903               	skipnz
+  1638  00E7  28C4               	goto	l95
+  1639  00E8  28D0               	goto	l903
+  1640  00E9                     l98:	
+  1641  00E9  0008               	return
+  1642  00EA                     __end_of_aguaMEF:	
+  1643                           
+  1644                           	psect	text8
+  1645  019B                     __ptext8:	
+  1646 ;; *************** function _aguaMEFInit *****************
+  1647 ;; Defined at:
+  1648 ;;		line 141 in file "main.c"
+  1649 ;; Parameters:    Size  Location     Type
+  1650 ;;		None
+  1651 ;; Auto vars:     Size  Location     Type
+  1652 ;;		None
+  1653 ;; Return value:  Size  Location     Type
+  1654 ;;                  1    wreg      void 
+  1655 ;; Registers used:
+  1656 ;;		wreg
+  1657 ;; Tracked objects:
+  1658 ;;		On entry : 0/0
+  1659 ;;		On exit  : 0/0
+  1660 ;;		Unchanged: 0/0
+  1661 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1662 ;;      Params:         0       0       0       0       0
+  1663 ;;      Locals:         0       0       0       0       0
+  1664 ;;      Temps:          1       0       0       0       0
+  1665 ;;      Totals:         1       0       0       0       0
+  1666 ;;Total ram usage:        1 bytes
+  1667 ;; Hardware stack levels used:    1
+  1668 ;; Hardware stack levels required when called:    1
+  1669 ;; This function calls:
+  1670 ;;		Nothing
+  1671 ;; This function is called by:
+  1672 ;;		_main
+  1673 ;;		_aguaMEF
+  1674 ;; This function uses a non-reentrant model
+  1675 ;;
+  1676                           
+  1677                           
+  1678                           ;psect for function _aguaMEFInit
+  1679  019B                     _aguaMEFInit:	
+  1680  019B                     l755:	
+  1681                           ;incstack = 0
+  1682                           ; Regs used in _aguaMEFInit: [wreg]
+  1683                           
+  1684                           
+  1685                           ;main.c: 142:     estadoAgua = E_AGUA_IN;
+  1686  019B  3007               	movlw	7
+  1687  019C  00F9               	movwf	??_aguaMEFInit
+  1688  019D  0879               	movf	??_aguaMEFInit,w
+  1689  019E  00F4               	movwf	_estadoAgua
+  1690  019F                     l85:	
+  1691  019F  0008               	return
+  1692  01A0                     __end_of_aguaMEFInit:	
+  1693                           
+  1694                           	psect	text9
+  1695  018F                     __ptext9:	
+  1696 ;; *************** function _isr *****************
+  1697 ;; Defined at:
+  1698 ;;		line 30 in file "interrupts.c"
+  1699 ;; Parameters:    Size  Location     Type
+  1700 ;;		None
+  1701 ;; Auto vars:     Size  Location     Type
+  1702 ;;		None
+  1703 ;; Return value:  Size  Location     Type
+  1704 ;;                  1    wreg      void 
+  1705 ;; Registers used:
+  1706 ;;		None
+  1707 ;; Tracked objects:
+  1708 ;;		On entry : 0/0
+  1709 ;;		On exit  : 0/0
+  1710 ;;		Unchanged: 0/0
+  1711 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1712 ;;      Params:         0       0       0       0       0
+  1713 ;;      Locals:         0       0       0       0       0
+  1714 ;;      Temps:          2       0       0       0       0
+  1715 ;;      Totals:         2       0       0       0       0
+  1716 ;;Total ram usage:        2 bytes
+  1717 ;; Hardware stack levels used:    1
+  1718 ;; This function calls:
+  1719 ;;		Nothing
+  1720 ;; This function is called by:
+  1721 ;;		Interrupt level 1
+  1722 ;; This function uses a non-reentrant model
+  1723 ;;
+  1724                           
+  1725                           
+  1726                           ;psect for function _isr
+  1727  018F                     _isr:	
+  1728  018F                     i1l159:	
+  1729  018F  0878               	movf	??_isr+1,w
+  1730  0190  008A               	movwf	10
+  1731  0191  0E77               	swapf	??_isr^(0+4294967168),w
+  1732  0192  0083               	movwf	3
+  1733  0193  0EFE               	swapf	btemp,f
+  1734  0194  0E7E               	swapf	btemp,w
+  1735  0195  0009               	retfie
+  1736  0196                     __end_of_isr:	
+  1737  007E                     btemp	set	126	;btemp
+  1738  007E                     wtemp0	set	126
+  1739                           
+  1740                           	psect	intentry
+  1741  0004                     __pintentry:	
+  1742                           ;incstack = 0
+  1743                           ; Regs used in _isr: []
+  1744                           
+  1745  0004                     interrupt_function:	
+  1746  007E                     saved_w	set	btemp
+  1747  0004  00FE               	movwf	btemp
+  1748  0005  0E03               	swapf	3,w
+  1749  0006  00F7               	movwf	??_isr
+  1750  0007  080A               	movf	10,w
+  1751  0008  00F8               	movwf	??_isr+1
+  1752  0009  120A  118A  298F   	ljmp	_isr
 
 
 Data Sizes:
@@ -1882,7 +1804,6 @@ Critical Paths under _isr in COMMON
 Critical Paths under _main in BANK0
 
     _main->_platoMEF
-    _main->_tickRead
 
 Critical Paths under _isr in BANK0
 
@@ -1917,18 +1838,14 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (0) _main                                                 0     0      0      34
+ (0) _main                                                 0     0      0       0
                             _aguaMEF
+                        _aguaMEFInit
                             _appInit
                           _comidaMEF
                       _comidaMEFInit
                            _platoMEF
                        _platoMEFInit
-                           _tickRead
- ---------------------------------------------------------------------------------
- (1) _tickRead                                             4     2      2      34
-                                              2 COMMON     2     0      2
-                                              0 BANK0      2     2      0
  ---------------------------------------------------------------------------------
  (1) _platoMEF                                             2     2      0       0
                                               0 BANK0      2     2      0
@@ -1954,7 +1871,7 @@ Call Graph Tables:
                                               3 COMMON     2     2      0
                         _aguaMEFInit
  ---------------------------------------------------------------------------------
- (2) _aguaMEFInit                                          1     1      0       0
+ (1) _aguaMEFInit                                          1     1      0       0
                                               2 COMMON     1     1      0
  ---------------------------------------------------------------------------------
  Estimated maximum stack depth 2
@@ -1972,6 +1889,7 @@ Call Graph Tables:
  _main (ROOT)
    _aguaMEF
      _aguaMEFInit
+   _aguaMEFInit
    _appInit
    _comidaMEF
      _comidaMEFInit
@@ -1980,7 +1898,6 @@ Call Graph Tables:
      _platoMEFInit
      _servoHorario
    _platoMEFInit
-   _tickRead
 
  _isr (ROOT)
 
@@ -2013,96 +1930,93 @@ DATA                 0      0      12      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Tue Nov 01 15:04:08 2022
+Symbol Table                                                                                   Tue Nov 01 15:49:50 2022
 
-            __CFG_CP$OFF 0000                       l51 00E8                       l60 0125  
-                     l54 00F0                       l63 01AC                       l47 01B3  
-                     l72 004A                       l80 00A1                       l74 0059  
-                     l83 01B1                       l91 00B5                       l67 0021  
-                     l93 00C1                       l77 0075                       l87 00A3  
-                     l96 00E6                      l105 0193                      l131 017B  
-                    l149 01A0                      _GIE 005F                      u300 0044  
-                    u301 0043                      u310 0050                      u311 004F  
-                    u400 00BB                      u320 0054                      u401 00BA  
-                    u321 0053                      u410 00C7                      u330 005F  
-                    u250 0027                      u411 00C6                      u331 005E  
-                    u251 0026                      u340 0063                      u260 002B  
-                    u341 0062                      u261 002A                      u350 006B  
-                    u270 0033                      u430 00EC                      u351 006A  
-                    u271 0032                      u431 00EB                      u360 006F  
-                    u280 0037                      u440 00F4                      u361 006E  
-                    u281 0036                      u441 00F3                      u370 007B  
-                    u290 0040                      u450 0108             __CFG_CPD$OFF 0000  
-                    u371 007A                      u291 003F                      u451 0107  
-                    u380 007F                      u381 007E                      u390 00A9  
-                    u391 00A8                      u477 0181                      u487 018E  
-                    _PSA 040B                      u497 0174                      _isr 01A1  
-           __CFG_IESO$ON 0000             __CFG_FOSC$XT 0000          ??_comidaMEFInit 0079  
-           __CFG_LVP$OFF 0000                     l1031 017C                     l1041 015D  
-                   l1121 002F                     l1033 017F                     l1051 0164  
-                   l1043 0160                     l1131 0040                     l1123 0033  
-                   l1115 0020                     l1027 01B2                     l1035 0187  
-                   l1037 01AD                     l1061 0169                     l1053 0165  
-                   l1045 0161                     l1029 01A8                     l1141 005F  
-                   l1133 0044                     l1125 0037                     l1117 0027  
-                   l1301 00F5                     l1071 016E                     l1063 016A  
-                   l1055 0166                     l1047 0162                     l1039 0159  
-                   l1151 0073                     l1143 0063                     l1135 0048  
-                   l1127 003B                     l1119 002B                     l1311 0108  
-                   l1303 00F7                     l1073 016F                     l1065 016B  
-                   l1057 0167                     l1049 0163                     l1153 007B  
-                   l1145 0067                     l1137 0050                     l1129 003C  
-                   l1161 008B                     l1313 010A                     l1305 00FB  
-                   l1321 0126                     l1171 00AD                     l1075 0170  
-                   l1067 016C                     l1059 0168                     l1155 007F  
-                   l1147 006B                     l1139 0054                     l1307 00FD  
-                   l1315 0110                     l1331 0131                     l1323 012B  
-                   l1181 00C7                     l1173 00AF                     l1077 0179  
-                   l1069 016D                     l1157 0083                     l1149 006F  
-                   l1309 0102                     l1341 0150                     l1333 0136  
-                   l1325 012E                     l1183 00CB                     l1175 00B3  
-                   l1167 00A2                     l1079 017A                     l1159 0085  
-                   l1415 011A                     l1335 013B                     l1327 012F  
-                   l1185 00CD                     l1177 00BB                     l1169 00A9  
-                   l1417 0093                     l1337 0146                     l1329 0130  
-                   l1419 00DB                     l1179 00BF                     l1187 00D3  
-                   l1291 019B                     l1339 014B                     l1295 00E7  
-                   l1287 0194                     l1297 00EC                     l1289 0195  
-                   l1299 00F4                     ?_isr 0077                     _T0CS 040D  
-           __CFG_WRT$OFF 0000            __CFG_FCMEN$ON 0000                     _main 0126  
+            __CFG_CP$OFF 0000                       l53 00EB                       l62 0128  
+                     l56 00F3                       l65 019A                       l49 01A1  
+                     l74 004B                       l82 00A4                       l76 005B  
+                     l85 019F                       l93 00B8                       l69 0021  
+                     l95 00C4                       l79 0078                       l89 00A6  
+                     l98 00E9                       u40 0027                       u41 0026  
+                     u50 002B                       u51 002A                       u60 0034  
+                     u61 0033                       u70 0038                       u71 0037  
+                     u80 0041                       u81 0040                       u90 0045  
+                     u91 0044                      l107 018E                      l133 0176  
+                    l901 00CE                      l903 00D0                      l831 002B  
+                    l751 01A0                      l905 00D6                      l753 0196  
+                    l841 003C                      l833 002F                      l761 0182  
+                    l755 019B                      l771 015F                      l763 0156  
+                    l851 0051                      l843 003D                      l835 0030  
+                    l827 0020                      l781 0164                      l773 0160  
+                    l765 015A                      l861 0069                      l853 0055  
+                    l845 0041                      l837 0034                      l829 0027  
+                    l757 0177                      l791 0169                      l783 0165  
+                    l775 0161                      l767 015D                      l871 007E  
+                    l863 006A                      l855 0059                      l847 0045  
+                    l839 0038                      l759 017A                      l793 016A  
+                    l785 0166                      l777 0162                      l769 015E  
+                    l873 0082                      l865 006E                      l857 0061  
+                    l849 0049                      l891 00B2                      l795 016B  
+                    l787 0167                      l779 0163                      l875 0086  
+                    l867 0072                      l859 0065                      l893 00B6  
+                    l885 00A5                      l797 0174                      l789 0168  
+                    l877 0088                      l869 0076                      l895 00BE  
+                    l887 00AC                      l799 0175                      l879 008E  
+                    l897 00C2                      l889 00B0                      l899 00CA  
+                    _GIE 005F                      u100 0051                      u101 0050  
+                    u110 0055                      u111 0054                      u200 00CA  
+                    u120 0061                      u201 00C9                      u121 0060  
+                    u130 0065                      u131 0064                      u140 006E  
+                    u141 006D                      u150 0072                      u230 00EF  
+                    u151 0071                      u231 00EE                      u160 007E  
+                    u240 00F7                      u161 007D                      u241 00F6  
+                    u170 0082                      u250 010B                      u171 0081  
+                    u251 010A                      u180 00AC                      u181 00AB  
+                    u190 00BE                      u191 00BD             __CFG_CPD$OFF 0000  
+                    u267 017C                      u277 0189                      u287 016F  
+                    _PSA 040B                      _isr 018F             __CFG_IESO$ON 0000  
+           __CFG_FOSC$XT 0000          ??_comidaMEFInit 0079             __CFG_LVP$OFF 0000  
+                   l1111 00EA                     l1121 00FE                     l1113 00EF  
+                   l1123 0100                     l1115 00F7                     l1131 0113  
+                   l1221 0096                     l1125 0105                     l1117 00F8  
+                   l1141 0131                     l1223 00DE                     l1127 010B  
+                   l1119 00FA                     l1151 013E                     l1143 0132  
+                   l1129 010D                     l1153 0143                     l1145 0133  
+                   l1137 0129                     l1219 011D                     l1155 0148  
+                   l1147 0134                     l1139 012E                     l1157 014D  
+                   l1149 0139                     ?_isr 0077                     _T0CS 040D  
+           __CFG_WRT$OFF 0000            __CFG_FCMEN$ON 0000                     _main 0129  
                    btemp 007E                     start 000C     __size_of_aguaMEFInit 0005  
           __CFG_MCLRE$ON 0000                    ??_isr 0077                    ?_main 0077  
           __CFG_WDTE$OFF 0000                    _ANSEL 0188                    _IOCB5 04B5  
-                  i1l157 01A1          __end_of_aguaMEF 00E7          __end_of_appInit 017C  
+                  i1l159 018F          __end_of_aguaMEF 00EA          __end_of_appInit 0177  
          __CFG_BOREN$OFF 0000                    pclath 000A                    status 0003  
-                  wtemp0 007E          __initialization 000F             __end_of_main 0159  
+                  wtemp0 007E          __initialization 000F             __end_of_main 0156  
                  ??_main 007C                   _ANSELH 0189                   _TMR0IE 005D  
          __CFG_PWRTE$OFF 0000                ??_aguaMEF 007A                ??_appInit 0079  
-       __end_of_platoMEF 0126         __end_of_tickRead 01A1                   saved_w 007E  
-__end_of__initialization 001C           __pcstackCOMMON 0077            ?_platoMEFInit 0077  
-         _OPTION_REGbits 0081       __size_of_comidaMEF 0082               __pbssBANK0 0020  
-             _tHeartbeat 0020               __pmaintext 0126               __pintentry 0004  
-         ??_platoMEFInit 0079              tickRead@aux 0024    __end_of_comidaMEFInit 01AD  
-          ??_aguaMEFInit 0079                ?_platoMEF 0077                ?_tickRead 0079  
-      __end_of_comidaMEF 00A2               _estadoAgua 0074                  _aguaMEF 00A2  
-                _appInit 0159                  __ptext1 0194                  __ptext2 00E7  
-                __ptext3 017C                  __ptext4 01B2                  __ptext5 0020  
-                __ptext6 01A8                  __ptext7 0159                  __ptext8 00A2  
-                __ptext9 01AD             __size_of_isr 0007     end_of_initialization 001C  
-          ?_servoHorario 0077               ??_platoMEF 0024               ??_tickRead 007B  
-    __end_of_aguaMEFInit 01B2                _PORTAbits 0005                _PORTBbits 0006  
-              _PORTDbits 0008                _PORTEbits 0009                _TRISAbits 0085  
-              _TRISBbits 0086                _TRISDbits 0088                _TRISEbits 0089  
-         ??_servoHorario 0079     __end_of_platoMEFInit 01B4      start_initialization 000F  
-            __end_of_isr 01A8              _aguaMEFInit 01AD             _estadoComida 0075  
-            __pbssCOMMON 0070                ___latbits 0002            __pcstackBANK0 0024  
-      __size_of_platoMEF 003F        __size_of_tickRead 000D                _comidaMEF 0020  
-               ?_aguaMEF 0077                 ?_appInit 0077     __end_of_servoHorario 0194  
-  __size_of_platoMEFInit 0002        interrupt_function 0004                _tickColor 0022  
-             ?_comidaMEF 0077   __size_of_comidaMEFInit 0005             _platoMEFInit 01B2  
-            _estadoPlato 0076         __size_of_aguaMEF 0045         __size_of_appInit 0023  
-        mideColorAzul@t1 0072                 __ptext10 01A1        __CFG_BOR4V$BOR21V 0000  
-          _comidaMEFInit 01A8            __size_of_main 0033             ?_aguaMEFInit 0077  
-               _platoMEF 00E7                 _tickRead 0194              ??_comidaMEF 007A  
-  __size_of_servoHorario 0018              _tickCounter 0070           ?_comidaMEFInit 0077  
-               intlevel1 0000             _servoHorario 017C  
+       __end_of_platoMEF 0129                   saved_w 007E  __end_of__initialization 001C  
+         __pcstackCOMMON 0077            ?_platoMEFInit 0077           _OPTION_REGbits 0081  
+     __size_of_comidaMEF 0085               __pbssBANK0 0020               _tHeartbeat 0020  
+             __pmaintext 0129               __pintentry 0004           ??_platoMEFInit 0079  
+  __end_of_comidaMEFInit 019B            ??_aguaMEFInit 0079                ?_platoMEF 0077  
+      __end_of_comidaMEF 00A5               _estadoAgua 0074                  _aguaMEF 00A5  
+                _appInit 0156                  __ptext1 00EA                  __ptext2 0177  
+                __ptext3 01A0                  __ptext4 0020                  __ptext5 0196  
+                __ptext6 0156                  __ptext7 00A5                  __ptext8 019B  
+                __ptext9 018F             __size_of_isr 0007     end_of_initialization 001C  
+          ?_servoHorario 0077               ??_platoMEF 0024      __end_of_aguaMEFInit 01A0  
+              _PORTAbits 0005                _PORTBbits 0006                _PORTDbits 0008  
+              _PORTEbits 0009                _TRISAbits 0085                _TRISBbits 0086  
+              _TRISDbits 0088                _TRISEbits 0089           ??_servoHorario 0079  
+   __end_of_platoMEFInit 01A2      start_initialization 000F              __end_of_isr 0196  
+            _aguaMEFInit 019B             _estadoComida 0075              __pbssCOMMON 0070  
+              ___latbits 0002            __pcstackBANK0 0024        __size_of_platoMEF 003F  
+              _comidaMEF 0020                 ?_aguaMEF 0077                 ?_appInit 0077  
+   __end_of_servoHorario 018F    __size_of_platoMEFInit 0002        interrupt_function 0004  
+              _tickColor 0022               ?_comidaMEF 0077   __size_of_comidaMEFInit 0005  
+           _platoMEFInit 01A0              _estadoPlato 0076         __size_of_aguaMEF 0045  
+       __size_of_appInit 0021          mideColorAzul@t1 0072        __CFG_BOR4V$BOR21V 0000  
+          _comidaMEFInit 0196            __size_of_main 002D             ?_aguaMEFInit 0077  
+               _platoMEF 00EA              ??_comidaMEF 007A    __size_of_servoHorario 0018  
+            _tickCounter 0070           ?_comidaMEFInit 0077                 intlevel1 0000  
+           _servoHorario 0177  

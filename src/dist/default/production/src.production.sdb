@@ -36,11 +36,11 @@ E_AGUA_VACIO 9
 [v _comidaMEFInit comidaMEFInit `(v  1 e 1 0 ]
 "96
 [v _comidaMEF comidaMEF `(v  1 e 1 0 ]
-"138
+"141
 [v _aguaMEFInit aguaMEFInit `(v  1 e 1 0 ]
-"142
+"145
 [v _aguaMEF aguaMEF `(v  1 e 1 0 ]
-"186
+"188
 [v _servoHorario servoHorario `(v  1 e 1 0 ]
 "62 Z:\proyecto-6to-2022\src\tick.c
 [v _tickRead tickRead `(ui  1 e 2 0 ]
@@ -90,7 +90,7 @@ E_AGUA_VACIO 9
 "427
 [u S42 . 1 `S37 1 . 1 0 ]
 [v _PORTEbits PORTEbits `VES42  1 e 1 @9 ]
-[s S312 . 1 `uc 1 PS 1 0 :3:0 
+[s S315 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -98,13 +98,13 @@ E_AGUA_VACIO 9
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "1366
-[s S319 . 1 `uc 1 PS0 1 0 :1:0 
+[s S322 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S323 . 1 `S312 1 . 1 0 `S319 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES323  1 e 1 @129 ]
-[s S243 . 1 `uc 1 TRISA0 1 0 :1:0 
+[u S326 . 1 `S315 1 . 1 0 `S322 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES326  1 e 1 @129 ]
+[s S246 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -114,9 +114,9 @@ E_AGUA_VACIO 9
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "1433
-[u S252 . 1 `S243 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES252  1 e 1 @133 ]
-[s S201 . 1 `uc 1 TRISB0 1 0 :1:0 
+[u S255 . 1 `S246 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES255  1 e 1 @133 ]
+[s S204 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -126,9 +126,9 @@ E_AGUA_VACIO 9
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "1495
-[u S210 . 1 `S201 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES210  1 e 1 @134 ]
-[s S222 . 1 `uc 1 TRISD0 1 0 :1:0 
+[u S213 . 1 `S204 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES213  1 e 1 @134 ]
+[s S225 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -138,16 +138,16 @@ E_AGUA_VACIO 9
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "1619
-[u S231 . 1 `S222 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES231  1 e 1 @136 ]
-[s S264 . 1 `uc 1 TRISE0 1 0 :1:0 
+[u S234 . 1 `S225 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES234  1 e 1 @136 ]
+[s S267 . 1 `uc 1 TRISE0 1 0 :1:0 
 `uc 1 TRISE1 1 0 :1:1 
 `uc 1 TRISE2 1 0 :1:2 
 `uc 1 TRISE3 1 0 :1:3 
 ]
 "1677
-[u S269 . 1 `S264 1 . 1 0 ]
-[v _TRISEbits TRISEbits `VES269  1 e 1 @137 ]
+[u S272 . 1 `S267 1 . 1 0 ]
+[v _TRISEbits TRISEbits `VES272  1 e 1 @137 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
@@ -168,7 +168,6 @@ E_AGUA_VACIO 9
 [v _estadoAgua estadoAgua `E1356  1 e 1 0 ]
 "23
 [v _tickColor tickColor `ui  1 e 2 0 ]
-[v _tHeartbeat tHeartbeat `ui  1 e 2 0 ]
 "26 Z:\proyecto-6to-2022\src\tick.c
 [v _tickCounter tickCounter `VEui  1 e 2 0 ]
 "41 Z:\proyecto-6to-2022\src\main.c
@@ -176,22 +175,15 @@ E_AGUA_VACIO 9
 {
 "55
 } 0
-"62 Z:\proyecto-6to-2022\src\tick.c
-[v _tickRead tickRead `(ui  1 e 2 0 ]
-{
 "63
-[v tickRead@aux aux `ui  1 a 2 0 ]
-"68
-} 0
-"63 Z:\proyecto-6to-2022\src\main.c
 [v _platoMEF platoMEF `(v  1 e 1 0 ]
 {
 "90
 } 0
-"186
+"188
 [v _servoHorario servoHorario `(v  1 e 1 0 ]
 {
-"192
+"194
 } 0
 "59
 [v _platoMEFInit platoMEFInit `(v  1 e 1 0 ]
@@ -201,7 +193,7 @@ E_AGUA_VACIO 9
 "96
 [v _comidaMEF comidaMEF `(v  1 e 1 0 ]
 {
-"136
+"139
 } 0
 "92
 [v _comidaMEFInit comidaMEFInit `(v  1 e 1 0 ]
@@ -211,17 +203,17 @@ E_AGUA_VACIO 9
 "14 Z:\proyecto-6to-2022\src\user.c
 [v _appInit appInit `(v  1 e 1 0 ]
 {
-"48
+"46
 } 0
-"142 Z:\proyecto-6to-2022\src\main.c
+"145 Z:\proyecto-6to-2022\src\main.c
 [v _aguaMEF aguaMEF `(v  1 e 1 0 ]
 {
-"169
+"171
 } 0
-"138
+"141
 [v _aguaMEFInit aguaMEFInit `(v  1 e 1 0 ]
 {
-"140
+"143
 } 0
 "30 Z:\proyecto-6to-2022\src\interrupts.c
 [v _isr isr `II(v  1 e 1 0 ]

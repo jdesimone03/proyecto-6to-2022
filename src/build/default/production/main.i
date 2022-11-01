@@ -2814,7 +2814,7 @@ void main(void) {
     PORTEbits.RE2 = 0;
     platoMEFInit();
     comidaMEFInit();
-    tHeartbeat = tickRead();
+    aguaMEFInit();
     while (1) {
         platoMEF();
         comidaMEF();
@@ -2866,6 +2866,7 @@ void comidaMEF(void) {
         case E_COMIDA_IN:
             if (!PORTAbits.RA2 && !PORTAbits.RA3) {
                 estadoComida = E_LLENO;
+                PORTEbits.RE2 = 0;
             }
             if (!PORTAbits.RA2 && PORTAbits.RA3) {
                 estadoComida = E_MEDIO;
@@ -2879,11 +2880,13 @@ void comidaMEF(void) {
         case E_LLENO:
             if (!PORTAbits.RA2 && PORTAbits.RA3) {
                 estadoComida = E_MEDIO;
+                PORTEbits.RE2 = 0;
             }
             break;
         case E_MEDIO:
             if (!PORTAbits.RA2 && !PORTAbits.RA3) {
                 estadoComida = E_LLENO;
+                PORTEbits.RE2 = 0;
             }
 
             if (PORTAbits.RA2 && PORTAbits.RA3) {
@@ -2904,7 +2907,7 @@ void comidaMEF(void) {
 }
 
 void aguaMEFInit(void) {
-    estadoComida = E_AGUA_IN;
+    estadoAgua = E_AGUA_IN;
 }
 
 void aguaMEF(void) {
@@ -2913,20 +2916,19 @@ void aguaMEF(void) {
             if (!PORTDbits.RD2) {
                 estadoAgua = E_AGUA_LLENO;
                 PORTAbits.RA5 = 0;
-            }
-            else {
+            } else {
                 estadoAgua = E_AGUA_VACIO;
                 PORTAbits.RA5 = 1;
             }
             break;
         case E_AGUA_LLENO:
-            if(PORTDbits.RD2){
+            if (PORTDbits.RD2) {
                 estadoAgua = E_AGUA_VACIO;
                 PORTAbits.RA5 = 1;
             }
             break;
         case E_AGUA_VACIO:
-            if(!PORTDbits.RD2){
+            if (!PORTDbits.RD2) {
                 estadoAgua = E_AGUA_LLENO;
                 PORTAbits.RA5 = 0;
             }
