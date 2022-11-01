@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Tue Nov 01 15:49:50 2022
+                                                                                               Tue Nov 01 15:59:33 2022
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	16F887
@@ -1521,10 +1521,10 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1505                           ;main.c: 147:         case E_AGUA_IN:
   1506                           
   1507                           
-  1508                           ;main.c: 148:             if (!PORTDbits.RD2) {
+  1508                           ;main.c: 148:             if (PORTDbits.RD2) {
   1509  00A6  1283               	bcf	3,5	;RP0=0, select bank0
   1510  00A7  1303               	bcf	3,6	;RP1=0, select bank0
-  1511  00A8  1908               	btfsc	8,2	;volatile
+  1511  00A8  1D08               	btfss	8,2	;volatile
   1512  00A9  28AB               	goto	u181
   1513  00AA  28AC               	goto	u180
   1514  00AB                     u181:	
@@ -1560,10 +1560,10 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1544                           ;main.c: 156:         case E_AGUA_LLENO:
   1545                           
   1546                           
-  1547                           ;main.c: 157:             if (PORTDbits.RD2) {
+  1547                           ;main.c: 157:             if (!PORTDbits.RD2) {
   1548  00B8  1283               	bcf	3,5	;RP0=0, select bank0
   1549  00B9  1303               	bcf	3,6	;RP1=0, select bank0
-  1550  00BA  1D08               	btfss	8,2	;volatile
+  1550  00BA  1908               	btfsc	8,2	;volatile
   1551  00BB  28BD               	goto	u191
   1552  00BC  28BE               	goto	u190
   1553  00BD                     u191:	
@@ -1585,10 +1585,10 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
   1569                           ;main.c: 162:         case E_AGUA_VACIO:
   1570                           
   1571                           
-  1572                           ;main.c: 163:             if (!PORTDbits.RD2) {
+  1572                           ;main.c: 163:             if (PORTDbits.RD2) {
   1573  00C4  1283               	bcf	3,5	;RP0=0, select bank0
   1574  00C5  1303               	bcf	3,6	;RP1=0, select bank0
-  1575  00C6  1908               	btfsc	8,2	;volatile
+  1575  00C6  1D08               	btfss	8,2	;volatile
   1576  00C7  28C9               	goto	u201
   1577  00C8  28CA               	goto	u200
   1578  00C9                     u201:	
@@ -1930,7 +1930,7 @@ DATA                 0      0      12      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Tue Nov 01 15:49:50 2022
+Symbol Table                                                                                   Tue Nov 01 15:59:33 2022
 
             __CFG_CP$OFF 0000                       l53 00EB                       l62 0128  
                      l56 00F3                       l65 019A                       l49 01A1  

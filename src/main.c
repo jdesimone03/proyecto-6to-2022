@@ -145,7 +145,7 @@ void aguaMEFInit(void) {
 void aguaMEF(void) {
     switch (estadoAgua) {
         case E_AGUA_IN: // Estado Inicial
-            if (!CAP_AGUA) {
+            if (CAP_AGUA) {
                 estadoAgua = E_AGUA_LLENO;
                 PIN_LED_AZ = 0;
             } else {
@@ -154,13 +154,13 @@ void aguaMEF(void) {
             }
             break;
         case E_AGUA_LLENO:
-            if (CAP_AGUA) {
+            if (!CAP_AGUA) {
                 estadoAgua = E_AGUA_VACIO;
                 PIN_LED_AZ = 1;
             }
             break;
         case E_AGUA_VACIO:
-            if (!CAP_AGUA) {
+            if (CAP_AGUA) {
                 estadoAgua = E_AGUA_LLENO;
                 PIN_LED_AZ = 0;
             }

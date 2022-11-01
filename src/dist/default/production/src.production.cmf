@@ -28,7 +28,7 @@ cstackBANK0 BANK0 1 24 24 2 1
 intentry CODE 0 4 4 8 2
 bssBANK0 BANK0 1 20 20 4 1
 bssCOMMON COMMON 1 70 70 7 1
-$C:\Users\Alumno\AppData\Local\Temp\s66g.o
+$C:\Users\Alumno\AppData\Local\Temp\s3f0.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 0 2007 2007 2 2
@@ -78,24 +78,24 @@ STRING 1A2-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\src.production.o
-F cinit CODE >950:C:\Users\Alumno\AppData\Local\Temp\s66g.s
-F cinit CODE >953:C:\Users\Alumno\AppData\Local\Temp\s66g.s
-F cinit CODE >985:C:\Users\Alumno\AppData\Local\Temp\s66g.s
-10 cinit CODE >986:C:\Users\Alumno\AppData\Local\Temp\s66g.s
-11 cinit CODE >987:C:\Users\Alumno\AppData\Local\Temp\s66g.s
-12 cinit CODE >988:C:\Users\Alumno\AppData\Local\Temp\s66g.s
-13 cinit CODE >989:C:\Users\Alumno\AppData\Local\Temp\s66g.s
-14 cinit CODE >990:C:\Users\Alumno\AppData\Local\Temp\s66g.s
-15 cinit CODE >991:C:\Users\Alumno\AppData\Local\Temp\s66g.s
-16 cinit CODE >994:C:\Users\Alumno\AppData\Local\Temp\s66g.s
-17 cinit CODE >995:C:\Users\Alumno\AppData\Local\Temp\s66g.s
-18 cinit CODE >996:C:\Users\Alumno\AppData\Local\Temp\s66g.s
-19 cinit CODE >997:C:\Users\Alumno\AppData\Local\Temp\s66g.s
-1A cinit CODE >998:C:\Users\Alumno\AppData\Local\Temp\s66g.s
-1B cinit CODE >999:C:\Users\Alumno\AppData\Local\Temp\s66g.s
-1C cinit CODE >1005:C:\Users\Alumno\AppData\Local\Temp\s66g.s
-1C cinit CODE >1007:C:\Users\Alumno\AppData\Local\Temp\s66g.s
-1D cinit CODE >1008:C:\Users\Alumno\AppData\Local\Temp\s66g.s
+F cinit CODE >950:C:\Users\Alumno\AppData\Local\Temp\s3f0.s
+F cinit CODE >953:C:\Users\Alumno\AppData\Local\Temp\s3f0.s
+F cinit CODE >985:C:\Users\Alumno\AppData\Local\Temp\s3f0.s
+10 cinit CODE >986:C:\Users\Alumno\AppData\Local\Temp\s3f0.s
+11 cinit CODE >987:C:\Users\Alumno\AppData\Local\Temp\s3f0.s
+12 cinit CODE >988:C:\Users\Alumno\AppData\Local\Temp\s3f0.s
+13 cinit CODE >989:C:\Users\Alumno\AppData\Local\Temp\s3f0.s
+14 cinit CODE >990:C:\Users\Alumno\AppData\Local\Temp\s3f0.s
+15 cinit CODE >991:C:\Users\Alumno\AppData\Local\Temp\s3f0.s
+16 cinit CODE >994:C:\Users\Alumno\AppData\Local\Temp\s3f0.s
+17 cinit CODE >995:C:\Users\Alumno\AppData\Local\Temp\s3f0.s
+18 cinit CODE >996:C:\Users\Alumno\AppData\Local\Temp\s3f0.s
+19 cinit CODE >997:C:\Users\Alumno\AppData\Local\Temp\s3f0.s
+1A cinit CODE >998:C:\Users\Alumno\AppData\Local\Temp\s3f0.s
+1B cinit CODE >999:C:\Users\Alumno\AppData\Local\Temp\s3f0.s
+1C cinit CODE >1005:C:\Users\Alumno\AppData\Local\Temp\s3f0.s
+1C cinit CODE >1007:C:\Users\Alumno\AppData\Local\Temp\s3f0.s
+1D cinit CODE >1008:C:\Users\Alumno\AppData\Local\Temp\s3f0.s
 4 intentry CODE >30:Z:\proyecto-6to-2022\src\interrupts.c
 18F text9 CODE >30:Z:\proyecto-6to-2022\src\interrupts.c
 18F text9 CODE >35:Z:\proyecto-6to-2022\src\interrupts.c
@@ -239,10 +239,10 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\src.production.o
 __Hstrings 0 0 ABS 0 strings -
 _T0CS 40D 0 ABS 0 - dist/default/production\src.production.o
-___sp 0 0 STACK 2 stack C:\Users\Alumno\AppData\Local\Temp\s66g.o
+___sp 0 0 STACK 2 stack C:\Users\Alumno\AppData\Local\Temp\s3f0.o
 _main 252 0 CODE 0 maintext dist/default/production\src.production.o
 btemp 7E 0 ABS 0 - dist/default/production\src.production.o
-start 18 0 CODE 0 init C:\Users\Alumno\AppData\Local\Temp\s66g.o
+start 18 0 CODE 0 init C:\Users\Alumno\AppData\Local\Temp\s3f0.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\src.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\src.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
@@ -251,12 +251,12 @@ __Hpowerup 0 0 CODE 0 powerup -
 _servoHorario 2EE 0 CODE 0 text2 dist/default/production\src.production.o
 _platoMEFInit 340 0 CODE 0 text3 dist/default/production\src.production.o
 mideColorAzul@t1 72 0 COMMON 1 bssCOMMON dist/default/production\src.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\Alumno\AppData\Local\Temp\s66g.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Alumno\AppData\Local\Temp\s66g.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Alumno\AppData\Local\Temp\s66g.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Alumno\AppData\Local\Temp\s66g.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Alumno\AppData\Local\Temp\s66g.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Alumno\AppData\Local\Temp\s66g.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Alumno\AppData\Local\Temp\s3f0.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Alumno\AppData\Local\Temp\s3f0.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Alumno\AppData\Local\Temp\s3f0.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Alumno\AppData\Local\Temp\s3f0.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Alumno\AppData\Local\Temp\s3f0.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Alumno\AppData\Local\Temp\s3f0.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\src.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
@@ -270,8 +270,8 @@ _aguaMEFInit 336 0 CODE 0 text8 dist/default/production\src.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __end_of_servoHorario 31E 0 CODE 0 text2 dist/default/production\src.production.o
 __end_of_platoMEFInit 344 0 CODE 0 text3 dist/default/production\src.production.o
-___stackhi 0 0 ABS 0 - C:\Users\Alumno\AppData\Local\Temp\s66g.o
-___stacklo 0 0 ABS 0 - C:\Users\Alumno\AppData\Local\Temp\s66g.o
+___stackhi 0 0 ABS 0 - C:\Users\Alumno\AppData\Local\Temp\s3f0.o
+___stacklo 0 0 ABS 0 - C:\Users\Alumno\AppData\Local\Temp\s3f0.o
 _aguaMEF 14A 0 CODE 0 text7 dist/default/production\src.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\src.production.o
 _TRISAbits 85 0 ABS 0 - dist/default/production\src.production.o
@@ -283,7 +283,7 @@ __pcstackBANK0 24 0 BANK0 1 cstackBANK0 dist/default/production\src.production.o
 _TMR0IE 5D 0 ABS 0 - dist/default/production\src.production.o
 _appInit 2AC 0 CODE 0 text6 dist/default/production\src.production.o
 _estadoComida 75 0 COMMON 1 bssCOMMON dist/default/production\src.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Alumno\AppData\Local\Temp\s66g.o
+___int_sp 0 0 STACK 2 stack C:\Users\Alumno\AppData\Local\Temp\s3f0.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -337,7 +337,7 @@ __end_of_comidaMEFInit 336 0 CODE 0 text5 dist/default/production\src.production
 saved_w 7E 0 ABS 0 - dist/default/production\src.production.o
 __end_of_isr 32C 0 CODE 0 text9 dist/default/production\src.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Alumno\AppData\Local\Temp\s66g.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Alumno\AppData\Local\Temp\s3f0.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/default/production\src.production.o
 _tickCounter 70 0 COMMON 1 bssCOMMON dist/default/production\src.production.o

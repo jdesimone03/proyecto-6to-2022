@@ -708,8 +708,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 147:         case E_AGUA_IN:
 [e :U 175 ]
 "148
-[; ;main.c: 148:             if (!PORTDbits.RD2) {
-[e $ ! ! != -> . . _PORTDbits 0 2 `i -> 0 `i 176  ]
+[; ;main.c: 148:             if (PORTDbits.RD2) {
+[e $ ! != -> . . _PORTDbits 0 2 `i -> 0 `i 176  ]
 {
 "149
 [; ;main.c: 149:                 estadoAgua = E_AGUA_LLENO;
@@ -740,8 +740,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 156:         case E_AGUA_LLENO:
 [e :U 178 ]
 "157
-[; ;main.c: 157:             if (PORTDbits.RD2) {
-[e $ ! != -> . . _PORTDbits 0 2 `i -> 0 `i 179  ]
+[; ;main.c: 157:             if (!PORTDbits.RD2) {
+[e $ ! ! != -> . . _PORTDbits 0 2 `i -> 0 `i 179  ]
 {
 "158
 [; ;main.c: 158:                 estadoAgua = E_AGUA_VACIO;
@@ -760,8 +760,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 162:         case E_AGUA_VACIO:
 [e :U 180 ]
 "163
-[; ;main.c: 163:             if (!PORTDbits.RD2) {
-[e $ ! ! != -> . . _PORTDbits 0 2 `i -> 0 `i 181  ]
+[; ;main.c: 163:             if (PORTDbits.RD2) {
+[e $ ! != -> . . _PORTDbits 0 2 `i -> 0 `i 181  ]
 {
 "164
 [; ;main.c: 164:                 estadoAgua = E_AGUA_LLENO;

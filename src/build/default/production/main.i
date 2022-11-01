@@ -2913,7 +2913,7 @@ void aguaMEFInit(void) {
 void aguaMEF(void) {
     switch (estadoAgua) {
         case E_AGUA_IN:
-            if (!PORTDbits.RD2) {
+            if (PORTDbits.RD2) {
                 estadoAgua = E_AGUA_LLENO;
                 PORTAbits.RA5 = 0;
             } else {
@@ -2922,13 +2922,13 @@ void aguaMEF(void) {
             }
             break;
         case E_AGUA_LLENO:
-            if (PORTDbits.RD2) {
+            if (!PORTDbits.RD2) {
                 estadoAgua = E_AGUA_VACIO;
                 PORTAbits.RA5 = 1;
             }
             break;
         case E_AGUA_VACIO:
-            if (!PORTDbits.RD2) {
+            if (PORTDbits.RD2) {
                 estadoAgua = E_AGUA_LLENO;
                 PORTAbits.RA5 = 0;
             }
